@@ -11,10 +11,10 @@
 
 #ifndef _H
 #define _H
-#include parent
+#include Club
 
 
-class Customer : public parent
+class Customer : public Club
 {
 public:
     // --------------------------constructor---------------------------------
