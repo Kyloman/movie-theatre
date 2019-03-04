@@ -6,7 +6,7 @@
 // Purpose - The class in which text files are parsed and processed into internal data. Once processed, 
 // these different types of media will be stored in a Hash Table inside of the class
 // --------------------------------------------------------------------------------------------------------------------
-// Notes on specifications, special algorithms, and assumptions.
+// Files are read here and must be according to project specification. 
 // --------------------------------------------------------------------------------------------------------------------
 
 #ifndef SHOP_H
