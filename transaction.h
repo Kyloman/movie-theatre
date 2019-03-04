@@ -3,9 +3,10 @@
 // 3/3/2019
 // Date of Last Modification
 // --------------------------------------------------------------------------------------------------------------------
-// Purpose - this is to complete the task ike borrow and return
+// This class represents an action a customer can do, from borrowing to returning a movie. It tracks what type of media
+// was manipulated, how many were manipulated, and who did it.
 // --------------------------------------------------------------------------------------------------------------------
-// Notes on specifications, special algorithms, and assumptions.
+// Will be stored in a vector. 
 // --------------------------------------------------------------------------------------------------------------------
 
 #ifndef TRANSACTION_H
