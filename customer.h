@@ -45,6 +45,12 @@ public:
     // --------------------------borrow()---------------------------------
     // Description: an item is borrowed by the customer
     // ----------------------------------------------------------------------
+    
+     // --------------------------setName(string, string)---------------------------------
+    // Description: an item is borrowed by the customer
+    // ----------------------------------------------------------------------
+    void setName(string, string);
+    
     void borrow();
     // --------------------------borrow()---------------------------------
     // Description: an item is returned by the customer
@@ -52,8 +58,10 @@ public:
     void Return():
     
     
-private:
     
+private:
+    void setID();
+   
     int ident;
     string name;    //name of customer
     vector <type transaction> idHistory; //the history of the individual
