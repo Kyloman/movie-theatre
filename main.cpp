@@ -17,13 +17,10 @@ using namespace std;
 int main()
 {
 	Shop shroudStore;
-	shroudStore.read something();
-	//{
-//		read dataMovies.txt
-//		
-	//}
-	shroudStore.read somethingelse();
-	shroudStore.read lastsomething();
+	shroudStore.readFileCostumers(ifstream& infile)
+	shroudStore.readFileMovie(ifstream& infile);
+	shroudStore.readFileComands(ifstream& infile);
+	
 	
 	return 0;
 }
