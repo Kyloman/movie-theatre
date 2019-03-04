@@ -3,9 +3,9 @@
 // Creation Date
 // Date of Last Modification
 // --------------------------------------------------------------------------------------------------------------------
-// Purpose - Parent class for DVD allows for expansion later on to different media archetypes. 
+// Purpose - Parent class for DVD allows for expansion later on to different media archetypes. Keeps track of stock. 
 // --------------------------------------------------------------------------------------------------------------------
-// Notes on specifications, special algorithms, and assumptions.
+// This class is built so future types of media can be inherited from this class.
 // --------------------------------------------------------------------------------------------------------------------
 
 #ifndef MEDIA_H
