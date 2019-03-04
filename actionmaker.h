@@ -30,7 +30,7 @@ public:
 	
 private:
 	// ------------------------helperFunctions-------------------------------
-	// helper functions are called to make specific style of Movie.
+	// helper functions are called to make specific action.
 	// ----------------------------------------------------------------------
 	Shop *makeInventory(istream &stream, Shop *shop);
 	Customer *makeHistory(istream &stream, Shop *shop);
