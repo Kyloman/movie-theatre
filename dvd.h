@@ -1,9 +1,9 @@
-// ------------------------------------------------ file name ---------------------------------------------------------
+// ------------------------------------------------------ DVD ---------------------------------------------------------
 // Programmer Name Course Section Number
 // Creation Date
 // Date of Last Modification
 // --------------------------------------------------------------------------------------------------------------------
-// Purpose - a brief statement of the program's function
+// Purpose - Child of Media class. Parent class for all DVD types. 
 // --------------------------------------------------------------------------------------------------------------------
 // Notes on specifications, special algorithms, and assumptions.
 // --------------------------------------------------------------------------------------------------------------------
@@ -19,11 +19,17 @@ using namespace std;
 class DVD : public Media
 {
 public:
+	//Constructor
 	DVD();
+	
+	//Deconstructor
 	~DVD();
-
+	
+	//Setter
 	void setDirector(string name);
 	void setTitle(string name);
+	
+	//Getters
 	void getDate(string name);
 	string getDirector();
 	string getTitle();
