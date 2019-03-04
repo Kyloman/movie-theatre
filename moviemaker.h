@@ -12,7 +12,7 @@
 #ifndef MOVIEMAKER_H
 #define MOVIEMAKER_H
 
-#include "movie.h"
+#include "DVD.h"
 #include "comedy.h"
 #include "drama.h"
 #include "classic.h"
