@@ -3,9 +3,9 @@
 // 3/3/2019
 // Date of Last Modification
 // --------------------------------------------------------------------------------------------------------------------
-// Purpose - a brief statement of the program's function
+// Child class of DVD for Classic type DVD’s. Allows the user to set and get the month and major actor of the DVD.
 // --------------------------------------------------------------------------------------------------------------------
-// Notes on specifications, special algorithms, and assumptions.
+// Specially categorized using Month and Actor on top of normal DVD sorting mechanics.
 // --------------------------------------------------------------------------------------------------------------------
 
 #ifndef CLASSIC_H
