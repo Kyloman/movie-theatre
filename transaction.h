@@ -16,9 +16,13 @@
 class Media
 {
 public:
+	//Constructor
 	Media();
+	
+	//Deconstructor
 	~Media();
-
+	
+	//Functions
 	void printData();
 
 private:
