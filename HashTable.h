@@ -5,7 +5,7 @@
 // --------------------------------------------------------------------------------------------------------------------
 // Purpose - create a hashtable to keep track of customers
 // --------------------------------------------------------------------------------------------------------------------
-// Notes on specifications, special algorithms, and assumptions.
+// Hashes using the normal bucket system where it delineates by name primarily. 
 // --------------------------------------------------------------------------------------------------------------------
 
 #ifndef HASHTABLE_H
