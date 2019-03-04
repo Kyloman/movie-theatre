@@ -5,7 +5,7 @@
 // --------------------------------------------------------------------------------------------------------------------
 // Purpose - Reads in data from text files provided in supportingFiles.zip and creates actions.
 // --------------------------------------------------------------------------------------------------------------------
-// Notes on specifications, special algorithms, and assumptions.
+// This is what drives the Action class
 // --------------------------------------------------------------------------------------------------------------------
 
 #ifndef ACTIONMAKER_H
@@ -26,18 +26,23 @@ public:
 	// ---------------------------- Make ------------------------------------
 	// Creates an action, calls helper function after determining action type 
 	// ----------------------------------------------------------------------
-	Action *Make(istream &stream, Shop *shop);
+	Action *make(istream &stream, Shop *shop);
 	
 private:
 	// ------------------------helperFunctions-------------------------------
 	// helper functions are called to make specific action.
 	// ----------------------------------------------------------------------
-	Shop *makeInventory(istream &stream, Shop *shop);
+
+	
+	Media *findDVD(istream &stream, Shop *shop);
+	
+	Classics *findClassics(istream &stream, Shop *shop);
+	
+	Comedy *findComedy(istream &stream, Shop *shop);
+	
+	Drama *findDrama(istream &stream, Shop *shop);
+	
 	Customer *makeHistory(istream &stream, Shop *shop);
 	Customer *makeBorrow(istream &stream, Shop *shop);
 	Customer *makeReturn(istream &stream, Shop *shop);
-	Media *FindMedia(istream &stream, Shop *shop);
-	Classics *FindClassics(istream &stream, Shop *shop);
-	Comedy *FindComedy(istream &stream, Shop *shop);
-	Drama *FindDrama(istream &stream, Shop *shop);
 };
