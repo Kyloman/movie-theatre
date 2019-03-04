@@ -22,14 +22,14 @@ using namespace std;
 class
 {
 public:
-    // ------------------------------make------------------------------------
-    // creates a movie, calls helper function after determining movie type
-    // ----------------------------------------------------------------------
+	// ------------------------------make------------------------------------
+	// creates a movie, calls helper function after determining movie type
+	// ----------------------------------------------------------------------
 	Movie *make(istream &in);   
 private:
-    // ------------------------helperFunctions-------------------------------
-    // helper functions are called to make specific style of Movie.
-    // ----------------------------------------------------------------------
+	// ------------------------helperFunctions-------------------------------
+	// helper functions are called to make specific style of Movie.
+	// ----------------------------------------------------------------------
 	Comedy *makeComedy
 	Drama *makeDrama
 	Classic *makeClassic 
