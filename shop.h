@@ -22,6 +22,10 @@ public:
       ~shop();
       
       readFile(ifstream& infile)
+//    {
+//         reads file
+           
+      }
       
       void printInventory();
       
