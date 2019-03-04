@@ -21,12 +21,45 @@ public:
       //destructors
       ~shop();
       
-      readFile(ifstream& infile)
-//    {
-//         reads file
-           
-      }
-      
+    void readFileMovies(ifstream& infile)
+//        reads files data4Movies
+//        if does not worrk
+//            print does not work
+//
+//        while(file doen not end)
+//            if (leter on line is F)
+//                make comedy movie
+//            else if (leter on line is C)
+//                make comedy movie
+//            else if (leter on line is D)
+//                make comedy movie
+//            else
+//                print"error"
+//
+    void readFileCommands(ifstream& infile)
+//        reads files data4Comands
+//        if does not worrk
+//            print does not work
+//        while(file doesnt end)
+//            if (leter on line is I)
+//                output all Comedy movies, then all Dramas, then all Classics
+//            else if (leter on line is H)
+//                print History
+//            else if (leter on line is B)
+//                borrow item
+//            else if (leter on line is R)
+//                return item
+//            else
+//                print"error"
+//
+    void readFileCostumers(ifstream& infile)
+//            reads file data4customers
+//                if does not worrk
+//                    print does not work
+//                while(file does not end)
+//                    make new costumer
+//
+
       void printInventory();
       
 Private:
