@@ -56,7 +56,15 @@ public:
     // Description: an item is returned by the customer
     // ----------------------------------------------------------------------
     void Return():
-    
+    // --------------------------==---------------------------------
+    // Description: returns true if two customers are the same
+    // ----------------------------------------------------------------------
+    bool operator==(const Customer &) const;
+	// --------------------------==---------------------------------
+    // Description: returns false if two customers are the same
+    // ----------------------------------------------------------------------
+    bool operator!=(const Customer &) const;
+	
     
     
 private:
