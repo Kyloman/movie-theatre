@@ -18,6 +18,10 @@ int main()
 {
 	Shop shroudStore;
 	shroudStore.read something();
+	//{
+//		read dataMovies.txt
+//		
+	//}
 	shroudStore.read somethingelse();
 	shroudStore.read lastsomething();
 	
