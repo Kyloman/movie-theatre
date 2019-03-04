@@ -17,10 +17,10 @@ class Transaction
 {
 public:
 	//Constructor
-	Media();
+	Transaction();
 	
 	//Deconstructor
-	~Media();
+	~Transaction();
 	
 	//Functions
 	void printData();
