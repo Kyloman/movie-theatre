@@ -3,7 +3,7 @@
 // 3/3/2019
 // Date of Last Modification
 // --------------------------------------------------------------------------------------------------------------------
-// Purpose - a brief statement of the program's function
+// Purpose - Reads in data from text files provided in supportingFiles.zip and creates actions.
 // --------------------------------------------------------------------------------------------------------------------
 // Notes on specifications, special algorithms, and assumptions.
 // --------------------------------------------------------------------------------------------------------------------
@@ -24,15 +24,21 @@ using namespace std;
 class ActionMaker
 {
 public:
-	Action *Create(istream &stream, Store *store);
+	// ---------------------------- Make ------------------------------------
+	// Creates an action, calls helper function after determining action type 
+	// ----------------------------------------------------------------------
+	Action *Make(istream &stream, Shop *shop);
 	
 private:
-	Shop *makeInventory(istream &stream, Store *store);
-	Customer *makeHistory(istream &stream, Store *store);
-	Customer *makeBorrow(istream &stream, Store *store);
-	Customer *makeReturn(istream &stream, Store *store);
-	Media *FindMedia(istream &stream, Store *store);
-	Classics *FindClassics(istream &stream, Store *store);
-	Comedy *FindComedy(istream &stream, Store *store);
-	Drama *FindDrama(istream &stream, Store *store);
+	// ------------------------helperFunctions-------------------------------
+	// helper functions are called to make specific style of Movie.
+	// ----------------------------------------------------------------------
+	Shop *makeInventory(istream &stream, Shop *shop);
+	Customer *makeHistory(istream &stream, Shop *shop);
+	Customer *makeBorrow(istream &stream, Shop *shop);
+	Customer *makeReturn(istream &stream, Shop *shop);
+	Media *FindMedia(istream &stream, Shop *shop);
+	Classics *FindClassics(istream &stream, Shop *shop);
+	Comedy *FindComedy(istream &stream, Shop *shop);
+	Drama *FindDrama(istream &stream, Shop *shop);
 };
