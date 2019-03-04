@@ -57,7 +57,7 @@ public:
     
 private:
     struct Node {
-        Customer cust;                        // pointer to data object
+        Media item;                        // pointer to data object
         Node* left;                            // left subtree pointer
         Node* right;                        // right subtree pointer
     };
