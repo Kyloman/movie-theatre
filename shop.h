@@ -9,8 +9,8 @@
 // Notes on specifications, special algorithms, and assumptions.
 // --------------------------------------------------------------------------------------------------------------------
 
-#ifndef _H
-#define _H
+#ifndef SHOP_H
+#define SHOP_H
 using namespace std;
 
 class Shop
@@ -31,9 +31,9 @@ public:
       
 Private:
       club Club;
-      BST comedy;
-      BST drama;
-      BST classic;
+      BinTree comedy;
+      BinTree drama;
+      BinTree classic;
 };
 
 #endif 
