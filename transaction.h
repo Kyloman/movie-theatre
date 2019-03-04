@@ -13,7 +13,7 @@
 #include "media.h"
 #include "customer.h"
 
-class Media
+class Transaction
 {
 public:
 	//Constructor
