@@ -6,7 +6,7 @@
 // --------------------------------------------------------------------------------------------------------------------
 // Purpose - this is the class for the customer that keeps track of costumer info and actions.
 // --------------------------------------------------------------------------------------------------------------------
-// Notes on specifications, special algorithms, and assumptions.
+// Think of this like a dossier which notes what customers have interacted with a store. 
 // --------------------------------------------------------------------------------------------------------------------
 
 #ifndef _H
