@@ -11,7 +11,8 @@
 
 #ifndef bintree_h
 #define bintree_h
-#include "nodedata.h"
+#include "club.h"
+#include "customer.h"
 
 class BinTree {                // you add class/method comments and assumptions
     // --------------------------Operator <<----------------------------------------
@@ -56,7 +57,7 @@ public:
     
 private:
     struct Node {
-        NodeData* data;                        // pointer to data object
+        Customer cust;                        // pointer to data object
         Node* left;                            // left subtree pointer
         Node* right;                        // right subtree pointer
     };
