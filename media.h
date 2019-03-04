@@ -1,9 +1,9 @@
-// ------------------------------------------------ file name ---------------------------------------------------------
+// --------------------------------------------------- Media ----------------------------------------------------------
 // Programmer Name Course Section Number
 // Creation Date
 // Date of Last Modification
 // --------------------------------------------------------------------------------------------------------------------
-// Purpose - a brief statement of the program's function
+// Purpose - Parent class for DVD allows for expansion later on to different media archetypes. 
 // --------------------------------------------------------------------------------------------------------------------
 // Notes on specifications, special algorithms, and assumptions.
 // --------------------------------------------------------------------------------------------------------------------
@@ -14,11 +14,17 @@
 class Media
 {
 public:
+	//Getter
 	int getInv();
+	
+	//Setter
 	void setInv(int amount);
+	
+	//functions
 	void increaseInv(int amount);
 	void decreaseInv(int amount);
-
+	
+	//Operator Overload
 	virtual Media& operator==(const Media& other);
 	virtual Media& operator<(const Media& other);
 
