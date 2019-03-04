@@ -17,11 +17,22 @@ using namespace std;
 class Classic : public DVD
 {
 public:
+	// --------------------------constructor---------------------------------
+    	// Description: creates a clasic dvd
+    	// ----------------------------------------------------------------------
 	Classic();
+	// --------------------------destructor---------------------------------
+    	// Description: deletes the itmes in the class 
+    	// ----------------------------------------------------------------------
 	~Classic();
-
+	// --------------------------constructor---------------------------------
+    	// Description: creates an exact copy of an already existing comedy class
+    	// ----------------------------------------------------------------------
 	Classic(const Classic& copy);
 
+	// --------------------------constructor---------------------------------
+   	// Description: ``````````````````
+    // ----------------------------------------------------------------------
 	void setMonth(int newMonth);
 	void setMajorActor(string newActor);
 	int getMonth();
