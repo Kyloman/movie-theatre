@@ -3,9 +3,10 @@
 // 3/3/2019
 // Date of Last Modification
 // --------------------------------------------------------------------------------------------------------------------
-// Purpose - a brief statement of the program's function
+// This Club represents a list of customers that have interacted with the shop. You can add customers and see how many
+// are in.
 // --------------------------------------------------------------------------------------------------------------------
-// Notes on specifications, special algorithms, and assumptions.
+// Customers are stored in a hash table. 
 // --------------------------------------------------------------------------------------------------------------------
 
 #ifndef CLUB_H
