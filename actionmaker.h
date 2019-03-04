@@ -42,7 +42,7 @@ private:
 	
 	Drama *findDrama(istream &stream, Shop *shop);
 	
-	Customer *makeHistory(istream &stream, Shop *shop);
+
 	Customer *makeBorrow(istream &stream, Shop *shop);
 	Customer *makeReturn(istream &stream, Shop *shop);
 };
