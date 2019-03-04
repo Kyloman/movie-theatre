@@ -6,7 +6,7 @@
 // Purpose - Reads in data from text files provided in supportingFiles.zip and creates movies using the included movie 
 // types.
 // --------------------------------------------------------------------------------------------------------------------
-// Notes on specifications, special algorithms, and assumptions.
+// Will borrow from Action class in future implementation.
 // --------------------------------------------------------------------------------------------------------------------
 
 #ifndef MOVIEMAKER_H
