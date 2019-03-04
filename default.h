@@ -1,6 +1,6 @@
 // ------------------------------------------------ file name ---------------------------------------------------------
-// Programmer Name Course Section Number
-// Creation Date
+// Kyle Lotterer, Jonathan Rojas, Marko Lakic CSS 343 C
+// 3/3/2019
 // Date of Last Modification
 // --------------------------------------------------------------------------------------------------------------------
 // Purpose - a brief statement of the program's function
