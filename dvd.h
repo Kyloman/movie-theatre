@@ -5,7 +5,7 @@
 // --------------------------------------------------------------------------------------------------------------------
 // Purpose - Child of Media class. Parent class for all DVD types. 
 // --------------------------------------------------------------------------------------------------------------------
-// Notes on specifications, special algorithms, and assumptions.
+// Some DVDs have special characteristics, but all of them have DVD's inherited and additional characteristics. 
 // --------------------------------------------------------------------------------------------------------------------
 
 #ifndef DVD_H
