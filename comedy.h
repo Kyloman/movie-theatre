@@ -3,9 +3,9 @@
 // 3/3/2019
 // Date of Last Modification
 // --------------------------------------------------------------------------------------------------------------------
-// Purpose - a brief statement of the program's function
+// Purpose - Child class of DVD for Comedy type DVD’s.
 // --------------------------------------------------------------------------------------------------------------------
-// Notes on specifications, special algorithms, and assumptions.
+// To be stored in a Binary Search Tree.
 // --------------------------------------------------------------------------------------------------------------------
 
 #ifndef COMEDY_H
