@@ -1,4 +1,4 @@
-// ------------------------------------------------ file name ---------------------------------------------------------
+// ----------------------------------------------------- club ---------------------------------------------------------
 // Kyle Lotterer, Jonathan Rojas, Marko Lakic CSS 343 C
 // 3/3/2019
 // Date of Last Modification
@@ -18,18 +18,21 @@ using namespace std;
 class Club : public DVD
 {
 public:
+	//Constructor
 	Club();
+	
+	//Deconstructor
 	~Club();
-
+	
+	//Copy Constructor
 	Club(const Club& copy);
-
+	
+	//functions
 	void addMember(Customer newCustomer);
 
 private:
 	int customerAmount;
 	HashTable<Customer> customers;
-	
-
 };
 
 #endif 
