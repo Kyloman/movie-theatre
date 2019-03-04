@@ -30,7 +30,7 @@ public:
      // --------------------------getName(int)---------------------------------
     // Description: returns the name as a string of the ID
     // ----------------------------------------------------------------------
-    int getName(int);
+    string getName(int);
     
     // --------------------------getId---------------------------------
     // Description: returns the Id of a customer by name
