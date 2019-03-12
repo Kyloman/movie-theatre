@@ -1,5 +1,5 @@
 
-// ------------------------------------------------ customer.h ---------------------------------------------------------
+// ---------------------------------- customer.h-------------------------------------------
 // Programmer Name Course Section Number
 // Creation Date
 // Date of Last Modification
@@ -11,16 +11,18 @@
 
 #ifndef _H
 #define _H
-#include Club
+#include <iostream>
+
+using namespace std;
 
 
-class Customer : public Club
+class Customer //: public Customer
 {
 public:
     // --------------------------constructor---------------------------------
     // Description: creates a new customer with a unique ID
     // ----------------------------------------------------------------------
-    Customer();
+    Customer(int, string, string);
     
     // --------------------------getId---------------------------------
     // Description: returns the Id of a customer by name
@@ -35,7 +37,7 @@ public:
     // --------------------------getId---------------------------------
     // Description: returns the Id of a customer by name
     // ----------------------------------------------------------------------
-    int getId(string);
+    //int getId(string);
     
      // --------------------------getHistory---------------------------------
     // Description: prints using cout<< the history of customer
@@ -55,24 +57,25 @@ public:
     // --------------------------borrow()---------------------------------
     // Description: an item is returned by the customer
     // ----------------------------------------------------------------------
-    void Return():
+    void Return();
     // --------------------------==---------------------------------
     // Description: returns true if two customers are the same
     // ----------------------------------------------------------------------
-    bool operator==(const Customer &) const;
+    //bool operator==(const Customer &) const;
 	// --------------------------==---------------------------------
     // Description: returns false if two customers are the same
     // ----------------------------------------------------------------------
-    bool operator!=(const Customer &) const;
+   // bool operator!=(const Customer &) const;
 	
-    
-    
 private:
+    
+    string fName;      //name of customer
+    string lName; 
     void setID();
    
     int ident;
-    string name;    //name of customer
-    vector <type transaction> idHistory; //the history of the individual
+
+    //vector <movies> idHistory; //the history of the individual
     
 };
 

@@ -11,12 +11,12 @@
 
 #ifndef CLUB_H
 #define CLUB_H
-using namespace std;
-#include "dvd.h"
 #include "customer.h"
-#include "hashtable.h"
+#include <iostream>
+#include <vector>
 
-class Club : public DVD
+using namespace std;
+class Club //: public DVD
 {
 public:
 	//Constructor
@@ -26,14 +26,25 @@ public:
 	~Club();
 	
 	//Copy Constructor
-	Club(const Club& copy);
+	//Club(const Club& copy);
 	
 	//functions
-	void addMember(Customer newCustomer);
-
+	void addMember(int, string, string, int);
+    bool deleteMember(int);
+    
 private:
 	int customerAmount;
-	HashTable<Customer> customers;
+    int capacity = 10007;
+    struct Node {
+        int Id;
+        Customer* cust;                        // pointer to data object
+        Node* nextCust;                            // left subtree pointer
+                              // right subtree pointer
+    };
+    
+    Node *arr[10007];
+    vector<Customer> cusr; 
+//	HashTable<Customer> customers;
 };
 
 #endif 
