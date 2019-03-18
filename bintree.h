@@ -13,6 +13,7 @@
 #define bintree_h
 #include "club.h"
 #include "customer.h"
+#include "movie.h"
 
 class BinTree {                // you add class/method comments and assumptions
     // --------------------------Operator <<----------------------------------------
@@ -48,30 +49,30 @@ public:
     // ----------------------------------------------------------------------------
     bool operator==(const BinTree &) const;
     bool operator!=(const BinTree &) const;
-    bool insert(NodeData*);
-    bool retrieve(NodeData, NodeData*) const;
+    bool insert(Movie*);
+    bool retrieve(Movie, Movie*) const;
     void displaySideways() const;            // provided below, displays the tree sideways
-    int getHeight (const NodeData &) const;
-    void bstreeToArray(NodeData* []);
-    void arrayToBSTree(NodeData* []);
+    int getHeight (const Movie &) const;
+    void bstreeToArray(Movie* []);
+    void arrayToBSTree(Movie* []);
     
 private:
     struct Node {
-        Media item;                        // pointer to data object
+        Movie item;                        // pointer to data object
         Node* left;                            // left subtree pointer
         Node* right;                        // right subtree pointer
     };
     Node* root;                                // root of the tree
     
     // utility functions
-    void insertHelper(Node* & , NodeData* );
+    void insertHelper(Node* & , Movie* );
     void copyHelper( Node* &, Node* );
     void inorderHelper(Node*  ) const;
     void sideways(Node*, int) const;            // provided below, helper for displaySideways()
-    void treeToArrayHelper(Node* &, NodeData* [], int &);
-    void arrayToBSTreeHelper(NodeData* [], int, int);
+    void treeToArrayHelper(Node* &, Movie* [], int &);
+    void arrayToBSTreeHelper(Movie* [], int, int);
     void makeEmptyHelper(Node* &);
-    void getHeightHelper(const NodeData &data, Node* current, int &i, int &max, bool found) const;
+    void getHeightHelper(const Movie &data, Node* current, int &i, int &max, bool found) const;
     bool equalityHelper( Node* ,  Node* )const;
     
 };
