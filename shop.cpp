@@ -7,7 +7,9 @@
 //
 
 #include "shop.h"
-
+// --------------------------cunstructor----------------------------------------
+// Description: initializes shop class
+// ----------------------------------------------------------------------------
 Shop::Shop()
 {
 }
@@ -17,15 +19,18 @@ Shop::~Shop()
 }
 
 
-
+// --------------------------readFileMovies(ifstream&)-------------------------------
+// Description: reads Movie File
+// ----------------------------------------------------------------------------
 void Shop::readFileMovies(ifstream& infile)
 {
     string s;
-
     for (;;) {
-        infile >> s;
+        infile >> s;                         //reads first letter in line
         
         if (infile.eof()) break;             // no more lines of data
+        
+        //if f for comedy
         if(s == "F,")
         {
             int stock;
@@ -34,23 +39,17 @@ void Shop::readFileMovies(ifstream& infile)
             int year;
             Movie* f;
             infile>> stock;
-            while(!director.find(','))
-            {
-                string temp;
-                infile>>temp;
-                director += temp;
-            }
-            while(!title.find(','))
-            {
-                string temp;
-                infile>>temp;
-                title += temp;
-            }
+            
+            director = stringHelper(infile);
+            title = stringHelper(infile);
+            
             infile>> year;
             
             f = new Comedy(director, title, year );
             comedy.insert(f);
         }
+        
+        //d for Drama
         else if(s == "D,")
         {
             int stock;
@@ -59,23 +58,16 @@ void Shop::readFileMovies(ifstream& infile)
             int year;
             Movie* d;
             infile>> stock;
-            while(!director.find(','))
-            {
-                string temp;
-                infile>>temp;
-                director += temp;
-            }
-            while(!title.find(','))
-            {
-                string temp;
-                infile>>temp;
-                title += temp;
-            }
-            infile>> year;
             
+            director = stringHelper(infile);
+            title = stringHelper(infile);
+            
+            infile>> year;
             d = new Drama(director, title, year );
             drama.insert(d);
         }
+        
+        //C for clasic
         else if(s == "C,")
         {
             int stock;
@@ -84,20 +76,11 @@ void Shop::readFileMovies(ifstream& infile)
             string actorYear;
             Movie* c;
             infile>> stock;
-            while(!director.find(','))
-            {
-                string temp;
-                infile>>temp;
-                director += temp;
-            }
-            while(!title.find(','))
-            {
-                string temp;
-                infile>>temp;
-                title += temp;
-            }
-            getline(infile,actorYear);
             
+            director = stringHelper(infile); 
+            title = stringHelper(infile);
+            
+            getline(infile,actorYear);
             c = new Classic(director, title, actorYear );
             classic.insert(c);
         }
@@ -120,6 +103,8 @@ void Shop::readFileCommands(ifstream& infile)
         infile >> s;
         
         if (infile.eof()) break;             // no more lines of data
+        
+        // I calls inventory
         if(s == "I")
         {
             cout<<"comedys:"<<endl;
@@ -130,6 +115,8 @@ void Shop::readFileCommands(ifstream& infile)
             cout<<classic;
             
         }
+        
+        //H calls history
         else if(s == "H")
         {
             string iD;
@@ -141,10 +128,9 @@ void Shop::readFileCommands(ifstream& infile)
                 temp->getHistory();
                 
             }
-            
-                
-                
         }
+        
+        //B calls borrow
         else if(s == "B")
         {
             string borrowed;
@@ -154,9 +140,12 @@ void Shop::readFileCommands(ifstream& infile)
             infile>> iD;
             infile>> typeMedia;
             infile>> typeMovie;
+            
+            //Checks if iD is valid
             if(club.find(iD))
             {
-                if(typeMedia == "D" && typeMovie == "C")
+                //Checks if media type and movie type correct
+                if(typeMedia == "D")
                 {
                     string historyString;
                     Movie* tempMovie;
@@ -168,13 +157,26 @@ void Shop::readFileCommands(ifstream& infile)
                     infile>> temp;
                     date += " " + temp;
                     getline(infile, actor);
-                    Comedy.retreive(date, actor, temp);
+                    //checks movie type
+                    if(typeMovie == "F")
+                        Comedy.retreive(date, actor, temp);
+                    else if(typeMovie == "D")
+                        dra.retreive(date, actor, temp);
+                    else if(typeMovie == "C")
+                        Comedy.retreive(date, actor, temp);
+                    else
+                        cout<<"no type movie";
+                    
+                    
                     temp.borrow();
                     Club.getCust(iD, tempCust);
                     tempCust = Club.getCustomer(iD);
-                    tempCust.borrow(tempMovie);
-                    
-                    
+                    tempCust.borrow(tempMovie);     
+                }
+                else
+                {
+                    cout<<"no type media"<<endl;
+                    getline(infile, "");
                 }
             }
             else
@@ -182,11 +184,13 @@ void Shop::readFileCommands(ifstream& infile)
             
             
         }
+        
+        //R calls return
         else if(s == "R")
         {
+            //Checks if media type and movie type correct
             if(typeMedia == "D" && typeMovie == "C")
             {
-                
                 movie* tempMovie;
                 string temp;
                 string date;
@@ -210,7 +214,9 @@ void Shop::readFileCommands(ifstream& infile)
         
     }
 }
-
+// ---------------------readFileCostumers(ifstream&)---------------------------------
+// Description: reads th file for Customer info.
+// ---------------------------------------------------------------------------
 void Shop::readFileCostumers(ifstream& infile)
 {
     int ID;
@@ -226,4 +232,16 @@ void Shop::readFileCostumers(ifstream& infile)
         i++;
     }
         
+}
+
+string Shop::stringHelper(ifstream& infile)
+{
+    string fullString;
+    while(!fullString.find(','))
+    {
+        string temp;
+        infile>>temp;
+        title += temp;
+    }
+    return fullString;
 }
