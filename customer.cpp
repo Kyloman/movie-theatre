@@ -31,12 +31,15 @@ void Customer::returning(Media* newMedia)
 	Transaction tran(newMedia, "returned");
 	idHistory.push_back(tran);
 }
-void Customer::getHistory()
+
+void Customer::getHistory() 
 {
 	int size = idHistory.size();
+	string out = ""; //we are building a string to print
 	for (int x = 0; x < size; x++) {
-		
-
+		out = "";
+		out += getName() + " "; 
+		out += idHistory[x].
 	}
 }
 

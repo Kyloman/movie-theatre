@@ -16,7 +16,7 @@
 using namespace std;
 
 
-class Movie //: public Media
+class Movie : public Media
 {
 public:
 	//Constructor

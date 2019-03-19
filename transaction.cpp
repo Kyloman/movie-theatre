@@ -13,5 +13,7 @@ Transaction::~Transaction() {
 
 string Transaction::toString() {
 	string retVal = ""; //string to return
+	retVal += action + " " + type.toString(); 
+
 }
 

@@ -34,20 +34,20 @@ void Movie::setTitle(string name)
 //Getters
 void Movie::getName()
 {
-	return this.name;
+	return title;
 }
 string Movie::getDirector()
 {
-    return this.director;
+    return director;
 }
 string Movie::getTitle()
 {
     
-    return this.title;
+    return title;
 }
 string Movie::getDate()
 {
-    return this.date;
+    return date;
 }
 
 //Had to guess what the vars were, you magic tricked movie.h out of repo

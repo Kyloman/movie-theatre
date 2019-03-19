@@ -23,6 +23,8 @@ public:
 	//functions
 	void increaseInv(int amount);
 	void decreaseInv(int amount);
+
+	string toString();
 	
 	//Operator Overload
 	virtual Media& operator==(const Media& other);
