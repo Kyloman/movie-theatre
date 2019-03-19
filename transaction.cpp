@@ -1,7 +1,9 @@
 #include "transaction.h"
-#include "customer.h"
+//#include "customer.h"
 using namespace std;
-
+Transaction::Transaction() {
+    
+}
 
 Transaction::Transaction(Media* newMedia, string newAction) {
 	type = newMedia;
@@ -15,6 +17,7 @@ Transaction::~Transaction() {
 string Transaction::toString() {
 	string retVal = ""; //string to return
     retVal += action + " " + type->toString();
+    return retVal;
 
 }
 

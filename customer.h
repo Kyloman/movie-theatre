@@ -81,10 +81,10 @@ private:
     string fName;      //name of customer
     string lName; 
     
-
-   
+    
     int ident;
-    vector <Transaction> idHistory; //the history of all borrows/returns
+    vector<Transaction> idHistory; //the history of all borrows/returns
+    
     
 };
 

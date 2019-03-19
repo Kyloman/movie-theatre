@@ -23,6 +23,7 @@ Customer::Customer(int id, string first, string last)
 void Customer::borrow(Media* newMedia)
 {
 	Transaction tran(newMedia, "borrowed");
+
 	idHistory.push_back(tran);
 }
 
@@ -30,16 +31,16 @@ void Customer::returning(Media* newMedia)
 {
 	Transaction tran(newMedia, "returned");
 	idHistory.push_back(tran);
+    
 }
 
 void Customer::getHistory() 
 {
 	int size = idHistory.size();
 	string out = ""; //we are building a string to print
-	for (int x = 0; x < size; x++) {
-		out = "";
-		out += getName() + " "; 
-		out += idHistory[x].
+	for (int x = 0; x < size; x++)
+    {
+        cout<<idHistory[x].toString()<<endl;
 	}
 }
 
