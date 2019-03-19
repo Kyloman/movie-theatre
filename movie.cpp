@@ -3,6 +3,7 @@
 //  assi_4
 //
 //  Created by Jonathan Acoltzi Rojas on 3/14/19.
+//  Edited by Marko Lakic on 3/19/19
 //  Copyright © 2019 Jonathan Acoltzi Rojas. All rights reserved.
 //
 
@@ -13,6 +14,8 @@ using namespace std;
 Movie::Movie()
 {
     title = "";
+	director = "";
+	year = 0;
 }
 
 //Deconstructor
@@ -30,6 +33,10 @@ void Movie::setTitle(string name)
 {
     title = name;
 }
+void Movie::setYear(int name)
+{
+	year = name;
+}
 
 //Getters
 string Movie::getName()const
@@ -42,18 +49,17 @@ string Movie::getDirector()const
 }
 string Movie::getTitle()const
 {
-    
     return title;
 }
-string Movie::getDate()const
+int Movie::getYear()const
 {
-    return date;
+    return year;
 }
 
 //Had to guess what the vars were, you magic tricked movie.h out of repo
 string Movie::toString()const
 {
-    return (this->getTitle() + " (" + this->getDate() + ")");
+    return (this->getTitle() + " (" + to_string(this->getYear()) + ")"); 
 }
 
 bool Movie::operator==(const Movie& other)
@@ -76,24 +82,18 @@ bool Movie::operator==(const Movie& other)
 	}
 
 	//Check dates
-    string date1 = date;
-	string date2 = other.getDate();
+    int date1 = year;
+	int date2 = other.getYear();
 
-    if (date1.length() != date2.length())
+    if (date1 != date2)
     {
 		return false;
 	}
-
-	for (int x = 0; x < date1.length(); x++)
-    {
-		if (date1[x] != date2[x])
-        {
-			return false;
-		}
+	else
+	{
+		//If these are both the same, we assume they are the same!
+		return true;
 	}
-
-	//If these are both the same, we assume they are the same!
-	return true;
 
 }
 bool Movie::operator<(const Movie& other)
