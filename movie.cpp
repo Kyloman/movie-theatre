@@ -31,8 +31,12 @@ void Movie::setTitle(string name)
     
 }
 
+string toString() {
+	return title;
+}
+
 //Getters
-void Movie::getName()
+string Movie::getName()
 {
 	return title;
 }

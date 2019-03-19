@@ -35,6 +35,8 @@ public:
 	string getTitle();
 	string getDate(); 
 
+	string toString(); 
+
 private:
     int stock;
     string director;
