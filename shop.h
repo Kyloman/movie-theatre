@@ -11,7 +11,8 @@
 
 #ifndef SHOP_H
 #define SHOP_H
-#include "club.h" 
+#include "club.h"
+#include "bintree.h"
 #include <fstream>
 #include <iostream>
 using namespace std;
@@ -28,12 +29,14 @@ public:
     void readFileCommands(ifstream& infile);
     void readFileCostumers(ifstream& infile);
     void printInventory();
+    
       
 private:
-        Club club1;
-//      BinTree comedy;
-//      BinTree drama;
-//      BinTree classic;
+    string stringHelper(ifstream& infile);
+    Club club1;
+    BinTree comedy;
+    BinTree drama;
+    BinTree classic;
 };
 
 #endif 
