@@ -23,7 +23,7 @@ public:
 	DVD();
 	
 	//Deconstructor
-	~DVD();
+	~DVD(); //lksdfkjlsdfjldfsl
 	
 	//Setter
 	void setDirector(string name);
