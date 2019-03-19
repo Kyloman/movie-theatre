@@ -31,10 +31,46 @@ void Club::addMember(int ID, string last, string first, int i)
     
     temp->cust = new Customer(ID, last, first);
     temp->nextCust = NULL;
+    if(arr[ID % capacity] == NULL  )
+        arr[ID % capacity] = temp;
     
-
-    arr[ID % capacity] = temp;
-    //cusr.push_back(cus);
+    else
     customerAmount++;
 
 }
+void Club::addMemberHelper(Node *temp, Node* current)
+{
+    if(current->nextCust == NULL)
+        current->nextCust = temp;
+    else
+        addMemberHelper( temp, current->nextCust);
+    
+}
+
+bool Club::deleteMember(int iD)
+{
+    int find = iD % capacity;
+    Node* temp =arr[find]
+    Node* next;
+   
+        
+}
+bool Club::deleteMember(int iD)
+{
+    int find = iD % capacity;
+    Node* temp =arr[find];
+    Node* next;
+
+}
+Customer* Club::find(int iD)
+{
+    int find = iD % capacity;
+    Node* temp = arr[find];
+    while(temp->Id != find)
+    {
+        if(temp->cust == NULL)
+            return NULL;
+        temp = temp->nextCust;
+    }
+}
+

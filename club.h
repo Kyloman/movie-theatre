@@ -31,20 +31,21 @@ public:
 	//functions
 	void addMember(int, string, string, int);
     bool deleteMember(int);
+    Customer* find(int);
     
 private:
+    
+    
 	int customerAmount;
     int capacity = 10007;
     struct Node {
         int Id;
         Customer* cust;                        // pointer to data object
-        Node* nextCust;                            // left subtree pointer
-                              // right subtree pointer
+        Node* nextCust;                         
     };
-    
+    void addMemberHelper(Node*, Node* );
     Node *arr[10007];
-    vector<Customer> cusr; 
-//	HashTable<Customer> customers;
+    
 };
 
 #endif 
