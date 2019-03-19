@@ -30,14 +30,17 @@ public:
 	void setTitle(string name);
 	
 	//Getters
-	void getDate(string name);
-	string getDirector();
-	string getTitle();
-	string getDate(); 
+	void getDate(string name)const;
+    string getName()const;
+	string getDirector()const;
+	string getTitle()const;
+	string getDate()const;
 
-	string toString(); 
-
+	string toString()const;
+    bool operator==(const Movie& other);
+    bool operator<(const Movie& other);
 private:
+    string date;
     int stock;
     string director;
 	string title;

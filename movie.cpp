@@ -12,7 +12,7 @@ using namespace std;
 //Constructor
 Movie::Movie()
 {
-    
+    title = "";
 }
 
 //Deconstructor
@@ -24,72 +24,82 @@ Movie::~Movie()
 //Setter
 void Movie::setDirector(string name)
 {
-    
+    director = name;
 }
 void Movie::setTitle(string name)
 {
-    
-}
-
-string toString() {
-	return title;
+    title = name;
 }
 
 //Getters
-string Movie::getName()
+string Movie::getName()const
 {
 	return title;
 }
-string Movie::getDirector()
+string Movie::getDirector()const
 {
     return director;
 }
-string Movie::getTitle()
+string Movie::getTitle()const
 {
     
     return title;
 }
-string Movie::getDate()
+string Movie::getDate()const
 {
     return date;
 }
 
 //Had to guess what the vars were, you magic tricked movie.h out of repo
-string Movie::toString() {
-	return (this.getTitle() + " (" + this.getDate() + ")")
+string Movie::toString()const
+{
+    return (this->getTitle() + " (" + this->getDate() + ")");
 }
 
-bool Movie::operator==(const Movie& other) {
+bool Movie::operator==(const Movie& other)
+{
 	//Check titles
-	string title1 = this.getTitle();
-	string title2 = other.getTitle(); 
+    string title1 = this->getTitle();
+	string title2 = other.getTitle();
+    
 
-	if (title1.length != title2.length) {
+    if (title1.length() != title2.length())
+    {
 		return false;
 	}
 	
-	for (int x = 0; x < title1.lenth; x++) {
-		if (title1.charAt(x) != title2.charAt(x)) {
+	for (int x = 0; x < title1.length(); x++) {
+		if (title1[x] != title2[x])
+        {
 			return false;
 		}
 	}
 
 	//Check dates
-	string date1 = this.getDate();
+    string date1 = date;
 	string date2 = other.getDate();
 
-	if (date1.length != date2.length) {
+    if (date1.length() != date2.length())
+    {
 		return false;
 	}
 
-	for (int x = 0; x < date1.lenth; x++) {
-		if (date1.charAt(x) != date2.charAt(x)) {
+	for (int x = 0; x < date1.length(); x++)
+    {
+		if (date1[x] != date2[x])
+        {
 			return false;
 		}
 	}
 
 	//If these are both the same, we assume they are the same!
 	return true;
-	}
 
 }
+bool Movie::operator<(const Movie& other)
+{
+    return true;
+    
+}
+
+

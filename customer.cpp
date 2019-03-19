@@ -7,7 +7,7 @@
 //
 
 #include "customer.h"
-#include "transaction.h"
+
 Customer::Customer()
 {
 	ident = -1;

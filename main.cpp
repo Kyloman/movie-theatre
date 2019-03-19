@@ -16,11 +16,28 @@ using namespace std;
 
 int main()
 {
-	Shop shroudStore;
-	shroudStore.readFileCostumers(ifstream& infile)
-	shroudStore.readFileMovie(ifstream& infile);
-	shroudStore.readFileComands(ifstream& infile);
-	
-	
+    ifstream infile("data4Movies.txt");
+    if (!infile) {
+        cout << "File could not be opened." << endl;
+        return 1;
+    }
+    
+    ifstream infile2("data4Commands.txt");
+    if (!infile2) {
+        cout << "File could not be opened." << endl;
+        return 1;
+    }
+    
+    ifstream infile3("data4Customers.txt");
+    if (!infile3) {
+        cout << "File could not be opened." << endl;
+        return 1;
+    }
+    
+    Shop jonnyStore;
+    jonnyStore.readFileCostumers(infile3);
+    jonnyStore.readFileMovies(infile);
+    jonnyStore.readFileCommands(infile2);
+    
 	return 0;
 }

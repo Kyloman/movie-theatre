@@ -10,6 +10,9 @@
 
 #ifndef MEDIA_H
 #define MEDIA_H
+#include <string>
+using namespace std;
+
 
 class Media
 {
@@ -24,7 +27,7 @@ public:
 	void increaseInv(int amount);
 	void decreaseInv(int amount);
 
-	string toString();
+    string toString();
 	
 	//Operator Overload
 	virtual Media& operator==(const Media& other);
