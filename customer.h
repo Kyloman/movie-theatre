@@ -9,8 +9,8 @@
 // Think of this like a dossier which notes what customers have interacted with a store. 
 // --------------------------------------------------------------------------------------------------------------------
 
-#ifndef _H
-#define _H
+#ifndef CUSTOMER_H
+#define CUSTOMER_H
 #include <iostream>
 
 using namespace std;
