@@ -19,6 +19,11 @@ using namespace std;
 class Customer //: public Customer
 {
 public:
+	// -------------------------default constructor---------------------------------
+	// Description: creates an empty customer
+	// ----------------------------------------------------------------------
+	Customer();
+
     // --------------------------constructor---------------------------------
     // Description: creates a new customer with a unique ID
     // ----------------------------------------------------------------------
