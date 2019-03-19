@@ -29,3 +29,7 @@ Comedy::Comedy(const Comedy& copy)
 {
     
 }
+bool Comedy::Comedy& operator<(const Comedy& rhs)
+{
+    
+}

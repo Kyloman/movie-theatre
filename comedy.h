@@ -29,7 +29,8 @@ public:
    	// Description: copy constuctor
   	// ----------------------------------------------------------------------
 	Comedy(const Comedy& copy);
-
+    bool Comedy& operator<(const Comedy& rhs);
+    
 private:
 
 };

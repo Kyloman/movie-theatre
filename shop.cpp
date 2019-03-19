@@ -63,7 +63,7 @@ void Shop::readFileMovies(ifstream& infile)
             title = stringHelper(infile);
             
             infile>> year;
-            d = new Drama(director, title, year );
+            d = new Drama(director, title, year);
             drama.insert(d);
         }
         
@@ -81,7 +81,7 @@ void Shop::readFileMovies(ifstream& infile)
             title = stringHelper(infile);
             
             getline(infile,actorYear);
-            c = new Classic(director, title, actorYear );
+            c = new Classic(director, title, actorYear ); 
             classic.insert(c);
         }
         else

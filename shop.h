@@ -13,6 +13,9 @@
 #define SHOP_H
 #include "club.h"
 #include "bintree.h"
+#include "drama.h"
+#include "comedy.h"
+#include "classic.h"
 #include <fstream>
 #include <iostream>
 using namespace std;
