@@ -18,7 +18,7 @@ class Transaction
 {
 public:
 	//Constructor
-	Transaction(Media newMedia, Customer newCustomer, string action);
+	Transaction(Media newMedia, string action);
 	
 	//Deconstructor
 	~Transaction();
@@ -27,8 +27,7 @@ public:
 	void printData();
 
 private:
-	Media type;
-	Customer owner;
+	Media *type;
 	string action;
 };
 

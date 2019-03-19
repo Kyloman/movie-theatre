@@ -80,7 +80,7 @@ private:
    
     int ident;
 
-    //vector <movies> idHistory; //the history of the individual
+    vector <Transaction> idHistory; //the history of all borrows/returns 
     
 };
 
