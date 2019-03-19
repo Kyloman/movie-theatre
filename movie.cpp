@@ -86,6 +86,6 @@ bool Movie::operator==(const Movie& other) {
 
 	//If these are both the same, we assume they are the same!
 	return true;
-}
+	}
 
 }
