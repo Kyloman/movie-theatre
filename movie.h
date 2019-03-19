@@ -28,19 +28,19 @@ public:
 	//Setter
 	void setDirector(string name);
 	void setTitle(string name);
+	void setYear(int name);
 	
 	//Getters
-	void getDate(string name)const;
     string getName()const;
 	string getDirector()const;
 	string getTitle()const;
-	string getDate()const;
+	int getYear()const;
 
 	string toString()const;
     bool operator==(const Movie& other);
     bool operator<(const Movie& other);
 private:
-    string date;
+    int year;
     int stock;
     string director;
 	string title;

@@ -11,9 +11,9 @@
 #ifndef DRAMA_H
 #define DRAMA_H
 using namespace std;
-#include "dvd.h"
+#include "movie.h"
 
-class Drama : public DVD
+class Drama : public Movie
 {
 public:
 	//Constructor
@@ -26,7 +26,10 @@ public:
 	Drama(const Drama& copy);
 
 private:
-
+	string date;
+	int stock;
+	string director;
+	string title;
 };
 
 #endif 
