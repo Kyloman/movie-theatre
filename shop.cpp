@@ -10,12 +10,14 @@
 
 Shop::Shop()
 {
-    //club1 = new Club();
 }
 Shop::~Shop() 
 {
     
 }
+
+
+
 void Shop::readFileMovies(ifstream& infile)
 {
     string s;
@@ -108,6 +110,8 @@ void Shop::readFileMovies(ifstream& infile)
     }
 
 }
+
+
 void Shop::readFileCommands(ifstream& infile)
 {
     string s;
@@ -206,6 +210,7 @@ void Shop::readFileCommands(ifstream& infile)
         
     }
 }
+
 void Shop::readFileCostumers(ifstream& infile)
 {
     int ID;
