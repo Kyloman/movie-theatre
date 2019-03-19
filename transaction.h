@@ -4,7 +4,7 @@
 // Date of Last Modification
 // --------------------------------------------------------------------------------------------------------------------
 // This class represents an action a customer can do, from borrowing to returning a movie. It tracks what type of media
-// was manipulated, how many were manipulated, and who did it.
+// was manipulated, how many were manipulated
 // --------------------------------------------------------------------------------------------------------------------
 // Will be stored in a vector. 
 // --------------------------------------------------------------------------------------------------------------------
@@ -18,16 +18,16 @@ class Transaction
 {
 public:
 	//Constructor
-	Transaction(Media newMedia, string action);
+	Transaction(Media* newMedia, string action);
 	
 	//Deconstructor
 	~Transaction();
 	
 	//Functions
-	void printData();
+	string toString();
 
 private:
-	Media *type;
+	Media* type;
 	string action;
 };
 

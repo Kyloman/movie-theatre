@@ -12,6 +12,8 @@
 #ifndef CUSTOMER_H
 #define CUSTOMER_H
 #include <iostream>
+#include "movie.h"
+#include <vector>
 
 using namespace std;
 
@@ -28,41 +30,42 @@ public:
     // Description: creates a new customer with a unique ID
     // ----------------------------------------------------------------------
     Customer(int, string, string);
+ 
     
-    // --------------------------getId---------------------------------
-    // Description: returns the Id of a customer by name
+     // --------------------------getName()---------------------------------
+    // Description: returns the name of a customer
     // ----------------------------------------------------------------------
-    int getId(string);
-    
-     // --------------------------getName(int)---------------------------------
-    // Description: returns the name as a string of the ID
-    // ----------------------------------------------------------------------
-    string getName(int);
-    
-    // --------------------------getId---------------------------------
-    // Description: returns the Id of a customer by name
-    // ----------------------------------------------------------------------
-    //int getId(string);
+    string getName();
+
+
+	// --------------------------setName(string, string)---------------------------------
+	// Description: an item is borrowed by the customer
+	// ----------------------------------------------------------------------
+	void setName(string, string);
+   
+	// --------------------------getID()---------------------------------
+	// Description: returns the id of a customer
+	// ----------------------------------------------------------------------
+	int getID();
+
+	// --------------------------getID()---------------------------------
+	// Description: sets the id of a customer
+	// ----------------------------------------------------------------------
+	void setID(int);
     
      // --------------------------getHistory---------------------------------
     // Description: prints using cout<< the history of customer
     // ----------------------------------------------------------------------
     void getHistory();
     
-    // --------------------------borrow()---------------------------------
-    // Description: an item is borrowed by the customer
-    // ----------------------------------------------------------------------
-    
-     // --------------------------setName(string, string)---------------------------------
-    // Description: an item is borrowed by the customer
-    // ----------------------------------------------------------------------
-    void setName(string, string);
-    
-    void borrow();
+	// --------------------------borrow()---------------------------------
+	// Description: an item is borrowed by the customer
+	// ----------------------------------------------------------------------
+    void borrow(Media*);
     // --------------------------borrow()---------------------------------
     // Description: an item is returned by the customer
     // ----------------------------------------------------------------------
-    void Return();
+    void returning(Media*);
     // --------------------------==---------------------------------
     // Description: returns true if two customers are the same
     // ----------------------------------------------------------------------
@@ -76,11 +79,12 @@ private:
     
     string fName;      //name of customer
     string lName; 
-    void setID();
+
+
    
     int ident;
 
-    vector <Transaction> idHistory; //the history of all borrows/returns 
+    vector<Transaction> idHistory; //the history of all borrows/returns 
     
 };
 

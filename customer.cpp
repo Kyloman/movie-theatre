@@ -7,8 +7,12 @@
 //
 
 #include "customer.h"
+#include "transaction.h"
 Customer::Customer()
 {
+	ident = -1;
+	fName = "NULL";
+	lName = "OBJECT";
 }
 Customer::Customer(int id, string first, string last)
 {
@@ -16,21 +20,39 @@ Customer::Customer(int id, string first, string last)
     fName = first;
     lName = last;
 }
-void Customer::borrow(Movie* bMovie)
+void Customer::borrow(Media* newMedia)
 {
-    string borrowed = to_string(iD) + " ";
-    borrowed += bMovie.toString();
-    history.push_back(borrowed);
-    
+	Transaction tran(newMedia, "borrowed");
+	idHistory.push_back(tran);
 }
-void Customer::Return(Movie* rMovie)
+
+void Customer::returning(Media* newMedia)
 {
-    string returned = to_string(iD) + " ";
-    returned += rMovie.toString();
-    history.push_back(returned);
+	Transaction tran(newMedia, "returned");
+	idHistory.push_back(tran);
 }
 void Customer::getHistory()
 {
-    for (auto i = history.begin(); i != history.end(); ++i)
-        cout << *i << " ";
+	int size = idHistory.size();
+	for (int x = 0; x < size; x++) {
+		
+
+	}
+}
+
+int Customer::getID() {
+	return ident;
+}
+
+void Customer::setID(int newID) {
+	ident = newID;
+}
+
+string Customer::getName() {
+	return fName + " " + lName;
+}
+
+void Customer::setName(string first, string last) {
+	fName = first;
+	lName = last;
 }
