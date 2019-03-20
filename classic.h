@@ -47,7 +47,7 @@ public:
    	// Description:  returns major actor the actor
     	// ----------------------------------------------------------------------
 	string getMajorActor();
-   // bool Classic& operator<(const Classic& other);
+    bool Classic& operator<(const Classic& other); 
 
 private:
 	int month;
