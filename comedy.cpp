@@ -36,6 +36,9 @@ Comedy::Comedy(const Comedy& rhs)
 	setInv(rhs.getInv());
 }
 
+// --------------------------operator<---------------------------------
+// Description: Overloads < opertaor for Comedy Movies
+// ----------------------------------------------------------------------
 bool Comedy::operator<(const Comedy& rhs)const
 {
     if(this->getTitle() == rhs.getTitle())
@@ -43,11 +46,17 @@ bool Comedy::operator<(const Comedy& rhs)const
     return this->getTitle() < rhs.getTitle();
 }
 
+// --------------------------operator>---------------------------------
+// Description: Overloads > opertaor for Comedy Movies
+// ----------------------------------------------------------------------
 bool Comedy::operator>(const Comedy& rhs)const
 {
     return !(*this < rhs);
 }
 
+// --------------------------operator==---------------------------------
+// Description: Overloads == opertaor for Comedy Movies
+// ----------------------------------------------------------------------
 bool Comedy::operator==(const Comedy& rhs)const
 {
     if((*this < rhs) && (*this > rhs))
@@ -56,7 +65,9 @@ bool Comedy::operator==(const Comedy& rhs)const
     
 }
 
-//same as Drama should compine??
+// --------------------------operator=---------------------------------
+// Description: Overloads = opertaor for Comedy Movies
+// ----------------------------------------------------------------------
 Comedy& Comedy::operator=(const Comedy& rhs)
 {
     setTitle(rhs.getTitle());
@@ -64,9 +75,4 @@ Comedy& Comedy::operator=(const Comedy& rhs)
     setYear(rhs.getYear());
     setInv(rhs.getInv());
     return *this;
-}
-
-string Comedy::toString()const
-{
-	return (this->getTitle() + " (" + to_string(this->getYear()) + "), "); 
 }

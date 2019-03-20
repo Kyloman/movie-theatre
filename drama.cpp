@@ -47,6 +47,10 @@ Drama::Drama(const Drama& copy)
 	director = copy.getDirector();
 	date = copy.getYear();
 }
+
+// --------------------------operator=---------------------------------
+// Description: Overloads = opertaor for Drama Movies
+// ----------------------------------------------------------------------
 Drama& Drama::operator=(const Drama& rhs)
 {
     setTitle(rhs.getTitle());
@@ -56,16 +60,27 @@ Drama& Drama::operator=(const Drama& rhs)
     return *this;
 }
 
+// --------------------------operator<---------------------------------
+// Description: Overloads < opertaor for Drama Movies
+// ----------------------------------------------------------------------
 bool Drama::operator<(const Drama& rhs)const 
 {
 	if (this->getDirector() == rhs.getDirector())
 		return (this->getTitle() < rhs.getTitle());
 	return (this->getDirector() < rhs.getDirector());
 }
+
+// --------------------------operator>---------------------------------
+// Description: Overloads > opertaor for Drama Movies
+// ----------------------------------------------------------------------
 bool Drama::operator>(const Drama& rhs)const
 {
-	return (*this < rhs);
+	return !(*this < rhs);
 }
+
+// --------------------------operator==---------------------------------
+// Description: Overloads == opertaor for Drama Movies
+// ----------------------------------------------------------------------
 bool Drama::operator==(const Drama& rhs)const
 {
 	if ((*this < rhs) && (*this > rhs))

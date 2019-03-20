@@ -84,21 +84,34 @@ string Classic::getMajorActor()const
     return majorActor;
 }
 
+// --------------------------operator<---------------------------------
+// Description: Overloads < opertaor for Classic Movies
+// ----------------------------------------------------------------------
 bool Classic::operator<(const Classic& rhs)const 
 {
 	if (this->getYear() == rhs.getYear())
 	{
 		if (this->getMonth() == rhs.getMonth())
-			return(this->getMajorActor() < rhs.getMajorActor());
+            if (this->getTitle() == rhs.getTitle())
+				return false;
+			else
+				return(this->getMajorActor() < rhs.getMajorActor());
 		else
-			return (this->getMonth() < rhs.getYear());
+			return (this->getMonth() < rhs.getMonth());
 	}
 	return (this->getYear() < rhs.getYear());
 }
+
+// --------------------------operator>---------------------------------
+// Description: Overloads > opertaor for Classic Movies
+// ----------------------------------------------------------------------
 bool Classic::operator>(const Classic& rhs)const
 {
-	return (*this < rhs);
+	return !(*this < rhs);
 }
+// --------------------------operator==---------------------------------
+// Description: Overloads == opertaor for Classic Movies
+// ----------------------------------------------------------------------
 bool Classic::operator==(const Classic& rhs)const
 {
 	if ((*this < rhs) && (*this > rhs))
