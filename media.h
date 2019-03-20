@@ -28,10 +28,6 @@ public:
 	void decreaseInv(int amount);
 
     string toString();
-	
-	//Operator Overload
-	virtual Media& operator==(const Media& other);
-	virtual Media& operator<(const Media& other);
 
 private:
 	int inventory;
