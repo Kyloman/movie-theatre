@@ -54,8 +54,8 @@ bool Comedy::operator<(const Comedy& other)const
 	if (title1.length() < title2.length())
 		return true;
 
-	int year1 = this->getYear;
-	int year2 = other.getYear;
+	int year1 = this->getYear();
+	int year2 = other.getYear();
 
 	return (year1 < year2);
 }
