@@ -85,7 +85,7 @@ bool Comedy::operator==(const Comedy& other)const
 		{
 			if (title1[i] != title2[i])
 			{
-				return false
+				return false;
 			}
 		}
 
