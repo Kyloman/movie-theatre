@@ -13,11 +13,11 @@
 #include <string>
 using namespace std;
 
-
 class Media
 {
 public:
-	//Getter
+    Media();
+    //Getter
 	int getInv()const;
 	
 	//Setter
@@ -35,7 +35,7 @@ public:
 
 private:
 	int inventory;
-	int name; 
+	string name;
 };
 
 #endif 
