@@ -68,7 +68,7 @@ bool Drama::operator<(const Drama& rhs)const
 }
 bool Drama::operator>(const Drama& rhs)const
 {
-	return (*this < rhs);
+	return !(*this < rhs);
 }
 bool Drama::operator==(const Drama& rhs)const
 {

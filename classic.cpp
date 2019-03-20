@@ -100,7 +100,7 @@ bool Classic::operator<(const Classic& rhs)const
 }
 bool Classic::operator>(const Classic& rhs)const
 {
-	return (*this < rhs);
+	return !(*this < rhs);
 }
 bool Classic::operator==(const Classic& rhs)const
 {
