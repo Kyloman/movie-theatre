@@ -44,19 +44,15 @@ Drama::~Drama()
 Drama::Drama(const Drama& copy)
 {
 	title = copy.getTitle();
-	director = copy.director;
-	date = copy.date;
+	director = copy.getDirector();
+	date = copy.getYear();
 }
 Drama& Drama::operator=(const Drama& rhs)
 {
-    int newStock = rhs.getInv();
-    string newDirector = rhs.getDirector();
-    string newTitle = rhs.getTitle();
-    int newDate = rhs.getYear();
-    setTitle(newTitle);
-    setDirector(newDirector);
-    setYear(newDate);
-    setInv(newStock);
+    setTitle(rhs.getTitle());
+    setDirector(rhs.getDirector());
+    setYear(rhs.getYear());
+    setInv(rhs.getInv());
     return *this;
 }
 
