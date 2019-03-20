@@ -8,7 +8,7 @@
 
 #include "drama.h"
 // --------------------------constructor---------------------------------
-// Description: creates a comedy class
+// Description: creates a classic class
 // ----------------------------------------------------------------------
 Drama::Drama()
 {
