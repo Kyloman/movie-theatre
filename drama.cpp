@@ -59,3 +59,20 @@ Drama& Drama::operator=(const Drama& rhs)
     setInv(newStock);
     return *this;
 }
+
+bool Drama::operator<(const Drama& rhs)const
+{
+	if (this->getDirector() == rhs.getDirector())
+		return (this->getTitle() < rhs.getTitle());
+	return (this->getDirector() < rhs.getDirector());
+}
+bool Drmaa::operator>(const Drama& rhs)const
+{
+	return (*this < rhs);
+}
+bool Drama::operator==(const Drama& rhs)const
+{
+	if ((*this < rhs) && (*this > rhs))
+		return true;
+	return false;
+}

@@ -26,6 +26,9 @@ public:
 	//Copy Constructor
 	Drama(const Drama& copy);
     Drama& operator=(const Drama&);
+	bool opertaor<(const Drama& rhs)const;
+	bool operator>(const Drama& rhs)const;
+	bool operator==(const Drama& rhs)const;
 private:
 	int date;
 	int stock;
