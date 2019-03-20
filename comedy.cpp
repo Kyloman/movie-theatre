@@ -63,3 +63,8 @@ Comedy& Comedy::operator=(const Comedy& rhs)
     setInv(newStock);
     return *this;
 }
+
+string Comedy::toString()const
+{
+	return (this->getTitle() + " (" + to_string(this->getYear()) + "), "); 
+}
