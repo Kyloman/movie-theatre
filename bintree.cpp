@@ -221,7 +221,7 @@ void BinTree::inorderHelper(Node* current) const
     {
         if(current->left != NULL)
             inorderHelper(current->left);
-        cout << current->data->toString() <<" ";
+        cout << current->data->toString().length()-1 <<" " << endl;
         if(current->right != NULL)
             inorderHelper(current->right);
     }
