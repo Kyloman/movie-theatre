@@ -28,20 +28,26 @@ Comedy::~Comedy()
 // --------------------------contructor---------------------------------
 // Description: copy constuctor
 // ----------------------------------------------------------------------
-Comedy::Comedy(const Comedy& copy)
+Comedy::Comedy(const Comedy& rhs)
 {
-    
+	setTitle(rhs.getTitle());
+	setDirector(rhs.getDirector());
+	setYear(rhs.getYear());
+	setInv(rhs.getInv());
 }
+
 bool Comedy::operator<(const Comedy& rhs)const
 {
     if(this->getTitle() == rhs.getTitle())
         return this->getYear() < rhs.getYear();
     return this->getTitle() < rhs.getTitle();
 }
+
 bool Comedy::operator>(const Comedy& rhs)const
 {
-    return (*this < rhs);
+    return !(*this < rhs);
 }
+
 bool Comedy::operator==(const Comedy& rhs)const
 {
     if((*this < rhs) && (*this > rhs))
@@ -53,14 +59,10 @@ bool Comedy::operator==(const Comedy& rhs)const
 //same as Drama should compine??
 Comedy& Comedy::operator=(const Comedy& rhs)
 {
-    int newStock = rhs.getInv();
-    string newDirector = rhs.getDirector();
-    string newTitle = rhs.getTitle();
-    int newDate = rhs.getYear();
-    setTitle(newTitle);
-    setDirector(newDirector);
-    setYear(newDate);
-    setInv(newStock);
+    setTitle(rhs.getTitle());
+    setDirector(rhs.getDirector());
+    setYear(rhs.getYear());
+    setInv(rhs.getInv());
     return *this;
 }
 

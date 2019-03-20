@@ -28,9 +28,9 @@ public:
 	void decreaseInv(int amount);
 
     string toString();
-
-private:
+protected:
 	int inventory;
+private:	
 	string name;
 };
 

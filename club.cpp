@@ -18,7 +18,14 @@ Club::Club()
 //Deconstructor
 Club::~Club()
 {
-    
+	Node *clear = arr[0];
+	
+	for (int x = 1; x < capacity; x++) {
+		Node *temp = clear;
+		clear = clear->nextCust;
+		delete temp->cust;
+		delete temp; 
+	}
 }
 
 //Copy Constructor
