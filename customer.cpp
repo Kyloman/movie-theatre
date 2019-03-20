@@ -40,7 +40,8 @@ void Customer::getHistory()
 	string out = ""; //we are building a string to print
 	for (int x = 0; x < size; x++)
     {
-        cout<<idHistory[x].toString()<<endl;
+		out += getName() + " "; 
+		out += idHistory[x].toString();
 	}
 	cout << out << endl;
 }
