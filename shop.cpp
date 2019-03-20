@@ -108,13 +108,13 @@ void Shop::readFileMovies(ifstream& infile)
 void Shop::readFileCommands(ifstream& infile)
 {
 	string s;
-
+    string dummy;
 	for (;;) {
 		infile >> s;
 
 		if (infile.eof()) break;             // no more lines of data
 
-											 // I calls inventory prints trees in order
+        // I calls inventory prints trees in order
 		if (s == "I")
 		{
 			cout << "comedys:" << endl;
@@ -143,129 +143,126 @@ void Shop::readFileCommands(ifstream& infile)
 		//B calls borrow
 		else if (s == "B")
 		{
-			string borrowed;
-			string typeMedia;
-			string typeMovie;
-			int iD;
-			infile >> iD;
-			infile >> typeMedia;
-			infile >> typeMovie;
+            Customer* tempCust;
+            Movie* tempMovie;
+            transactionData(tempCust,tempMovie, infile);
+            tempCust->borrow(tempMovie);
+        }
 
-			//Checks if iD is valid
-			if (club1.find(iD))
-			{
-				//Checks if media type and movie type correct
-				if (typeMedia == "D")
-				{
-                    Movie* tempMovie;
-                    Customer* tempCust;
-                    if(typeMovie == "F")
-                    {
-                        string title;
-                        int date;
-                        title = stringHelper(infile);
-                        infile>> date;
-                        Comedy temp(0, "", title, date);
-                        comedyTree.retrieve(temp, tempMovie);
-                    }
-                    else if(typeMovie == "D")
-                    {
-                        string director;
-                        string title;
-                        director = stringHelper(infile);
-                        title = stringHelper(infile);
-                        Drama temp(0, director, title, 0);
-                        dramaTree.retrieve(temp, tempMovie);
-                    }
-                    else if(typeMovie == "C")
-                    {
-                        
-                        classicTree.retreive(date, actor, temp);
-                    }
-                    else
-                        cout<<"no type movie";
-                    
-                        tempCust = club1.getCustomer(iD);
-                        tempCust->borrow(tempMovie);
-                    }
-					else
-					{
-                        string temp;
-						cout << "no type media" << endl;
-						getline(infile, temp );
-					}
-				}
-				else
-					cout << "ID not found" << endl;
+        //R calls return
+        else if (s == "R")
+        {
+            Customer* tempCust;
+            Movie* tempMovie;
+            transactionData(tempCust,tempMovie, infile);
+            tempCust->returning(tempMovie);
+        }
 
 
-			}
+        else
+        {
+            cout<<"not a command";
+            getline(infile, dummy);
+            
+        }
+    }
+}
+// ---------------------readFileCostumers(ifstream&)---------------------------------
+// Description: reads th file for Customer info.
+// ---------------------------------------------------------------------------
+void Shop::readFileCostumers(ifstream& infile)
+{
+    int ID;
+    int i = 0;
+    string lastName;
+    string firstName;
+    for (;;) {
+        infile >> ID;
+        infile >> lastName;
+        infile >> firstName;
+        if (infile.eof()) break;             // no more lines of data
+        club1.addMember(ID, lastName, firstName, i);
+        i++;
+    }
+}
 
-			//R calls return
-			else if (s == "R")
-			{
-				string returned;
-				string typeMedia;
-				string typeMovie;
-				int iD;
-				infile >> iD;
-				infile >> typeMedia;
-				infile >> typeMovie;
-				//Checks if media type and movie type correct
-				if (typeMedia == "D" && typeMovie == "C")
-				{
-					Movie* tempMovie;
-					string temp;
-					string date;
-					string actor;
-					infile >> date;
-					infile >> temp;
-					actorDate += " " + temp;
-					getline(infile, actor);
-					C.retreive(date, actor *movie);
-					temp.returnMovie();
-					tempCust = Shop.getCustomer(iD);
-					tempCust.returnMovie(tempMovie);
-
-				}
-			}
-
-			else
-			{
-			}
-
-
-
-		}
-	}
-	// ---------------------readFileCostumers(ifstream&)---------------------------------
-	// Description: reads th file for Customer info.
-	// ---------------------------------------------------------------------------
-	void Shop::readFileCostumers(ifstream& infile)
-	{
-		int ID;
-		int i = 0;
-		string lastName;
-		string firstName;
-		for (;;) {
-			infile >> ID;
-			infile >> lastName;
-			infile >> firstName;
-			if (infile.eof()) break;             // no more lines of data
-			club1.addMember(ID, lastName, firstName, i);
-			i++;
-		}
-
-	}
-
-	string Shop::stringHelper(ifstream& infile)
-	{
-		string fullString = "";
-		while (!fullString.find(','))
-		{
-			string temp;
-			infile >> temp;
-			fullString += temp;
-		}
-		return fullString;
-	}
+string Shop::stringHelper(ifstream& infile)
+{
+    string fullString = "";
+    while (!fullString.find(','))
+    {
+        string temp;
+        infile >> temp;
+        fullString += temp;
+    }
+    return fullString;
+}
+void Shop::transactionData(Customer* tempCust, Movie* tempMovie, ifstream& infile)
+{
+    string dummy;
+    string typeMedia;
+    string typeMovie;
+    int iD;
+    infile >> iD;
+    infile >> typeMedia;
+    infile >> typeMovie;
+    
+    //Checks if iD is valid
+    if (club1.find(iD))
+    {
+        //Checks if media type and movie type correct
+        if (typeMedia == "D")
+        {
+            if(typeMovie == "F")
+            {
+                string title;
+                int date;
+                title = stringHelper(infile);
+                infile>> date;
+                Comedy temp(0, "", title, date);
+                comedyTree.retrieve(temp, tempMovie);
+            }
+            else if(typeMovie == "D")
+            {
+                string director;
+                string title;
+                director = stringHelper(infile);
+                title = stringHelper(infile);
+                Drama temp(0, director, title, 0);
+                dramaTree.retrieve(temp, tempMovie);
+            }
+            else if(typeMovie == "C")
+            {
+                string actorF;
+                string actorL;
+                string actor = "";
+                int month;
+                int year;
+                infile>> month;
+                infile>> year;
+                infile>> actorF;
+                infile>> actorL;
+                actor += actorF + " " +actorL;
+                Classic temp(0, "", "", actor, month, year);
+                classicTree.retrieve(temp, tempMovie);
+            }
+            else
+            {
+                cout<<"no type movie";
+                getline(infile, dummy);
+            }
+            
+            tempCust = club1.getCustomer(iD);
+        }
+        else
+        {
+            cout << "no type media" << endl;
+            getline(infile, dummy );
+        }
+    }
+    else
+    {
+        cout << "ID not found" << endl;
+        getline(infile, dummy);
+    }
+}
