@@ -116,7 +116,7 @@ bool Classic::operator==(const Classic& rhs)const
 // --------------------------combineMajorActors---------------------------------
 // Description: Function to add another major actor to a movie. 
 // ----------------------------------------------------------------------
-string Classic::combineMajorActors(string rhsActor)
+void Classic::combineMajorActors(string rhsActor)
 {
 	string actors = this->getMajorActor() + " " + rhsActor;
 	this->setMajorActor(actors);
