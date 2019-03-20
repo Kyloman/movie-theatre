@@ -54,7 +54,7 @@ Classic& Classic::operator=(const Classic& rhs)
     setYear(newDate);
     setInv(newStock);
     month = rhs.getMonth();
-    majorActor = rhs.getMajoractor();
+    majorActor = rhs.getMajorActor();
     return *this;
 }
 void Classic::setMonth(int newMonth)
@@ -71,7 +71,7 @@ void Classic::setMajorActor(string newActor)
 // --------------------------getMonth---------------------------------
 // Description: returns month
 // ----------------------------------------------------------------------
-int Classic::getMonth()
+int Classic::getMonth()const
 {
     return month;
 }
@@ -79,7 +79,7 @@ int Classic::getMonth()
 // --------------------------setmajoractor---------------------------------
 // Description:  returns major actor the actor
 // ----------------------------------------------------------------------
-string Classic::getMajorActor()
+string Classic::getMajorActor()const
 {
     return majorActor;
 }

@@ -43,12 +43,12 @@ public:
 	// --------------------------getMonth---------------------------------
    	// Description: returns month
     	// ----------------------------------------------------------------------
-	int getMonth();
+	int getMonth()const;
 	
 	// --------------------------setmajoractor---------------------------------
    	// Description:  returns major actor the actor
     // ----------------------------------------------------------------------
-	string getMajorActor();
+	string getMajorActor()const;
     bool  operator<(const Classic& other); 
     Classic& operator=(const Classic&); 
 private:
