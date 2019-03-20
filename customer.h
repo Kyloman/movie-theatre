@@ -13,7 +13,9 @@
 #define CUSTOMER_H
 #include <iostream>
 #include "movie.h"
-#include "transaction.h"
+
+//do we need this?
+#include <transaction.h>
 #include <vector>
 
 using namespace std;
@@ -80,11 +82,12 @@ private:
     
     string fName;      //name of customer
     string lName; 
-    
-    
+
+
+   
     int ident;
-    vector<Transaction> idHistory; //the history of all borrows/returns
-    
+
+    vector<Transaction> idHistory; //the history of all borrows/returns 
     
 };
 

@@ -113,24 +113,25 @@ bool BinTree::insert(Movie *p)
 } // end of insert
 
 // --------------------------:retrieve(Movie , Movie) -----------------------------------
-// Description: looks for a Movie if found second perameter becomes
-// pointed to it.
+// Description: looks for a Movie if found the stock is increased
+////for kyle <3 chech for item if found increase stock then breack //use retrieve function
 // ----------------------------------------------------------------------------
 bool BinTree::retrieve(Movie tree, Movie *p) const
 {
     Node *current = root;
     
-    while(current != NULL )
-        if(*current->data > tree)
-            current = current->left;
-        else if(*current->data < tree)
-            current = current->right;
-        else if(*current->data == tree)
-        {
-            p = current->data;
-            return true;
-        }
-    
+	while (current != NULL) {
+		if (*current->data == tree)
+		{
+			tree.setInv(p->getInv());
+			return true;
+		}
+		else if (*current->data < tree)
+			current = current->right;
+		else {
+			current = current->left;
+		}
+	}
     return false;
 } // end of retrieve
 
@@ -207,7 +208,7 @@ void BinTree::sideways(Node* current, int level) const
             cout << "    ";
         }
         
-        cout << *current->data << endl;        // display information of object
+        cout << current->data->toString() << endl;        // display information of object
         sideways(current->left, level);
     }
 } // end of sideways
@@ -221,7 +222,7 @@ void BinTree::inorderHelper(Node* current) const
     {
         if(current->left != NULL)
             inorderHelper(current->left);
-        cout<< *current->data <<" ";
+        cout << current->data->toString() <<" ";
         if(current->right != NULL)
             inorderHelper(current->right);
     }
@@ -240,12 +241,10 @@ void BinTree::insertHelper(Node* &current, Movie* p)
         current->left = NULL;
         current->right = NULL;
     }
-    
-    else if(*current->data > *p)
-        insertHelper(current->left, p);
-
     else if(*current->data < *p)
         insertHelper(current->right, p);
+	else 
+		insertHelper(current->left, p);
     
 } // end of insertHelper
 
@@ -330,7 +329,7 @@ void BinTree::makeEmptyHelper(Node* &current)
 
         if(current->data != NULL)
         {
-            cout<<*current->data<< " ";
+            cout<< current->data->toString() << " ";
             delete current->data;
             current->data = NULL;
         }
