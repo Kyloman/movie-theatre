@@ -91,9 +91,9 @@ bool Classic::operator<(const Classic& rhs)const
 		if (this->getMonth() == rhs.getMonth())
 			return(this->getMajorActor() < rhs.getMajorActor());
 		else
-			this->getMonth() < rhs.getYear();
+			return (this->getMonth() < rhs.getYear());
 	}
-	return this->getYear() < rhs.getYear();
+	return (this->getYear() < rhs.getYear());
 }
 bool Classic::operator>(const Classic& rhs)const
 {
