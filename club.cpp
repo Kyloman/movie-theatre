@@ -52,10 +52,15 @@ bool Club::deleteMember(int iD)
 {
     int find = iD % capacity;
 	Node* temp = arr[find];
+	Node* placeholder = arr[find];
+
 
 	while (temp != NULL) {
-		//if temp's id = arg's id
-		// delete this and link the prev/next nodes 
+		if (temp->Id == iD) {
+			// delete this and link the prev/next nodes 
+
+			return true;
+		}
 		temp = temp->nextCust; 
 	}
    

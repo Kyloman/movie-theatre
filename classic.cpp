@@ -84,7 +84,7 @@ string Classic::getMajorActor()const
     return majorActor;
 }
 
-bool Classic::operator<(const Classic& rhs)const
+bool Classic::operator<(const Classic& rhs)const 
 {
 	if (this->getYear() == rhs.getYear())
 	{

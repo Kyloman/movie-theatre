@@ -35,7 +35,7 @@ public:
     
       
 private:
-    void transactionData(Customer* tempCust, Movie* tempCust, ifstream& infile);
+    void transactionData(Customer* tempCust, Movie* tempMovie, ifstream& infile);
     string stringHelper(ifstream& infile);
     Club club1;
     BinTree comedyTree;
