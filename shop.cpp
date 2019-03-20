@@ -154,6 +154,7 @@ void Shop::readFileCommands(ifstream& infile)
             Customer* tempCust = nullptr;
             Movie* tempMovie = nullptr;
             transactionData(tempCust, tempMovie, infile);
+            tempMovie->getInv();
             tempCust->borrow(tempMovie);
         }
 
@@ -238,7 +239,8 @@ void Shop::transactionData(Customer* tempCust, Movie* tempMovie, ifstream& infil
                 title = stringHelper(infile);
                 infile>> date;
                 Comedy *temp = new Comedy(0, "", title, date);
-                comedyTree.retrieve(temp, tempMovie);
+                if(!comedyTree.retrieve(temp, tempMovie))
+                    cout<<"fuck";
             }
             else if(typeMovie == "D")
             {
@@ -247,7 +249,8 @@ void Shop::transactionData(Customer* tempCust, Movie* tempMovie, ifstream& infil
                 director = stringHelper(infile);
                 title = stringHelper(infile);
                 Drama *temp = new Drama(0, director, title, 0);
-                dramaTree.retrieve(temp, tempMovie);
+                if(!dramaTree.retrieve(temp, tempMovie))
+                    cout<<"fuck";
             }
             else if(typeMovie == "C")
             {
@@ -262,7 +265,8 @@ void Shop::transactionData(Customer* tempCust, Movie* tempMovie, ifstream& infil
                 infile>> actorL;
                 actor += actorF + " " +actorL;
                 Classic *temp = new Classic(0, "", "", actor, month, year);
-                classicTree.retrieve(temp, tempMovie);
+                if(!classicTree.retrieve(temp, tempMovie))
+                    cout<<"fuck";
             }
             else
             {
