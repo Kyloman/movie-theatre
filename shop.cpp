@@ -202,7 +202,7 @@ string Shop::stringHelper(ifstream& infile)
     int i = 0;
     
     //creates a while to get all of the strings in one
-    while(!strchr(str.c_str(), ','))
+    while(str.find(",") != string::npos)
     {
         string temp;
         infile >> temp;
