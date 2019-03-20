@@ -46,7 +46,7 @@ void Shop::readFileMovies(ifstream& infile)
 			infile >> year;
 
 			f = new Comedy(stock, director, title, year);
-			comedy.insert(f);
+			comedyTree.insert(f);
 		}
 
 		//d for Drama
@@ -64,7 +64,7 @@ void Shop::readFileMovies(ifstream& infile)
 
 			infile >> year;
 			d = new Drama(stock, director, title, year);
-			drama.insert(d);
+			dramaTree.insert(d);
 		}
 
 		//C for clasic
@@ -92,7 +92,7 @@ void Shop::readFileMovies(ifstream& infile)
 			infile >> year;
 
 			c = new Classic(stock, director, title, actor, month, year);
-			classic.insert(c);
+			classicTree.insert(c);
 		}
 		else
 		{
@@ -157,37 +157,42 @@ void Shop::readFileCommands(ifstream& infile)
 				//Checks if media type and movie type correct
 				if (typeMedia == "D")
 				{
-					if (typeMovie == "F")
-					{
-						string historyString;
-						Movie* tempMovie;
-						Customer* tempCust;
-						string title;
-						string date;
-						infile >> date;
-						infile >> temp;
-						date += " " + temp;
-						getline(infile, actor);
-						//checks movie type
-						if (typeMovie == "F")
-							comedyTree.retreive(date, actor, temp);
-						else if (typeMovie == "D")
-							dramaTree.retreive(date, actor, temp);
-						else if (typeMovie == "C")
-							classicTree.retreive(date, actor, temp);
-						else
-							cout << "no type movie";
-
-
-						temp.borrow();
-						Club.getCust(iD, tempCust);
-						tempCust = Club.getCustomer(iD);
-						tempCust.borrow(tempMovie);
-					}
+                    Movie* tempMovie;
+                    Customer* tempCust;
+                    if(typeMovie == "F")
+                    {
+                        string title;
+                        int date;
+                        title = stringHelper(infile);
+                        infile>> date;
+                        Comedy temp(0, "", title, date);
+                        comedyTree.retrieve(temp, tempMovie);
+                    }
+                    else if(typeMovie == "D")
+                    {
+                        string director;
+                        string title;
+                        director = stringHelper(infile);
+                        title = stringHelper(infile);
+                        Drama temp(0, director, title, 0);
+                        dramaTree.retrieve(temp, tempMovie);
+                    }
+                    else if(typeMovie == "C")
+                    {
+                        
+                        classicTree.retreive(date, actor, temp);
+                    }
+                    else
+                        cout<<"no type movie";
+                    
+                        tempCust = club1.getCustomer(iD);
+                        tempCust->borrow(tempMovie);
+                    }
 					else
 					{
+                        string temp;
 						cout << "no type media" << endl;
-						getline(infile, "");
+						getline(infile, temp );
 					}
 				}
 				else
