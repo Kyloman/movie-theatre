@@ -24,10 +24,11 @@ Shop::~Shop()
 // ----------------------------------------------------------------------------
 void Shop::readFileMovies(ifstream& infile)
 {
-	string s;
 	for (;;) {
-		infile >> s;                         //reads first letter in line
-
+        string dummy;
+        string s;
+        infile>> s;                         //reads first letter in line
+        cout<<s<<endl;
 		if (infile.eof()) break;             // no more lines of data
 
 											 //if f for comedy
@@ -70,6 +71,7 @@ void Shop::readFileMovies(ifstream& infile)
 		//C for clasic
 		else if (s == "C,")
 		{
+            cout<<s;
 			int stock;
 			string director;
 			string title;
@@ -79,18 +81,19 @@ void Shop::readFileMovies(ifstream& infile)
 			int year;
 
 			Movie* c;
-			infile >> stock;
-
+			infile>> stock;
+            infile>> dummy;
+            
 			director = stringHelper(infile);
 			title = stringHelper(infile);
 
 			infile >> actor;
 			infile >> actorLast;
 			actor += " " + actorLast;
-
+            
 			infile >> month;
 			infile >> year;
-
+            cout<<stock<<endl<<director<< endl<<title<<endl<< actor<<endl<< month<<endl<< year <<endl;
 			c = new Classic(stock, director, title, actor, month, year);
 			classicTree.insert(c);
 		}
@@ -101,7 +104,7 @@ void Shop::readFileMovies(ifstream& infile)
 
 
 	}
-
+    cout<<"end";
 }
 
 
@@ -186,16 +189,26 @@ void Shop::readFileCostumers(ifstream& infile)
     }
 }
 
+
 string Shop::stringHelper(ifstream& infile)
 {
-    string fullString = "";
-    while (!fullString.find(','))
+    string str = "";
+    int i = 0;
+    
+    //creates a while to get all of the strings in one
+    while(!strchr(str.c_str(), ','))
     {
         string temp;
         infile >> temp;
-        fullString += temp;
+        
+        //creates a space if needed between strings
+        if( i > 0)
+            str += " ";
+        
+        i++;
+        str += temp;
     }
-    return fullString;
+    return str;
 }
 void Shop::transactionData(Customer* tempCust, Movie* tempMovie, ifstream& infile)
 {
