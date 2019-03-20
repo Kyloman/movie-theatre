@@ -47,21 +47,22 @@ void Club::addMemberHelper(Node *temp, Node* current)
     
 }
 
+//KYLE WORKING ON DELETEMEMBER MIGHT NOT WORK
 bool Club::deleteMember(int iD)
 {
     int find = iD % capacity;
-    Node* temp =arr[find]
-    Node* next;
+	Node* temp = arr[find];
+
+	while (temp != NULL) {
+		//if temp's id = arg's id
+		// delete this and link the prev/next nodes 
+		temp = temp->nextCust; 
+	}
    
+	return false; 
         
 }
-bool Club::deleteMember(int iD)
-{
-    int find = iD % capacity;
-    Node* temp =arr[find];
-    Node* next;
 
-}
 Customer* Club::find(int iD)
 {
     int find = iD % capacity;
