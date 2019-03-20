@@ -100,11 +100,11 @@ bool Movie::operator<(const Movie& other)
 	string title1 = this->getTitle();
 	string title2 = other.getTitle();
 
-	int chosenLength = title1.length;
+	int chosenLength = title1.length();
 
 	//If title 2 is smaller, we use that so no out of bounds error
 	if (title1.length() > title2.length())
-		chosenLength = title2.length;
+		chosenLength = title2.length();
 
 	//Check titles
 	for (int x = 0; x < chosenLength; x++) {
