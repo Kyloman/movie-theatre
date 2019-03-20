@@ -182,7 +182,7 @@ void Shop::readFileCommands(ifstream& infile)
 void Shop::readFileCostumers(ifstream& infile)
 {
     int ID;
-    int i = 0;
+    int i;
     string lastName;
     string firstName;
     for (;;) {

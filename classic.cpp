@@ -98,6 +98,7 @@ bool Classic::operator<(const Classic& rhs)const
 	}
 	return (this->getYear() < rhs.getYear());
 }
+
 bool Classic::operator>(const Classic& rhs)const
 {
 	return !(*this < rhs);

@@ -62,74 +62,74 @@ string Movie::toString()const
     return (this->getTitle() + " (" + to_string(this->getYear()) + ")"); 
 }
 
-bool Movie::operator==(const Movie& other)
-{
-	//Check titles
-    string title1 = this->getTitle();
-	string title2 = other.getTitle();
-    
-
-    if (title1.length() != title2.length())
-    {
-		return false;
-	}
-	
-	//Checking if the titles are the same
-	for (int x = 0; x < title1.length(); x++) {
-		if (title1[x] != title2[x])
-        {
-			return false;
-		}
-	}
-
-	//Check dates
-    int date1 = year;
-	int date2 = other.getYear();
-
-    if (date1 != date2)
-    {
-		return false;
-	}
-
-	//If these are both the same, we assume they are the same!
-	return true;
-}
-
-bool Movie::operator<(const Movie& other)
-{
-	string title1 = this->getTitle();
-	string title2 = other.getTitle();
-
-	//Check titles
-	for (int x = 0; x < title1.length(); x++) {
-		if (title1[x] < title2[x])
-		{
-			return true;
-		}
-		if (title1[x] > title2[x])
-		{
-			return false;
-		}
-	}
-
-	//Check dates
-	int date1 = year;
-	int date2 = other.getYear();
-
-	if (date1 < date2)
-	{
-		return true;
-	}
-	if (date1 > date2)
-	{
-		return false;
-	}
-
-	return false; //if they are equal then it is false
-}
-
-bool Movie::operator>(const Movie& other)
-{
-	return !(*this < other);
-}
-
+//bool Movie::operator==(const Movie& other)
+//{
+//    //Check titles
+//    string title1 = this->getTitle();
+//    string title2 = other.getTitle();
+//    
+//
+//    if (title1.length() != title2.length())
+//    {
+//        return false;
+//    }
+//    
+//    //Checking if the titles are the same
+//    for (int x = 0; x < title1.length(); x++) {
+//        if (title1[x] != title2[x])
+//        {
+//            return false;
+//        }
+//    }
+//
+//    //Check dates
+//    int date1 = year;
+//    int date2 = other.getYear();
+//
+//    if (date1 != date2)
+//    {
+//        return false;
+//    }
+//
+//    //If these are both the same, we assume they are the same!
+//    return true;
+//}
+//
+//bool Movie::operator<(const Movie& other)
+//{
+//    string title1 = this->getTitle();
+//    string title2 = other.getTitle();
+//
+//    //Check titles
+//    for (int x = 0; x < title1.length(); x++) {
+//        if (title1[x] < title2[x])
+//        {
+//            return true;
+//        }
+//        if (title1[x] > title2[x])
+//        {
+//            return false;
+//        }
+//    }
+//
+//    //Check dates
+//    int date1 = year;
+//    int date2 = other.getYear();
+//
+//    if (date1 < date2)
+//    {
+//        return true;
+//    }
+//    if (date1 > date2)
+//    {
+//        return false;
+//    }
+//
+//    return false; //if they are equal then it is false
+//}
+//
+//bool Movie::operator>(const Movie& other)
+//{
+//    return !(*this < other);
+//}
+//
