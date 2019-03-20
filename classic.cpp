@@ -89,7 +89,7 @@ bool Classic::operator<(const Classic& rhs)const
 	if (this->getYear() == rhs.getYear())
 	{
 		if (this->getMonth() == rhs.getMonth())
-			if (this->getTitle == rhs.getTitle)
+            if (this->getTitle() == rhs.getTitle())
 				return false;
 			else
 				return(this->getMajorActor() < rhs.getMajorActor());
