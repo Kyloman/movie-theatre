@@ -25,7 +25,7 @@ public:
 	
 	//Copy Constructor
 	Drama(const Drama& copy);
-
+    Drama& operator=(const Drama&);
 private:
 	int date;
 	int stock;

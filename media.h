@@ -18,7 +18,7 @@ class Media
 {
 public:
 	//Getter
-	int getInv();
+	int getInv()const;
 	
 	//Setter
 	void setInv(int amount);

@@ -16,9 +16,10 @@ Classic::Classic(int newstock, string newdirector, string newtitle, string newma
 	setTitle(newtitle);
 	setDirector(newdirector);
 	setYear(newyear);
-	month = newmonth;
-	majorActor = newmajoractor;
 	setInv(newstock);
+    
+    month = newmonth;
+    majorActor = newmajoractor;
 }
 
 
@@ -41,3 +42,44 @@ Classic::~Classic()
 //    month = copy.month;
 //    majorActor = copy.majoractor;
 //}
+Classic& Classic::operator=(const Classic& rhs)
+{
+    int newStock = rhs.getInv();
+    string newDirector = rhs.getDirector();
+    string newTitle = rhs.getTitle();
+    int newDate = rhs.getYear();
+    
+    setTitle(newTitle);
+    setDirector(newDirector);
+    setYear(newDate);
+    setInv(newStock);
+    month = rhs.getMonth();
+    majorActor = rhs.getMajoractor();
+    return *this;
+}
+void Classic::setMonth(int newMonth)
+{
+    month = newMonth;
+}
+// --------------------------setmajoractor---------------------------------
+// Description:  sets the actor
+// ----------------------------------------------------------------------
+void Classic::setMajorActor(string newActor)
+{
+    majorActor = newActor;
+}
+// --------------------------getMonth---------------------------------
+// Description: returns month
+// ----------------------------------------------------------------------
+int Classic::getMonth()
+{
+    return month;
+}
+
+// --------------------------setmajoractor---------------------------------
+// Description:  returns major actor the actor
+// ----------------------------------------------------------------------
+string Classic::getMajorActor()
+{
+    return majorActor;
+}

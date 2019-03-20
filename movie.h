@@ -35,6 +35,7 @@ public:
 	string getDirector()const;
 	string getTitle()const;
 	int getYear()const;
+    
 
 	string toString()const;
     bool operator==(const Movie& other);
