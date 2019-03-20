@@ -63,27 +63,95 @@ Drama& Drama::operator=(const Drama& rhs)
 // --------------------------operator<---------------------------------
 // Description: Overloads < opertaor for Drama Movies
 // ----------------------------------------------------------------------
-bool Drama::operator<(const Drama& rhs)const 
+bool Drama::operator<(const Drama& other)const 
 {
-	if (this->getDirector() == rhs.getDirector())
-		return (this->getTitle() < rhs.getTitle());
-	return (this->getDirector() < rhs.getDirector());
+	//Check directors
+	string director1 = this->getDirector();
+	string director2 = other.getDirector();
+
+	if (director1.length() != director2.length())
+	{
+		return false;
+	}
+
+	//Checking if the titles are the same
+	for (int x = 0; x < director1.length(); x++) {
+		if (director1[x] != director2[x])
+		{
+			return false;
+		}
+	}
+
+	//Check titles
+	string title1 = this->getTitle();
+	string title2 = other.getTitle();
+
+
+	if (title1.length() != title2.length())
+	{
+		return false;
+	}
+
+	//Checking if the titles are the same
+	for (int x = 0; x < title1.length(); x++) {
+		if (title1[x] != title2[x])
+		{
+			return false;
+		}
+	}
+
+	//If these are both the same, we assume they are the same!
+	return true;
 }
 
 // --------------------------operator>---------------------------------
 // Description: Overloads > opertaor for Drama Movies
 // ----------------------------------------------------------------------
-bool Drama::operator>(const Drama& rhs)const
+bool Drama::operator>(const Drama& other)const
 {
-	return !(*this < rhs);
+	return !(*this < other);
 }
 
 // --------------------------operator==---------------------------------
 // Description: Overloads == opertaor for Drama Movies
 // ----------------------------------------------------------------------
-bool Drama::operator==(const Drama& rhs)const
+bool Drama::operator==(const Drama& other)const
 {
-	if ((*this < rhs) && (*this > rhs))
-		return true;
-	return false;
+	//Check directors
+	string director1 = this->getDirector();
+	string director2 = other.getDirector();
+
+	if (director1.length() != director2.length())
+	{
+		return false;
+	}
+
+	//Checking if the titles are the same
+	for (int x = 0; x < director1.length(); x++) {
+		if (director1[x] != director2[x])
+		{
+			return false;
+		}
+	}
+
+	//Check titles
+	string title1 = this->getTitle();
+	string title2 = other.getTitle();
+
+
+	if (title1.length() != title2.length())
+	{
+		return false;
+	}
+
+	//Checking if the titles are the same
+	for (int x = 0; x < title1.length(); x++) {
+		if (title1[x] != title2[x])
+		{
+			return false;
+		}
+	}
+
+	//If these are both the same, we assume they are the same!
+	return true;
 }
