@@ -74,6 +74,7 @@ bool Movie::operator==(const Movie& other)
 		return false;
 	}
 	
+	//Checking if the titles are the same
 	for (int x = 0; x < title1.length(); x++) {
 		if (title1[x] != title2[x])
         {
@@ -89,12 +90,9 @@ bool Movie::operator==(const Movie& other)
     {
 		return false;
 	}
-	else
-	{
-		//If these are both the same, we assume they are the same!
-		return true;
-	}
 
+	//If these are both the same, we assume they are the same!
+	return true;
 }
 bool Movie::operator<(const Movie& other)
 {
