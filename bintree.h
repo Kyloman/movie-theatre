@@ -49,7 +49,7 @@ public:
     // ----------------------------------------------------------------------------
     bool operator==(const BinTree &) const;
     bool operator!=(const BinTree &) const;
-    //for kyle <3 chech for item if found increase stock then breack 
+    //for kyle <3 chech for item if found increase stock then breack //use retrieve function
     bool insert(Movie*);
     bool retrieve(Movie, Movie*) const;
     void displaySideways() const;            // provided below, displays the tree sideways
@@ -59,7 +59,7 @@ public:
     
 private:
     struct Node {
-        Movie data;                        // pointer to data object
+        Movie* data;                        // pointer to data object
         Node* left;                            // left subtree pointer
         Node* right;                        // right subtree pointer
     };

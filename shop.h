@@ -37,9 +37,9 @@ public:
 private:
     string stringHelper(ifstream& infile);
     Club club1;
-    BinTree comedy;
-    BinTree drama;
-    BinTree classic;
+    BinTree comedyTree;
+    BinTree dramaTree;
+    BinTree classicTree;
 };
 
 #endif 

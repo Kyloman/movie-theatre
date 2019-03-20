@@ -10,9 +10,9 @@
 
 #ifndef COMEDY_H
 #define COMEDY_H
-using namespace std;
 #include "movie.h"
 
+using namespace std;
 class Comedy : public Movie
 {
 public:
@@ -32,7 +32,7 @@ public:
     bool operator<(const Comedy& rhs)const;
     bool operator>(const Comedy& rhs)const;
     bool operator==(const Comedy& rhs)const;
-    
+    Comedy& operator=(const Comedy&);
 private:
 
 };

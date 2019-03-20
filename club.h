@@ -31,7 +31,9 @@ public:
 	//functions
 	void addMember(int, string, string, int);
     bool deleteMember(int);
-    Customer* find(int);
+    bool find(int);
+    Customer* getCustomer(int);
+    
     
 private:
     

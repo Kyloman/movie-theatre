@@ -49,3 +49,17 @@ bool Comedy::operator==(const Comedy& rhs)const
     return false;
     
 }
+
+//same as Drama should compine??
+Comedy& Comedy::operator=(const Comedy& rhs)
+{
+    int newStock = rhs.getInv();
+    string newDirector = rhs.getDirector();
+    string newTitle = rhs.getTitle();
+    int newDate = rhs.getYear();
+    setTitle(newTitle);
+    setDirector(newDirector);
+    setYear(newDate);
+    setInv(newStock);
+    return *this;
+}

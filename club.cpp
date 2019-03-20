@@ -63,16 +63,28 @@ bool Club::deleteMember(int iD)
         
 }
 
-Customer* Club::find(int iD)
+bool Club::find(int iD)
 {
     int find = iD % capacity;
     Node* temp = arr[find];
-    while(temp->Id != find)
+    while(temp->Id != iD)
+    {
+        if(temp->cust == NULL)
+            return false;
+        temp = temp->nextCust;
+    }
+    return true; //just so code runs please change and delete comment
+}
+Customer* Club::getCustomer(int iD)
+{
+    int find = iD % capacity;
+    Node* temp = arr[find];
+    while(temp->Id != iD)
     {
         if(temp->cust == NULL)
             return NULL;
         temp = temp->nextCust;
     }
-    return arr[find]->cust; //just so code runs please change and delete comment
+    return temp->cust;
 }
 

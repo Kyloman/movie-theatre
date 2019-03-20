@@ -114,15 +114,15 @@ void Shop::readFileCommands(ifstream& infile)
         
         if (infile.eof()) break;             // no more lines of data
         
-        // I calls inventory
+        // I calls inventory prints trees in order
         if(s == "I")
         {
             cout<<"comedys:"<<endl;
-            cout<<comedy;
+            cout<<comedyTree;
             cout<<"Dramas:"<<endl;
-            cout<<drama;
+            cout<<dramaTree;
             cout<<"Classics:"<<endl;
-            cout<<classic;
+            cout<<classicTree;
             
         }
         
@@ -157,23 +157,24 @@ void Shop::readFileCommands(ifstream& infile)
                 //Checks if media type and movie type correct
                 if(typeMedia == "D")
                 {
-                    string historyString;
-                    Movie* tempMovie;
-                    Customer* tempCust;
-                    string temp;
-                    string date;
-                    string actor;
-                    infile>> date;
-                    infile>> temp;
+                    if(typeMovie == "F")
+                    {
+                        string historyString;
+                        Movie* tempMovie;
+                        Customer* tempCust;
+                        string title;
+                        string date;
+                        infile>> date;
+                        infile>> temp;
                     date += " " + temp;
                     getline(infile, actor);
                     //checks movie type
                     if(typeMovie == "F")
-                        Comedy.retreive(date, actor, temp);
+                        comedyTree.retreive(date, actor, temp);
                     else if(typeMovie == "D")
-                        dra.retreive(date, actor, temp);
+                        dramaTree.retreive(date, actor, temp);
                     else if(typeMovie == "C")
-                        Comedy.retreive(date, actor, temp);
+                        classicTree.retreive(date, actor, temp);
                     else
                         cout<<"no type movie";
                     
@@ -198,10 +199,17 @@ void Shop::readFileCommands(ifstream& infile)
         //R calls return
         else if(s == "R")
         {
+            string returned;
+            string typeMedia;
+            string typeMovie;
+            int iD;
+            infile>> iD;
+            infile>> typeMedia;
+            infile>> typeMovie;
             //Checks if media type and movie type correct
             if(typeMedia == "D" && typeMovie == "C")
             {
-                movie* tempMovie;
+                Movie* tempMovie;
                 string temp;
                 string date;
                 string actor;
@@ -246,12 +254,12 @@ void Shop::readFileCostumers(ifstream& infile)
 
 string Shop::stringHelper(ifstream& infile)
 {
-    string fullString;
+    string fullString = "";
     while(!fullString.find(','))
     {
         string temp;
         infile>>temp;
-        title += temp;
+        fullString += temp;
     }
     return fullString;
 }
