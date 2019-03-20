@@ -219,7 +219,7 @@ void Shop::transactionData(Customer* tempCust, Movie* tempMovie, ifstream& infil
                 int date;
                 title = stringHelper(infile);
                 infile>> date;
-                Comedy temp(0, "", title, date);
+                Comedy *temp = new Comedy(0, "", title, date);
                 comedyTree.retrieve(temp, tempMovie);
             }
             else if(typeMovie == "D")
@@ -228,7 +228,7 @@ void Shop::transactionData(Customer* tempCust, Movie* tempMovie, ifstream& infil
                 string title;
                 director = stringHelper(infile);
                 title = stringHelper(infile);
-                Drama temp(0, director, title, 0);
+                Drama *temp = new Drama(0, director, title, 0);
                 dramaTree.retrieve(temp, tempMovie);
             }
             else if(typeMovie == "C")
@@ -243,7 +243,7 @@ void Shop::transactionData(Customer* tempCust, Movie* tempMovie, ifstream& infil
                 infile>> actorF;
                 infile>> actorL;
                 actor += actorF + " " +actorL;
-                Classic temp(0, "", "", actor, month, year);
+                Classic *temp = new Classic(0, "", "", actor, month, year);
                 classicTree.retrieve(temp, tempMovie);
             }
             else

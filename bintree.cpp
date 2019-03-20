@@ -103,7 +103,7 @@ bool BinTree::operator!=(const BinTree &rhs) const
 bool BinTree::insert(Movie *p)
 {
     Movie *temp = nullptr;
-    if(retrieve(*p, temp) == true)
+    if(retrieve(p, temp) == true)
     {
         temp = NULL;
         return false;
@@ -116,22 +116,21 @@ bool BinTree::insert(Movie *p)
 // Description: looks for a Movie if found the stock is increased
 ////for kyle <3 chech for item if found increase stock then breack //use retrieve function
 // ----------------------------------------------------------------------------
-bool BinTree::retrieve(Movie tree, Movie *p) const
+bool BinTree::retrieve(Movie* tree, Movie *p) const
 {
     Node *current = root;
     
-	while (current != NULL) {
-		if (*current->data == tree)
-		{
-			tree.setInv(p->getInv());
-			return true;
-		}
-		else if (*current->data < tree)
-			current = current->right;
-		else {
-			current = current->left;
-		}
-	}
+    while(current != NULL )
+        if(*current->data > *tree)
+            current = current->left;
+        else if(*current->data < *tree)
+            current = current->right;
+        else if(*current->data == *tree)
+        {
+            p = current->data;
+            return true;
+        }
+
     return false;
 } // end of retrieve
 

@@ -97,7 +97,9 @@ bool Movie::operator==(const Movie& other)
 bool Movie::operator<(const Movie& other)
 {
     return true;
-    
 }
-
+bool Movie::operator>(const Movie& other)
+{
+    return true;
+}
 
