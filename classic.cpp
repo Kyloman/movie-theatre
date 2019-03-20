@@ -84,7 +84,7 @@ string Classic::getMajorActor()const
     return majorActor;
 }
 
-bool Classic::operator<(const Classic& rhs)const 
+bool Classic::operator<(const Movie& rhs)const
 {
 	if (this->getYear() == rhs.getYear())
 	{
@@ -94,16 +94,15 @@ bool Classic::operator<(const Classic& rhs)const
 			else
 				return(this->getMajorActor() < rhs.getMajorActor());
 		else
-			return (this->getMonth() < rhs.getMonth());
+			return (this->getMonth() < rhs.month);
 	}
 	return (this->getYear() < rhs.getYear());
 }
-
-bool Classic::operator>(const Classic& rhs)const
+bool Classic::operator>(const Movie& rhs)const
 {
 	return !(*this < rhs);
 }
-bool Classic::operator==(const Classic& rhs)const
+bool Classic::operator==(const Movie& rhs)const
 {
 	if ((*this < rhs) && (*this > rhs))
 		return true;

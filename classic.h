@@ -49,10 +49,10 @@ public:
     // ----------------------------------------------------------------------
 	string getMajorActor()const;
 
-    bool operator<(const Classic& )const;
-	bool operator>(const Classic& )const;
-	bool operator==(const Classic& )const;
-    Classic& operator=(const Classic&); 
+    bool operator<(const Movie& )const;
+	bool operator>(const Movie& )const;
+	bool operator==(const Movie& )const;
+    Classic& operator=(const Movie&); 
 private:
 	int month;
 	string majorActor;
