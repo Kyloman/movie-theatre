@@ -48,7 +48,9 @@ public:
    	// Description:  returns major actor the actor
     // ----------------------------------------------------------------------
 	string getMajorActor()const;
-    bool  operator<(const Classic& other)const; 
+
+    bool operator<(const Classic& other); 
+    bool operator<(const Classic& other)const; 
 	bool operator>(const Classic& rhs)const;
 	bool operator==(const Classic& rhs)const;
     Classic& operator=(const Classic&); 
