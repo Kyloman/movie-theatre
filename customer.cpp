@@ -23,13 +23,14 @@ Customer::Customer(int id, string first, string last)
 void Customer::borrow(Media* newMedia)
 {
 	Transaction tran(newMedia, "borrowed");
-
+	newMedia->decreaseInv(1);
 	idHistory.push_back(tran);
 }
 
 void Customer::returning(Media* newMedia)
 {
 	Transaction tran(newMedia, "returned");
+	newMedia->increaseInv(1);
 	idHistory.push_back(tran);
     
 }
