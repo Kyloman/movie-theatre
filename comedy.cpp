@@ -10,7 +10,7 @@
 // --------------------------constructor---------------------------------
 // Description: creates a comedy class
 // ----------------------------------------------------------------------
-Comedy::Comedy(int stock, string name, string director, int day, int year )
+Comedy::Comedy( )
 {
     
 }

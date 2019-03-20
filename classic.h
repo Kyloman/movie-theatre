@@ -22,7 +22,7 @@ public:
     	// ----------------------------------------------------------------------
 	Classic();
 
-	Classic(int, string, string, string, int, int)
+    Classic(int, string, string, string, int, int);
 	// --------------------------destructor---------------------------------
     	// Description: deletes the itmes in the class 
     	// ----------------------------------------------------------------------
@@ -49,7 +49,7 @@ public:
    	// Description:  returns major actor the actor
     	// ----------------------------------------------------------------------
 	string getMajorActor();
-    bool Classic& operator<(const Classic& other); 
+    bool  operator<(const Classic& other); 
 
 private:
 	int month;

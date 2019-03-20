@@ -59,7 +59,7 @@ public:
     
 private:
     struct Node {
-        Movie item;                        // pointer to data object
+        Movie data;                        // pointer to data object
         Node* left;                            // left subtree pointer
         Node* right;                        // right subtree pointer
     };
