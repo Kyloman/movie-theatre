@@ -94,12 +94,42 @@ bool Movie::operator==(const Movie& other)
 	//If these are both the same, we assume they are the same!
 	return true;
 }
+
 bool Movie::operator<(const Movie& other)
 {
-    return true;
+	string title1 = this->getTitle();
+	string title2 = other.getTitle();
+
+	//Check titles
+	for (int x = 0; x < title1.length(); x++) {
+		if (title1[x] < title2[x])
+		{
+			return true;
+		}
+		if (title1[x] > title2[x])
+		{
+			return false;
+		}
+	}
+
+	//Check dates
+	int date1 = year;
+	int date2 = other.getYear();
+
+	if (date1 < date2)
+	{
+		return true;
+	}
+	if (date1 > date2)
+	{
+		return false;
+	}
+
+	return false; //if they are equal then it is false
 }
+
 bool Movie::operator>(const Movie& other)
 {
-    return true;
+	return !(*this < other);
 }
 
