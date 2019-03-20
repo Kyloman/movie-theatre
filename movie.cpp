@@ -100,8 +100,14 @@ bool Movie::operator<(const Movie& other)
 	string title1 = this->getTitle();
 	string title2 = other.getTitle();
 
+	int chosenLength = title1.length;
+
+	//If title 2 is smaller, we use that so no out of bounds error
+	if (title1.length() > title2.length())
+		chosenLength = title2.length;
+
 	//Check titles
-	for (int x = 0; x < title1.length(); x++) {
+	for (int x = 0; x < chosenLength; x++) {
 		if (title1[x] < title2[x])
 		{
 			return true;
@@ -110,6 +116,14 @@ bool Movie::operator<(const Movie& other)
 		{
 			return false;
 		}
+	}
+
+	//If one title is longer than the other, that's larger
+	if (title1 < title2) {
+		return true;
+	}
+	else if (title1 > title2) {
+		return false;
 	}
 
 	//Check dates
