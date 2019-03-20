@@ -6,26 +6,30 @@
 //  Copyright © 2019 Marko Lakic. All rights reserved.
 //
 
-#include "drama.h"
+#include "classic.h"
 // --------------------------constructor---------------------------------
 // Description: creates a classic class
 // ----------------------------------------------------------------------
-Drama::Drama()
+Classic::Classic()
 {
 	title = "";
 	director = "";
-	date = 0;	
+	majorActor = "";
+	month = 0;
+	year = 0;
 	setInv(0);
 }
 
 // --------------------------constructor---------------------------------
 // Description: ovearloaded Constructor
 // ----------------------------------------------------------------------
-Drama::Drama(int newstock, string newdirector, string newtitle, int newdate)
+Classic::Classic(int newstock, string newdirector, string newtitle, string newmajoractor,int newmonth, int newyear)
 {
 	title = newtitle;
 	director = newdirector;
-	date = newdate;
+	year = newyear;
+	month = newmonth;
+	majorActor = newmajoractor;
 	setInv(newstock);
 }
 
@@ -33,7 +37,7 @@ Drama::Drama(int newstock, string newdirector, string newtitle, int newdate)
 // ------------------------deconstructor---------------------------------
 // Description: destructor
 // ----------------------------------------------------------------------
-Drama::~Drama()
+Classic::~Classic()
 {
 
 }
@@ -41,9 +45,11 @@ Drama::~Drama()
 // --------------------------contructor---------------------------------
 // Description: copy constuctor
 // ----------------------------------------------------------------------
-Drama::Drama(const Drama& copy)
+Classic::Classic(const Drama& copy)
 {
 	title = copy.title;
 	director = copy.director;
-	date = copy.date;
+	year = copy.year;
+	month = copy.month;
+	majorActor = copy.majoractor;
 }

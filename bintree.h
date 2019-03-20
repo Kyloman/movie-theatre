@@ -49,6 +49,7 @@ public:
     // ----------------------------------------------------------------------------
     bool operator==(const BinTree &) const;
     bool operator!=(const BinTree &) const;
+    //for kyle <3 chech for item if found increase stock then breack 
     bool insert(Movie*);
     bool retrieve(Movie, Movie*) const;
     void displaySideways() const;            // provided below, displays the tree sideways

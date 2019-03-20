@@ -29,7 +29,20 @@ Comedy::Comedy(const Comedy& copy)
 {
     
 }
-bool Comedy::Comedy& operator<(const Comedy& rhs)
+bool Comedy::operator<(const Comedy& rhs)const
 {
+    if(this->getTitle() == rhs.getTitle())
+        return this->getYear() < rhs.getYear();
+    return this->getTitle() < rhs.getTitle();
+}
+bool Comedy::operator>(const Comedy& rhs)const
+{
+    return (*this < rhs);
+}
+bool Comedy::operator==(const Comedy& rhs)const
+{
+    if((*this < rhs) && (*this > rhs))
+        return true;
+    return false;
     
 }

@@ -11,9 +11,9 @@
 #ifndef COMEDY_H
 #define COMEDY_H
 using namespace std;
-#include "dvd.h"
+#include "movie.h"
 
-class Comedy : public DVD
+class Comedy : public Movie
 {
 public:
 	// --------------------------constructor---------------------------------
@@ -29,7 +29,9 @@ public:
    	// Description: copy constuctor
   	// ----------------------------------------------------------------------
 	Comedy(const Comedy& copy);
-    bool Comedy& operator<(const Comedy& rhs);
+    bool operator<(const Comedy& rhs)const;
+    bool operator>(const Comedy& rhs)const;
+    bool operator==(const Comedy& rhs)const;
     
 private:
 

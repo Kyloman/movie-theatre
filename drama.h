@@ -18,6 +18,7 @@ class Drama : public Movie
 public:
 	//Constructor
 	Drama();
+	Drama(int, string, string, int);
 	
 	//Deconstructor
 	~Drama();
@@ -26,10 +27,9 @@ public:
 	Drama(const Drama& copy);
 
 private:
-	string date;
+	int date;
 	int stock;
 	string director;
 	string title;
 };
-
 #endif 

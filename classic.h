@@ -11,16 +11,18 @@
 #ifndef CLASSIC_H
 #define CLASSIC_H
 using namespace std;
-#include "dvd.h"
+#include "movie.h"
 #include <string>
 
-class Classic : public DVD
+class Classic : public Movie
 {
 public:
 	// --------------------------constructor---------------------------------
     	// Description: creates a clasic dvd
     	// ----------------------------------------------------------------------
 	Classic();
+
+	Classic(int, string, string, string, int, int)
 	// --------------------------destructor---------------------------------
     	// Description: deletes the itmes in the class 
     	// ----------------------------------------------------------------------
@@ -47,11 +49,15 @@ public:
    	// Description:  returns major actor the actor
     	// ----------------------------------------------------------------------
 	string getMajorActor();
-   // bool Classic& operator<(const Classic& other);
+    bool Classic& operator<(const Classic& other); 
 
 private:
 	int month;
 	string majorActor;
+	int stock;
+	string director;
+	string title;
+	int year;
 };
 
 #endif 
