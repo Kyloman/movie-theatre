@@ -49,6 +49,11 @@ public:
     // ----------------------------------------------------------------------
 	string getMajorActor()const;
 
+	// --------------------------combineMajorActors---------------------------------
+	// Description: Function to add another major actor to a movie. 
+	// ----------------------------------------------------------------------
+	string combineMajorActors(string);
+
     bool operator<(const Classic& )const;
 	bool operator>(const Classic& )const;
 	bool operator==(const Classic& )const;

@@ -92,7 +92,7 @@ bool Classic::operator<(const Classic& rhs)const
 	if (this->getYear() == rhs.getYear())
 	{
 		if (this->getMonth() == rhs.getMonth())
-            if (this->getTitle() == rhs.getTitle())
+			if (this->getTitle() == rhs.getTitle())
 				return false;
 			else
 				return(this->getMajorActor() < rhs.getMajorActor());
@@ -117,4 +117,13 @@ bool Classic::operator==(const Classic& rhs)const
 	if ((*this < rhs) && (*this > rhs))
 		return true;
 	return false;
+}
+
+// --------------------------combineMajorActors---------------------------------
+// Description: Function to add another major actor to a movie. 
+// ----------------------------------------------------------------------
+string Classic::combineMajorActors(string rhsActor)
+{
+	string actors = this->getMajorActor() + " " + rhsActor;
+	this->setMajorActor(actors);
 }
