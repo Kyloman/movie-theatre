@@ -42,6 +42,7 @@ void Customer::getHistory()
     {
         cout<<idHistory[x].toString()<<endl;
 	}
+	cout << out << endl;
 }
 
 int Customer::getID() {
