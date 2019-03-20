@@ -116,6 +116,7 @@ bool BinTree::insert(Movie *p)
 // Description: looks for a Movie if found the stock is increased
 ////for kyle <3 chech for item if found increase stock then breack //use retrieve function
 // ----------------------------------------------------------------------------
+//TODO: ADD FUNCTIONALITY TO INCREASE STOCK HERE
 bool BinTree::retrieve(Movie* tree, Movie *p) const
 {
     Node *current = root;
