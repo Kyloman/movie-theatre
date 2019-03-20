@@ -39,11 +39,25 @@ Comedy::Comedy(const Comedy& rhs)
 // --------------------------operator<---------------------------------
 // Description: Overloads < opertaor for Comedy Movies
 // ----------------------------------------------------------------------
-bool Comedy::operator<(const Comedy& rhs)const
+bool Comedy::operator<(const Comedy& other)const
 {
-    if(this->getTitle() == rhs.getTitle())
-        return this->getYear() < rhs.getYear();
-    return this->getTitle() < rhs.getTitle();
+	string title1 = this->getTitle();
+	string title2 = other.getTitle();
+
+	for (int i = 0; i < title1.length(); i++)
+	{
+		if (title1[i] < title2[i])
+			return true;
+		if (title1[i] > title2[i])
+			return false;
+	}
+	if (title1.length() < title2.length())
+		return true;
+
+	int year1 = this->getYear;
+	int year2 = other.getYear;
+
+	return (year1 < year2);
 }
 
 // --------------------------operator>---------------------------------
@@ -57,12 +71,31 @@ bool Comedy::operator>(const Comedy& rhs)const
 // --------------------------operator==---------------------------------
 // Description: Overloads == opertaor for Comedy Movies
 // ----------------------------------------------------------------------
-bool Comedy::operator==(const Comedy& rhs)const
+bool Comedy::operator==(const Comedy& other)const
 {
-    if((*this < rhs) && (*this > rhs))
-        return true;
-    return false;
-    
+	string title1 = this->getTitle();
+	string title2 = other.getTitle();
+
+	if (title1.length() != title1.length())
+	{
+		return false;
+	}
+	else
+		for (int i = 0; i < title1.length(); i++)
+		{
+			if (title1[i] != title2[i])
+			{
+				return false
+			}
+		}
+
+	int year1 = this->getYear();
+	int year2 = other.getYear();
+
+	if (year1 != year2)
+		return false;
+	else
+		return true;
 }
 
 // --------------------------operator=---------------------------------
