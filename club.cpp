@@ -28,20 +28,25 @@ Club::~Club()
 void Club::addMember(int ID, string last, string first, int i)
 {
     Node *temp = new Node();
-    
+    Node *current = arr[ID % capacity];
     temp->cust = new Customer(ID, last, first);
+    temp->Id = ID;
     temp->nextCust = NULL;
     if(arr[ID % capacity] == NULL  )
+    {
         arr[ID % capacity] = temp;
-    
+    }
     else
+        addMemberHelper(temp, current);
     customerAmount++;
 
 }
 void Club::addMemberHelper(Node *temp, Node* current)
 {
     if(current->nextCust == NULL)
+    {
         current->nextCust = temp;
+    }
     else
         addMemberHelper( temp, current->nextCust);
     
@@ -72,12 +77,17 @@ bool Club::find(int iD)
 {
     int find = iD % capacity;
     Node* temp = arr[find];
-    while(temp->Id != iD)
+    if(temp != NULL)
     {
-        if(temp->cust == NULL)
-            return false;
-        temp = temp->nextCust;
+        while(temp->Id != iD)
+        {
+            if(temp->cust == NULL)
+                return false;
+            temp = temp->nextCust;
+        }
     }
+    else
+        return false;
     return true; //just so code runs please change and delete comment
 }
 Customer* Club::getCustomer(int iD)
