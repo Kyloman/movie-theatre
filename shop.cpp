@@ -40,6 +40,7 @@ void Shop::readFileMovies(ifstream& infile)
 			int year;
 			Movie* f;
 			infile >> stock;
+            infile >> dummy;
 
 			director = stringHelper(infile);
 			title = stringHelper(infile);
@@ -48,6 +49,7 @@ void Shop::readFileMovies(ifstream& infile)
 
 			f = new Comedy(stock, director, title, year);
 			comedyTree.insert(f);
+            cout<<stock<<endl<<director<< endl<<title<<endl <<year <<endl;
 		}
 
 		//d for Drama
@@ -59,6 +61,7 @@ void Shop::readFileMovies(ifstream& infile)
 			int year;
 			Movie* d;
 			infile >> stock;
+            infile >> dummy;
 
 			director = stringHelper(infile);
 			title = stringHelper(infile);
@@ -66,6 +69,7 @@ void Shop::readFileMovies(ifstream& infile)
 			infile >> year;
 			d = new Drama(stock, director, title, year);
 			dramaTree.insert(d);
+            cout<<stock<<endl<<director<< endl<<title<<endl<< year <<endl;
 		}
 
 		//C for clasic
@@ -100,6 +104,7 @@ void Shop::readFileMovies(ifstream& infile)
 		else
 		{
 			cout << "not correct input";
+            getline(infile, dummy );
 		}
 
 
