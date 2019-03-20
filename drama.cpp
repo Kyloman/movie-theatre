@@ -3,7 +3,7 @@
 //  assi_4
 //
 //  Created by Marko Lakic on 3/19/19.
-//  Copyright © 2019 Marko Lakic. All rights reserved.
+//  Copyright ï¿½ 2019 Marko Lakic. All rights reserved.
 //
 
 #include "drama.h"
@@ -23,10 +23,10 @@ Drama::Drama()
 // ----------------------------------------------------------------------
 Drama::Drama(int newstock, string newdirector, string newtitle, int newdate)
 {
-	title = newtitle;
-	director = newdirector;
-	date = newdate;
-	setInv(newstock);
+    setTitle(newtitle);
+    setDirector(newdirector);
+    setYear(newdate);
+    setInv(newstock);
 }
 
 

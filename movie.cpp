@@ -33,9 +33,9 @@ void Movie::setTitle(string name)
 {
     title = name;
 }
-void Movie::setYear(int name)
+void Movie::setYear(int yearMovie)
 {
-	year = name;
+	year = yearMovie;
 }
 
 //Getters

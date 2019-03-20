@@ -73,5 +73,6 @@ Customer* Club::find(int iD)
             return NULL;
         temp = temp->nextCust;
     }
+    return arr[find]->cust; //just so code runs please change and delete comment
 }
 

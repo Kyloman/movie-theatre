@@ -45,7 +45,7 @@ void Shop::readFileMovies(ifstream& infile)
             
             infile>> year;
             
-            f = new Comedy(director, title, year );
+            f = new Comedy(stock, director, title, year );
             comedy.insert(f);
         }
         
@@ -73,15 +73,25 @@ void Shop::readFileMovies(ifstream& infile)
             int stock;
             string director;
             string title;
-            string actorYear;
+            string actor;
+            string actorLast;
+            int month;
+            int year;
+            
             Movie* c;
             infile>> stock;
             
             director = stringHelper(infile); 
             title = stringHelper(infile);
             
-            getline(infile,actorYear);
-            c = new Classic(director, title, actorYear ); 
+            infile>>actor;
+            infile>>actorLast;
+            actor += " " + actorLast;
+            
+            infile>>month;
+            infile>>year;
+            
+            c = new Classic(stock, director, title, actor, month, year );
             classic.insert(c);
         }
         else
@@ -119,12 +129,12 @@ void Shop::readFileCommands(ifstream& infile)
         //H calls history
         else if(s == "H")
         {
-            string iD;
+            int iD;
             Customer* temp;
-            infile<<iD;
-            if(Club.find(iD))
+            infile>> iD;
+            if(club1.find(iD))
             {
-                temp = Club.getCustomer(iD);
+                temp = club1.getCustomer(iD);
                 temp->getHistory();
                 
             }
@@ -142,7 +152,7 @@ void Shop::readFileCommands(ifstream& infile)
             infile>> typeMovie;
             
             //Checks if iD is valid
-            if(club.find(iD))
+            if(club1.find(iD))
             {
                 //Checks if media type and movie type correct
                 if(typeMedia == "D")
