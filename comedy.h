@@ -29,6 +29,8 @@ public:
    	// Description: copy constuctor
   	// ----------------------------------------------------------------------
 	Comedy(const Comedy& copy);
+
+	string toString()const;
     bool operator<(const Comedy& rhs)const;
     bool operator>(const Comedy& rhs)const;
     bool operator==(const Comedy& rhs)const;
