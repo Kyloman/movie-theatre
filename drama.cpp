@@ -14,8 +14,22 @@ Drama::Drama()
 {
 	title = "";
 	director = "";
-	date = "";	
+	date = 0;	
+	stock = 0;
 }
+
+// --------------------------constructor---------------------------------
+// Description: overloaded Constructor
+// ----------------------------------------------------------------------
+Drama::Drama(int newstock, string newdirector, string newtitle, int newdate)
+{
+	title = newtitle;
+	director = newdirector;
+	date = newdate;
+	stock = newstock;
+}
+
+
 // ------------------------deconstructor---------------------------------
 // Description: destructor
 // ----------------------------------------------------------------------
