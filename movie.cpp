@@ -14,8 +14,8 @@ using namespace std;
 Movie::Movie()
 {
     title = "";
-	director = "";
-	year = 0;
+    director = "";
+    year = 0;
 }
 
 //Deconstructor
@@ -35,13 +35,13 @@ void Movie::setTitle(string name)
 }
 void Movie::setYear(int yearMovie)
 {
-	year = yearMovie;
+    year = yearMovie;
 }
 
 //Getters
 string Movie::getName()const
 {
-	return title;
+    return title;
 }
 string Movie::getDirector()const
 {
