@@ -19,7 +19,7 @@ public:
 	// --------------------------constructor---------------------------------
    	// Description: creates a comedy class
   	// ----------------------------------------------------------------------
-	Comedy();
+	Comedy(int newstock, string newdirector, string newtitle, int newdate);
 	// ------------------------deconstructor---------------------------------
    	// Description: destructor
   	// ----------------------------------------------------------------------

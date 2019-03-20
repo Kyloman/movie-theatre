@@ -3,7 +3,7 @@
 //  assi_4
 //
 //  Created by Marko Lakic on 3/19/19.
-//  Copyright © 2019 Marko Lakic. All rights reserved.
+//  Copyright ï¿½ 2019 Marko Lakic. All rights reserved.
 //
 
 #include "classic.h"
@@ -25,9 +25,9 @@ Classic::Classic()
 // ----------------------------------------------------------------------
 Classic::Classic(int newstock, string newdirector, string newtitle, string newmajoractor,int newmonth, int newyear)
 {
-	title = newtitle;
-	director = newdirector;
-	year = newyear;
+	setTitle(newtitle);
+	setDirector(newdirector);
+	setYear(newyear);
 	month = newmonth;
 	majorActor = newmajoractor;
 	setInv(newstock);
@@ -46,7 +46,7 @@ Classic::~Classic()
 // Description: copy constuctor
 // ----------------------------------------------------------------------
 Classic::Classic(const Drama& copy)
-{
+{ 
 	title = copy.title;
 	director = copy.director;
 	year = copy.year;

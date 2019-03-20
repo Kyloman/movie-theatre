@@ -10,9 +10,12 @@
 // --------------------------constructor---------------------------------
 // Description: creates a comedy class
 // ----------------------------------------------------------------------
-Comedy::Comedy( )
+Comedy::Comedy(int newstock, string newdirector, string newtitle, int newdate )
 {
-    
+    setTitle(newtitle);
+    setDirector(newdirector);
+    setYear(newdate);
+    setInv(newstock);
 }
 // ------------------------deconstructor---------------------------------
 // Description: destructor

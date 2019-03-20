@@ -54,10 +54,6 @@ public:
 private:
 	int month;
 	string majorActor;
-	int stock;
-	string director;
-	string title;
-	int year;
 };
 
 #endif 
