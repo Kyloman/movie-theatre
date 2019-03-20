@@ -69,7 +69,7 @@ bool Drama::operator<(const Drama& other)const
 	string director1 = this->getDirector();
 	string director2 = other.getDirector();
 
-	int chosenLength = director1.length;
+	int chosenLength = director1.length();
 
 	//If director 2 is smaller, we use that so no out of bounds error
 	if (director1.length() > director2.length())
@@ -100,7 +100,7 @@ bool Drama::operator<(const Drama& other)const
 	string title1 = this->getTitle();
 	string title2 = other.getTitle();
 
-	int chosenLength = title1.length;
+	chosenLength = title1.length();
 
 	//If title 2 is smaller, we use that so no out of bounds error
 	if (title1.length() > title2.length())
