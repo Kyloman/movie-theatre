@@ -44,35 +44,141 @@ Drama::~Drama()
 Drama::Drama(const Drama& copy)
 {
 	title = copy.getTitle();
-	director = copy.director;
-	date = copy.date;
+	director = copy.getDirector();
+	date = copy.getYear();
 }
+
+// --------------------------operator=---------------------------------
+// Description: Overloads = opertaor for Drama Movies
+// ----------------------------------------------------------------------
 Drama& Drama::operator=(const Drama& rhs)
 {
-    int newStock = rhs.getInv();
-    string newDirector = rhs.getDirector();
-    string newTitle = rhs.getTitle();
-    int newDate = rhs.getYear();
-    setTitle(newTitle);
-    setDirector(newDirector);
-    setYear(newDate);
-    setInv(newStock);
+    setTitle(rhs.getTitle());
+    setDirector(rhs.getDirector());
+    setYear(rhs.getYear());
+    setInv(rhs.getInv());
     return *this;
 }
 
-bool Drama::operator<(const Drama& rhs)const 
+// --------------------------operator<---------------------------------
+// Description: Overloads < opertaor for Drama Movies
+// ----------------------------------------------------------------------
+bool Drama::operator<(const Drama& other)const 
 {
-	if (this->getDirector() == rhs.getDirector())
-		return (this->getTitle() < rhs.getTitle());
-	return (this->getDirector() < rhs.getDirector());
-}
-bool Drama::operator>(const Drama& rhs)const
-{
-	return !(*this < rhs);
-}
-bool Drama::operator==(const Drama& rhs)const
-{
-	if ((*this < rhs) && (*this > rhs))
+	//Check directors
+	string director1 = this->getDirector();
+	string director2 = other.getDirector();
+
+	int chosenLength = director1.length();
+
+	//If director 2 is smaller, we use that so no out of bounds error
+	if (director1.length() > director2.length())
+		chosenLength = director2.length();
+
+	//Check directors
+	for (int x = 0; x < chosenLength; x++) {
+		if (director1[x] < director2[x])
+		{
+			return true;
+		}
+		if (director1[x] > director2[x])
+		{
+			return false;
+		}
+	}
+
+	//If one director is longer than the other, that's larger
+	if (director1 < director2) {
 		return true;
+	}
+	else if (director1 > director2) {
+		return false;
+	}
+
+
+	//CHECKING TITLES NEXT
+	string title1 = this->getTitle();
+	string title2 = other.getTitle();
+
+	chosenLength = title1.length();
+
+	//If title 2 is smaller, we use that so no out of bounds error
+	if (title1.length() > title2.length())
+		chosenLength = title2.length();
+
+	//Check titles
+	for (int x = 0; x < chosenLength; x++) {
+		if (title1[x] < title2[x])
+		{
+			return true;
+		}
+		if (title1[x] > title2[x])
+		{
+			return false;
+		}
+	}
+
+	//If one title is longer than the other, that's larger
+	if (title1 < title2) {
+		return true;
+	}
+	else if (title1 > title2) {
+		return false;
+	}
+
+
+	//If these are both the same, then it is false
 	return false;
+}
+
+// --------------------------operator>---------------------------------
+// Description: Overloads > opertaor for Drama Movies
+// ----------------------------------------------------------------------
+bool Drama::operator>(const Drama& other)const
+{
+	return !(*this < other);
+}
+
+// --------------------------operator==---------------------------------
+// Description: Overloads == opertaor for Drama Movies
+// ----------------------------------------------------------------------
+bool Drama::operator==(const Drama& other)const
+{
+	//Check directors
+	string director1 = this->getDirector();
+	string director2 = other.getDirector();
+
+	if (director1.length() != director2.length())
+	{
+		return false;
+	}
+
+	//Checking if the titles are the same
+	for (int x = 0; x < director1.length(); x++) {
+		if (director1[x] != director2[x])
+		{
+			return false;
+		}
+	}
+
+	//Check titles
+	string title1 = this->getTitle();
+	string title2 = other.getTitle();
+
+
+	if (title1.length() != title2.length())
+	{
+		return false;
+	}
+
+	//Checking if the titles are the same
+	for (int x = 0; x < title1.length(); x++) {
+		if (title1[x] != title2[x])
+		{
+			return false;
+		}
+	}
+
+	//If these are both the same, we assume they are the same!
+	return true;
 }

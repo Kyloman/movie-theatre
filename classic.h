@@ -16,46 +16,51 @@ using namespace std;
 class Classic : public Movie
 {
 public:
-	// --------------------------constructor---------------------------------
-    	// Description: creates a clasic dvd
-    	// ----------------------------------------------------------------------
-	Classic();
+    // --------------------------constructor---------------------------------
+        // Description: creates a clasic dvd
+        // ----------------------------------------------------------------------
+    Classic();
 
     Classic(int, string, string, string, int, int);
-	// --------------------------destructor---------------------------------
-    	// Description: deletes the itmes in the class 
-    	// ----------------------------------------------------------------------
-	~Classic();
-	// --------------------------constructor---------------------------------
-    	// Description: creates an exact copy of an already existing comedy class
-    	// ----------------------------------------------------------------------
-	Classic(const Classic& copy);
+    // --------------------------destructor---------------------------------
+        // Description: deletes the itmes in the class 
+        // ----------------------------------------------------------------------
+    ~Classic();
+    // --------------------------constructor---------------------------------
+        // Description: creates an exact copy of an already existing comedy class
+        // ----------------------------------------------------------------------
+    Classic(const Classic& copy);
 
-	// --------------------------setMonth---------------------------------
-   	// Description: sets the month of the DVD
-    	// ----------------------------------------------------------------------
-	void setMonth(int newMonth);
-	// --------------------------setmajoractor---------------------------------
-   	// Description:  sets the actor
-    	// ----------------------------------------------------------------------
-	void setMajorActor(string newActor);
-	// --------------------------getMonth---------------------------------
-   	// Description: returns month
-    	// ----------------------------------------------------------------------
-	int getMonth()const;
-	
-	// --------------------------setmajoractor---------------------------------
-   	// Description:  returns major actor the actor
+    // --------------------------setMonth---------------------------------
+       // Description: sets the month of the DVD
+        // ----------------------------------------------------------------------
+    void setMonth(int newMonth);
+    // --------------------------setmajoractor---------------------------------
+       // Description:  sets the actor
+        // ----------------------------------------------------------------------
+    void setMajorActor(string newActor);
+    // --------------------------getMonth---------------------------------
+       // Description: returns month
+        // ----------------------------------------------------------------------
+    int getMonth()const;
+    
+    // --------------------------setmajoractor---------------------------------
+       // Description:  returns major actor the actor
     // ----------------------------------------------------------------------
-	string getMajorActor()const;
+    string getMajorActor()const;
 
-    bool operator<(const Movie& )const;
-	bool operator>(const Movie& )const;
-	bool operator==(const Movie& )const;
-    Classic& operator=(const Movie&); 
+	// --------------------------combineMajorActors---------------------------------
+	// Description: Function to add another major actor to a movie. 
+	// ----------------------------------------------------------------------
+	string combineMajorActors(string);
+
+    bool operator<(const Classic& )const;
+	bool operator>(const Classic& )const;
+	bool operator==(const Classic& )const;
+    Classic& operator=(const Classic&); 
 private:
-	int month;
-	string majorActor;
+    int month;
+    string majorActor;
 };
 
 #endif 

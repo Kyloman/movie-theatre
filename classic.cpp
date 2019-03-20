@@ -13,12 +13,12 @@
 // ----------------------------------------------------------------------
 Classic::Classic(int newstock, string newdirector, string newtitle, string newmajoractor,int newmonth, int newyear)
 {
-	setTitle(newtitle);
-	setDirector(newdirector);
-	setYear(newyear);
-	setInv(newstock);
+    setTitle(newtitle);
+    setDirector(newdirector);
+    setYear(newyear);
+    setInv(newstock);
+    setMonth(newmonth);
     
-    month = newmonth;
     majorActor = newmajoractor;
 }
 
@@ -31,28 +31,22 @@ Classic::~Classic()
 
 }
 
-// --------------------------contructor---------------------------------
-// Description: copy constuctor
-// ----------------------------------------------------------------------
-//Classic::Classic(const Drama& copy)
-//{ 
-//    title = copy.title;
-//    director = copy.director;
-//    year = copy.year;
-//    month = copy.month;
-//    majorActor = copy.majoractor;
-//}
+ //--------------------------contructor---------------------------------
+ //Description: copy constuctor
+ //----------------------------------------------------------------------
+Classic::Classic(const Classic& copy)
+{ 
+    setTitle(copy.getTitle());
+    setDirector(copy.getDirector());
+    setYear(copy.getYear());
+    setInv(copy.getInv());
+}
 Classic& Classic::operator=(const Classic& rhs)
-{
-    int newStock = rhs.getInv();
-    string newDirector = rhs.getDirector();
-    string newTitle = rhs.getTitle();
-    int newDate = rhs.getYear();
-    
-    setTitle(newTitle);
-    setDirector(newDirector);
-    setYear(newDate);
-    setInv(newStock);
+{   
+    setTitle(rhs.getTitle());
+    setDirector(rhs.getDirector());
+    setYear(rhs.getYear());
+    setInv(rhs.getInv());
     month = rhs.getMonth();
     majorActor = rhs.getMajorActor();
     return *this;
@@ -84,27 +78,46 @@ string Classic::getMajorActor()const
     return majorActor;
 }
 
-bool Classic::operator<(const Movie& rhs)const
+// --------------------------operator<---------------------------------
+// Description: Overloads < opertaor for Classic Movies
+// ----------------------------------------------------------------------
+bool Classic::operator<(const Classic& rhs)const 
 {
-	if (this->getYear() == rhs.getYear())
-	{
-		if (this->getMonth() == rhs.getMonth())
+    if (this->getYear() == rhs.getYear())
+    {
+        if (this->getMonth() == rhs.getMonth())
             if (this->getTitle() == rhs.getTitle())
-				return false;
-			else
-				return(this->getMajorActor() < rhs.getMajorActor());
-		else
-			return (this->getMonth() < rhs.month);
-	}
-	return (this->getYear() < rhs.getYear());
+                return false;
+            else
+                return(this->getMajorActor() < rhs.getMajorActor());
+        else
+            return (this->getMonth() < rhs.month);
+    }
+    return (this->getYear() < rhs.getYear());
 }
-bool Classic::operator>(const Movie& rhs)const
+
+// --------------------------operator>---------------------------------
+// Description: Overloads > opertaor for Classic Movies
+// ----------------------------------------------------------------------
+bool Classic::operator>(const Classic& rhs)const
 {
-	return !(*this < rhs);
+    return !(*this < rhs);
 }
-bool Classic::operator==(const Movie& rhs)const
+// --------------------------operator==---------------------------------
+// Description: Overloads == opertaor for Classic Movies
+// ----------------------------------------------------------------------
+bool Classic::operator==(const Classic& rhs)const
 {
-	if ((*this < rhs) && (*this > rhs))
-		return true;
-	return false;
+    if ((*this < rhs) && (*this > rhs))
+        return true;
+    return false;
+}
+
+// --------------------------combineMajorActors---------------------------------
+// Description: Function to add another major actor to a movie. 
+// ----------------------------------------------------------------------
+string Classic::combineMajorActors(string rhsActor)
+{
+	string actors = this->getMajorActor() + " " + rhsActor;
+	this->setMajorActor(actors);
 }

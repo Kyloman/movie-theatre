@@ -7,7 +7,9 @@
 //
 
 #include "club.h"
-//Constructor
+// --------------------------constructor---------------------------------
+// Description: creats a new club class
+// ----------------------------------------------------------------------
 Club::Club()
 {
     customerAmount = 0; 
@@ -15,7 +17,9 @@ Club::Club()
         arr[i] = NULL;
 }
 
-//Deconstructor
+// --------------------------deconstructor---------------------------------
+// Description: clears out the club class then deletes it to free memory
+// ----------------------------------------------------------------------
 Club::~Club()
 {
 	Node *clear = arr[0];
@@ -32,6 +36,9 @@ Club::~Club()
 //Club::Club(const Club& copy)
 
 //functions
+// --------------------------addMember---------------------------------
+// Description: creats a new member with their full name and ID
+// ----------------------------------------------------------------------
 void Club::addMember(int ID, string last, string first, int i)
 {
     Node *temp = new Node();
@@ -48,6 +55,10 @@ void Club::addMember(int ID, string last, string first, int i)
     customerAmount++;
 
 }
+
+// --------------------------addMemberHelper---------------------------------
+// Description: helper function for addMember function
+// ----------------------------------------------------------------------
 void Club::addMemberHelper(Node *temp, Node* current)
 {
     if(current->nextCust == NULL)
@@ -59,6 +70,9 @@ void Club::addMemberHelper(Node *temp, Node* current)
     
 }
 
+// --------------------------deleteMember---------------------------------
+// Description: removes a member and unties pointers to free memory
+// ----------------------------------------------------------------------
 //KYLE WORKING ON DELETEMEMBER MIGHT NOT WORK
 bool Club::deleteMember(int iD)
 {
@@ -80,6 +94,10 @@ bool Club::deleteMember(int iD)
         
 }
 
+// --------------------------find---------------------------------
+// Description: searches club to find a specific member in the clu via ID
+// returns true if found, false if the member doesnt exist
+// ----------------------------------------------------------------------
 bool Club::find(int iD)
 {
     int find = iD % capacity;
@@ -97,6 +115,10 @@ bool Club::find(int iD)
         return false;
     return true; //just so code runs please change and delete comment
 }
+
+// --------------------------getMember---------------------------------
+// Description: returns a pointer to customer found by passing their ID
+// ----------------------------------------------------------------------
 Customer* Club::getCustomer(int iD)
 {
     int find = iD % capacity;

@@ -8,18 +8,30 @@
 
 #include "customer.h"
 
+// --------------------------Constructor---------------------------------
+// Description: default constructor for customer class sets to null
+// ----------------------------------------------------------------------
 Customer::Customer()
 {
 	ident = -1;
 	fName = "NULL";
 	lName = "OBJECT";
 }
+
+// --------------------------Constructor---------------------------------
+// Description: creates a customer class
+// ----------------------------------------------------------------------
 Customer::Customer(int id, string first, string last)
 {
     ident = id;
     fName = first;
     lName = last;
 }
+
+// --------------------------borrow---------------------------------
+// Description: function for when customers borrow a copy of a movie
+// decreases inventory when the borrow transaction goes through
+// ----------------------------------------------------------------------
 void Customer::borrow(Media* newMedia)
 {
 	Transaction tran(newMedia, "borrowed");
@@ -27,6 +39,10 @@ void Customer::borrow(Media* newMedia)
 	idHistory.push_back(tran);
 }
 
+// --------------------------return---------------------------------
+// Description: function for when customers return a copy of a movie
+// increases inventory when the return transaction goes through
+// ----------------------------------------------------------------------
 void Customer::returning(Media* newMedia)
 {
 	Transaction tran(newMedia, "returned");
@@ -35,6 +51,9 @@ void Customer::returning(Media* newMedia)
     
 }
 
+// --------------------------getHistory---------------------------------
+// Description: getter for customer History 
+// ----------------------------------------------------------------------
 void Customer::getHistory() 
 {
 	int size = idHistory.size();
@@ -47,18 +66,30 @@ void Customer::getHistory()
 	cout << out << endl;
 }
 
+// --------------------------getID---------------------------------
+// Description: getter for customer ID
+// ----------------------------------------------------------------------
 int Customer::getID() {
 	return ident;
 }
 
+// --------------------------setID---------------------------------
+// Description: setter for customer ID
+// ----------------------------------------------------------------------
 void Customer::setID(int newID) {
 	ident = newID;
 }
 
+// --------------------------getName---------------------------------
+// Description: getter for customer name
+// ----------------------------------------------------------------------
 string Customer::getName() {
 	return fName + " " + lName;
 }
 
+// --------------------------setName---------------------------------
+// Description: setter for customer name
+// ----------------------------------------------------------------------
 void Customer::setName(string first, string last) {
 	fName = first;
 	lName = last;
