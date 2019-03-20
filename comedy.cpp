@@ -66,5 +66,5 @@ Comedy& Comedy::operator=(const Comedy& rhs)
 
 Comedy::toString()const
 {
-	return (this->getTitle() + " (" + to_string(this->getYear()) + "), ");
+	return (this->getTitle() + " (" + to_string(this->getYear()) + "), \n");
 }
