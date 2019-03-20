@@ -43,8 +43,13 @@ bool Comedy::operator<(const Comedy& other)const
 {
 	string title1 = this->getTitle();
 	string title2 = other.getTitle();
-
-	for (int i = 0; i < title1.length(); i++)
+	int minLength = 0;
+	if (title1.length() < title2.length())
+		minLength = title1.length();
+	else
+		minLength = title2.length();
+	
+	for (int i = 0; i < minLength; i++)
 	{
 		if (title1[i] < title2[i])
 			return true;
