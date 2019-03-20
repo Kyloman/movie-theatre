@@ -10,9 +10,9 @@
 
 #ifndef DRAMA_H
 #define DRAMA_H
-using namespace std;
 #include "movie.h"
 
+using namespace std;
 class Drama : public Movie
 {
 public:

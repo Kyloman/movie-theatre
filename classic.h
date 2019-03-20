@@ -10,10 +10,9 @@
 
 #ifndef CLASSIC_H
 #define CLASSIC_H
-using namespace std;
 #include "movie.h"
 #include <string>
-
+using namespace std;
 class Classic : public Movie
 {
 public:

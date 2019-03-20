@@ -143,17 +143,17 @@ void Shop::readFileCommands(ifstream& infile)
 		//B calls borrow
 		else if (s == "B")
 		{
-            Customer* tempCust;
-            Movie* tempMovie;
-            transactionData(tempCust,tempMovie, infile);
+            Customer* tempCust = nullptr;
+            Movie* tempMovie = nullptr;
+            transactionData(tempCust, tempMovie, infile);
             tempCust->borrow(tempMovie);
         }
 
         //R calls return
         else if (s == "R")
         {
-            Customer* tempCust;
-            Movie* tempMovie;
+            Customer* tempCust = nullptr;
+            Movie* tempMovie = nullptr;
             transactionData(tempCust,tempMovie, infile);
             tempCust->returning(tempMovie);
         }
