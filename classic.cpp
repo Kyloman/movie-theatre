@@ -17,8 +17,8 @@ Classic::Classic(int newstock, string newdirector, string newtitle, string newma
 	setDirector(newdirector);
 	setYear(newyear);
 	setInv(newstock);
+	setMonth(newmonth);
     
-    month = newmonth;
     majorActor = newmajoractor;
 }
 
