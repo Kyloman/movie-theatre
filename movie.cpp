@@ -20,6 +20,7 @@ Movie::Movie()
     title = "";
     director = "";
     year = 0;
+	stock = 0;
 }
 
 // --------------------------deconstructor---------------------------------

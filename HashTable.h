@@ -3,7 +3,7 @@
 // 3/2/2019
 // Date of Last Modification 3/20/19
 // --------------------------------------------------------------------------------------------------------------------
-// Purpose - create a hashtable to keep track of customers
+// Purpose - create a hashtable to keep track of customers for club
 // --------------------------------------------------------------------------------------------------------------------
 // Hashes using the normal bucket system where it delineates by name primarily. 
 // --------------------------------------------------------------------------------------------------------------------
