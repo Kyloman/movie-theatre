@@ -20,7 +20,7 @@ Classic::Classic(int newstock, string newdirector, string newtitle, string newma
     setMonth(newmonth);
     setMajorActor(newmajoractor);
 
-	setComp1((to_string(getYear())) + (to_string(getMonth()))); 
+	setComp1(reformatDate(getYear(), getMonth()));
 	setComp2(getMajorActor());
 }
 
@@ -45,7 +45,7 @@ Classic::Classic(const Classic& copy)
 	month = copy.getMonth();
 	majorActor = copy.getMajorActor();
 
-	setComp1((to_string(getYear())) + (to_string(getMonth())));
+	setComp1(reformatDate(getYear(), getMonth()));
 	setComp2(getMajorActor());
 }
 Classic& Classic::operator=(const Classic& rhs)
@@ -57,7 +57,7 @@ Classic& Classic::operator=(const Classic& rhs)
     month = rhs.getMonth();
     majorActor = rhs.getMajorActor();
 
-	setComp1((to_string(getYear())) + (to_string(getMonth())));
+	setComp1(reformatDate(getYear(), getMonth()));
 	setComp2(getMajorActor());
 
     return *this;
@@ -92,19 +92,62 @@ string Classic::getMajorActor()const
 // --------------------------operator<---------------------------------
 // Description: Overloads < opertaor for Classic Movies
 // ----------------------------------------------------------------------
-bool Classic::operator<(const Movie& rhs)const
+bool Classic::operator<(const Movie& other)const
 {
-    if (this->getYear() == rhs.getYear())
-    {
-        if (this->getComp1() == rhs.getComp1())
-            if (this->getTitle() == rhs.getTitle())
-                return false;
-            else
-                return(this->getComp2() < rhs.getComp2());
-        else
-            return (this->getComp1() < rhs.getComp1());
-    }
-    return (this->getYear() < rhs.getYear());
+	//Check dates
+	string date1 = this->getComp1();
+	string date2 = other.getComp1();
+
+	int chosenLength = date1.length();
+
+	//If date 2 is smaller, we use that so no out of bounds error
+	if (date1.length() > date2.length())
+		chosenLength = date2.length();
+
+	//Check dates
+	for (int x = 0; x < chosenLength; x++)
+	{
+		if (date1[x] < date2[x])
+			return true;
+		if (date1[x] > date2[x])
+			return false;
+	}
+
+	//If one date is longer than the other, that's larger
+	if (date1 < date2)
+		return true;
+	else if (date1 > date2)
+		return false;
+
+
+	//CHECKING ACTORS NEXT
+	string actors1 = this->getComp2();
+	string actors2 = other.getComp2();
+
+	chosenLength = actors1.length();
+
+	//If actors 2 is smaller, we use that so no out of bounds error
+	if (actors1.length() > actors2.length())
+		chosenLength = actors2.length();
+
+	//Check actorss
+	for (int x = 0; x < chosenLength; x++)
+	{
+		if (actors1[x] < actors2[x])
+			return true;
+		if (actors1[x] > actors2[x])
+			return false;
+	}
+
+	//If one actors is longer than the other, that's larger
+	if (actors1 < actors2)
+		return true;
+	else if (actors1 > actors2)
+		return false;
+
+
+	//If these are both the same, then it is false
+	return false;
 }
 
 // --------------------------operator>---------------------------------
@@ -117,11 +160,38 @@ bool Classic::operator>(const Movie& rhs)const
 // --------------------------operator==---------------------------------
 // Description: Overloads == opertaor for Classic Movies
 // ----------------------------------------------------------------------
-bool Classic::operator==(const Movie& rhs)const
+bool Classic::operator==(const Classic& other)const
 {
-    if ((*this < rhs) && (*this > rhs))
-        return true;
-    return false;
+	//Check dates
+	string date1 = this->getComp1();
+	string date2 = other.getComp1();
+
+	if (date1.length() != date2.length())
+		return false;
+
+	//Checking if the titles are the same
+	for (int x = 0; x < date1.length(); x++)
+	{
+		if (date1[x] != date2[x])
+			return false;
+	}
+
+	//Check actors
+	string actors1 = this->getComp2();
+	string actors2 = other.getComp2();
+
+	if (actors1.length() != actors2.length())
+		return false;
+
+	//Checking if the actorss are the same
+	for (int x = 0; x < actors1.length(); x++)
+	{
+		if (actors1[x] != actors2[x])
+			return false;
+	}
+
+	//If these are both the same, we assume they are the same!
+	return true;
 }
 
 // --------------------------combineMajorActors---------------------------------
