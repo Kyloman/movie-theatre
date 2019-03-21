@@ -154,8 +154,13 @@ void Shop::readFileCommands(ifstream& infile)
             Customer* tempCust = nullptr;
             Movie* tempMovie = nullptr;
             transactionData(tempCust, tempMovie, infile);
-            tempMovie->getInv();
-            tempCust->borrow(tempMovie);
+            if(tempMovie != NULL)
+            {
+                tempMovie->getInv();
+                tempCust->borrow(tempMovie);
+            }
+            else
+                cout << "no such ID" << endl;
         }
 
         //R calls return
@@ -164,7 +169,10 @@ void Shop::readFileCommands(ifstream& infile)
             Customer* tempCust = nullptr;
             Movie* tempMovie = nullptr;
             transactionData(tempCust,tempMovie, infile);
-            tempCust->returning(tempMovie);
+            if(tempMovie != NULL)
+                tempCust->returning(tempMovie);
+            else
+                cout << "no such ID" << endl;
         }
 
 
