@@ -1,11 +1,13 @@
-//
-//  movie.cpp
-//  assi_4
-//
-//  Created by Jonathan Acoltzi Rojas on 3/14/19.
-//  Edited by Marko Lakic on 3/19/19
-//  Copyright © 2019 Jonathan Acoltzi Rojas. All rights reserved.
-//
+// ------------------------------------------------------ movie.cpp ---------------------------------------------------------
+// Kyle Lotterer, Jonathan Rojas, Marko Lakic CSS 343 C
+// 3/3/2019
+// Date of Last Modification 3/20/19
+// --------------------------------------------------------------------------------------------------------------------
+// Purpose - Child of Media class. Parent class for all Movie types.
+// --------------------------------------------------------------------------------------------------------------------
+// Some Movies have special characteristics, but all of them have Movie's inherited and additional characteristics.
+// --------------------------------------------------------------------------------------------------------------------
+
 
 #include "movie.h"
 using namespace std;

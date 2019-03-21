@@ -1,10 +1,13 @@
-//
-//  comedy.cpp
-//  assi_4
-//
-//  Created by Jonathan Acoltzi Rojas on 3/14/19.
-//  Copyright © 2019 Jonathan Acoltzi Rojas. All rights reserved.
-//
+// ------------------------------------------------ comedy.h ---------------------------------------------------------
+// Kyle Lotterer, Jonathan Rojas, Marko Lakic CSS 343 C
+// 3/3/2019
+// Date of Last Modification 3/20/19
+// --------------------------------------------------------------------------------------------------------------------
+// Purpose - Child class of movie for Comedy type movies. Represents a real movie.
+// --------------------------------------------------------------------------------------------------------------------
+// To be stored in a Binary Search Tree.
+// --------------------------------------------------------------------------------------------------------------------
+
 
 #include "comedy.h"
 // --------------------------constructor---------------------------------

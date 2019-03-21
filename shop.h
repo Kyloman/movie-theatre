@@ -1,7 +1,7 @@
 // ------------------------------------------------ shop.h ---------------------------------------------------------
 // Kyle Lotterer, Jonathan Rojas, Marko Lakic CSS 343 C
 // 3/3/2019
-// Date of Last Modification
+// Date of Last Modification 3/20/19
 // --------------------------------------------------------------------------------------------------------------------
 // Purpose - The class in which text files are parsed and processed into internal data. Once processed, 
 // these different types of media will be stored in a Hash Table inside of the class

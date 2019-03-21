@@ -1,13 +1,17 @@
-//
-//  shop.cpp
-//  assi_4
-//
-//  Created by Jonathan Acoltzi Rojas on 3/7/19.
-//  Copyright © 2019 Jonathan Acoltzi Rojas. All rights reserved.
-//
+// ------------------------------------------------ shop.cpp ---------------------------------------------------------
+// Kyle Lotterer, Jonathan Rojas, Marko Lakic CSS 343 C
+// 3/3/2019
+// Date of Last Modification 3/20/19
+// --------------------------------------------------------------------------------------------------------------------
+// Purpose - The class in which text files are parsed and processed into internal data. Once processed, 
+// these different types of media will be stored in a Hash Table inside of the class
+// --------------------------------------------------------------------------------------------------------------------
+// Files are read here and must be according to project specification. 
+// --------------------------------------------------------------------------------------------------------------------
+
 
 #include "shop.h"
-// --------------------------cunstructor-------------------------------------
+// --------------------------constructor-------------------------------------
 // Description: initializes shop class
 // ----------------------------------------------------
 Shop::Shop()

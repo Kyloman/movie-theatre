@@ -1,10 +1,13 @@
-//
-//  media.cpp
-//  plsWork
-//
-//  Created by Jonathan Acoltzi Rojas on 3/20/19.
-//  Copyright © 2019 Jonathan Acoltzi Rojas. All rights reserved.
-//
+// --------------------------------------------------- media.cpp ----------------------------------------------------------
+// Kyle Lotterer, Jonathan Rojas, Marko Lakic CSS 343 C
+// 3/2/2019
+// Date of Last Modification 3/20/19
+// --------------------------------------------------------------------------------------------------------------------
+// Purpose - Parent class for DVD allows for expansion later on to different media archetypes. Keeps track of stock. 
+// --------------------------------------------------------------------------------------------------------------------
+// This class is built so future types of media can be inherited from this class.
+// --------------------------------------------------------------------------------------------------------------------
+
 
 #include "media.h"
 

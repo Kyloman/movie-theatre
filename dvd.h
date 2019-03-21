@@ -1,7 +1,7 @@
 // ------------------------------------------------------ DVD ---------------------------------------------------------
-// Programmer Name Course Section Number
-// Creation Date
-// Date of Last Modification
+// Kyle Lotterer, Jonathan Rojas, Marko Lakic CSS 343 C
+// 3/2/2019
+// Date of Last Modification 3/20/19
 // --------------------------------------------------------------------------------------------------------------------
 // Purpose - Child of Media class. Parent class for all DVD types. 
 // --------------------------------------------------------------------------------------------------------------------
