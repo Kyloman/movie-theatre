@@ -54,9 +54,9 @@ public:
 	// ----------------------------------------------------------------------
 	void combineMajorActors(string);
 
-    bool operator<(const Classic& )const;
-	bool operator>(const Classic& )const;
-	bool operator==(const Classic& )const;
+    bool operator<(const Movie& )const;
+	bool operator>(const Movie& )const;
+	bool operator==(const Movie& )const;
     Classic& operator=(const Classic&); 
 private:
     int month;

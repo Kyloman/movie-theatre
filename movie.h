@@ -35,13 +35,15 @@ public:
     string getName()const;
 	string getDirector()const;
 	string getTitle()const;
+	string getComp1()const;
+	string getComp2()const;
 	int getYear()const;
     
 
 	string toString()const;
-    virtual bool operator==(const Movie& other);
-    virtual bool operator<(const Movie& other);
-    virtual bool operator>(const Movie& other);
+    virtual bool operator==(const Movie& other) = 0;
+    virtual bool operator<(const Movie& other) = 0;
+    virtual bool operator>(const Movie& other) = 0;
 private:
     int year;
     int stock;

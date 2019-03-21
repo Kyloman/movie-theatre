@@ -42,7 +42,7 @@ Comedy::Comedy(const Comedy& rhs)
 // --------------------------operator<---------------------------------
 // Description: Overloads < opertaor for Comedy Movies
 // ----------------------------------------------------------------------
-bool Comedy::operator<(const Comedy& other)const
+bool Comedy::operator<(const Movie& other)const
 {
 	string title1 = this->getTitle();
 	string title2 = other.getTitle();
@@ -71,7 +71,7 @@ bool Comedy::operator<(const Comedy& other)const
 // --------------------------operator>---------------------------------
 // Description: Overloads > opertaor for Comedy Movies
 // ----------------------------------------------------------------------
-bool Comedy::operator>(const Comedy& rhs)const
+bool Comedy::operator>(const Movie& rhs)const
 {
     return !(*this < rhs);
 }
@@ -109,7 +109,7 @@ bool Comedy::operator==(const Comedy& other)const
 // --------------------------operator=---------------------------------
 // Description: Overloads = opertaor for Comedy Movies
 // ----------------------------------------------------------------------
-Comedy& Comedy::operator=(const Comedy& rhs)
+Comedy& Comedy::operator=(const Movie& rhs)
 {
     setTitle(rhs.getTitle());
     setDirector(rhs.getDirector());

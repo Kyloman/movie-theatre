@@ -81,7 +81,7 @@ string Classic::getMajorActor()const
 // --------------------------operator<---------------------------------
 // Description: Overloads < opertaor for Classic Movies
 // ----------------------------------------------------------------------
-bool Classic::operator<(const Classic& rhs)const 
+bool Classic::operator<(const Movie& rhs)const 
 {
     if (this->getYear() == rhs.getYear())
     {
@@ -99,7 +99,7 @@ bool Classic::operator<(const Classic& rhs)const
 // --------------------------operator>---------------------------------
 // Description: Overloads > opertaor for Classic Movies
 // ----------------------------------------------------------------------
-bool Classic::operator>(const Classic& rhs)const
+bool Classic::operator>(const Movie& rhs)const
 {
     return !(*this < rhs);
 }
