@@ -39,11 +39,11 @@ void Movie::setYear(int yearMovie)
 }
 void Movie::setComp1(string comp1)
 {
-	comparable1 = comp1;
+    comparable1 = comp1;
 }
 void Movie::setComp2(string comp2)
 {
-	comparable2 = comp2;
+    comparable2 = comp2;
 }
 
 //Getters
@@ -65,11 +65,11 @@ int Movie::getYear()const
 }
 string Movie::getComp1()const
 {
-	return comparable1;
+    return comparable1;
 }
 string Movie::getComp2()const
 {
-	return comparable2;
+    return comparable2;
 }
 
 //Had to guess what the vars were, you magic tricked movie.h out of repo
@@ -80,71 +80,71 @@ string Movie::toString()const
 
 bool Movie::operator==(const Movie& other)
 {
-	//Check titles
+    //Check comp1
     string comp1_1 = this->getComp1();
-	string comp1_2= other.getComp1();
+    string comp1_2= other.getComp1();
     
     if (comp1_1.length() != comp1_2.length())
-		return false;
-	
-	//Checking if the titles are the same
-	for (int x = 0; x < comp1_1.length(); x++) 
-	{
-		if (comp1_1[x] != comp1_2[x])
-			return false;
-	}
+        return false;
+    
+    //Checking if the comp1 is the same
+    for (int x = 0; x < comp1_1.length(); x++) 
+    {
+        if (comp1_1[x] != comp1_2[x])
+            return false;
+    }
 
 	//Check dates
     int comp2_1 = getComp2();
 	int comp2_2 = other.getComp2();
 
     if (comp2_1 != comp2_2)
-		return false;
+        return false;
 
-	//If these are both the same, we assume they are the same!
-	return true;
+    //If these are both the same, we assume they are the same!
+    return true;
 }
 
 bool Movie::operator<(const Movie& other)
 {
-	string comp1_1 = this->getComp1();
-	string comp1_2 = other.getComp1();
+    string comp1_1 = this->getComp1();
+    string comp1_2 = other.getComp1();
 
-	int chosenLength = comp1_1.length();
+    int chosenLength = comp1_1.length();
 
-	//If title 2 is smaller, we use that so no out of bounds error
-	if (comp1_1.length() > comp1_2.length())
-		chosenLength = comp1_2.length();
+    //If comp 2 is smaller, we use that so no out of bounds error
+    if (comp1_1.length() > comp1_2.length())
+        chosenLength = comp1_2.length();
 
-	//Check titles
-	for (int x = 0; x < chosenLength; x++) 
-	{
-		if (comp1_1[x] < comp1_2[x])
-			return true;
-		if (comp1_1[x] > comp1_2[x])
-			return false;
-	}
+    //Check comp1
+    for (int x = 0; x < chosenLength; x++) 
+    {
+        if (comp1_1[x] < comp1_2[x])
+            return true;
+        if (comp1_1[x] > comp1_2[x])
+            return false;
+    }
 
-	//If one title is longer than the other, that's larger
-	if (comp1_1 < comp1_2) 
-		return true;
-	else if (comp1_1 > comp1_2)
-		return false;
+    //If one comp1 is longer than the other, that's larger
+    if (comp1_1 < comp1_2) 
+        return true;
+    else if (comp1_1 > comp1_2)
+        return false;
 
 	//Check dates
 	int comp2_1 = getComp2();
 	int comp2_2 = other.getComp2();
 
-	if (comp2_1 < comp2_2)
-		return true;
-	if (comp2_1> comp2_2)
-		return false;
+    if (comp2_1 < comp2_2)
+        return true;
+    if (comp2_1> comp2_2)
+        return false;
 
-	return false; //if they are equal then it is false
+    return false; //if they are equal then it is false
 }
 
 bool Movie::operator>(const Movie& other)
 {
-	return !(*this < other);
+    return !(*this < other);
 }
 
