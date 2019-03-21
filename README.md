@@ -6,6 +6,7 @@ DEMO HOW TO RUN:
 -run a.out using the command ./a.out 
 
 TEAM CONTRIBUTION:
+
 Jonathan:
 
 Kyle:
