@@ -43,7 +43,6 @@ void Shop::readFileMovies(ifstream& infile)
 			int year;
 			Movie* f;
 			infile >> stock;
-            cout<< stock<<endl<<endl;
             infile >> dummy;
 
 			director = stringHelper(infile);
@@ -158,9 +157,6 @@ void Shop::readFileCommands(ifstream& infile)
             transactionData(tempCust, tempMovie, infile);
             if(tempCust != NULL)
             {
-                
-                cout<< (tempMovie->getInv())<< endl;
-                cout<< (tempCust->getID()) << endl;
                 tempCust->borrow(tempMovie);
             }
             else
@@ -179,7 +175,6 @@ void Shop::readFileCommands(ifstream& infile)
                 cout << "no such ID" << endl;
         }
 
-
         else
         {
             cout<<"not a command";
@@ -189,7 +184,7 @@ void Shop::readFileCommands(ifstream& infile)
     }
 }
 // ---------------------readFileCostumers(ifstream&)---------------------------------
-// Description: reads th file for Customer info.
+// Description: reads the file for Customer info.
 // ---------------------------------------------------------------------------
 void Shop::readFileCostumers(ifstream& infile)
 {
