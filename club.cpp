@@ -30,8 +30,8 @@ Club::~Club()
 //        Node *clear = arr[0];
 //        while(clear->nextCust != NULL)
 //            clear = clear->nextCust;
-//            
-//        
+//
+//
 //    }
 }
 
