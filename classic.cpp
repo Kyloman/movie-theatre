@@ -132,3 +132,7 @@ void Classic::combineMajorActors(string rhsActor)
 	string actors = this->getMajorActor() + " " + rhsActor;
 	this->setMajorActor(actors);
 }
+
+static string reformatDate(int year, int month) {
+	return (to_string((year*12 + month)));
+}

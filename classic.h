@@ -53,6 +53,8 @@ public:
 	// Description: Function to add another major actor to a movie. 
 	// ----------------------------------------------------------------------
 	void combineMajorActors(string);
+	
+static string reformatDate(int year, int month);
 
     bool operator<(const Movie& )const;
 	bool operator>(const Movie& )const;
