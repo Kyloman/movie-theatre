@@ -117,7 +117,7 @@ bool Classic::operator>(const Movie& rhs)const
 // --------------------------operator==---------------------------------
 // Description: Overloads == opertaor for Classic Movies
 // ----------------------------------------------------------------------
-bool Classic::operator==(const Classic& rhs)const
+bool Classic::operator==(const Movie& rhs)const
 {
     if ((*this < rhs) && (*this > rhs))
         return true;

@@ -31,10 +31,10 @@ public:
 	Comedy(const Comedy& copy);
 
 	string toString()const;
-    bool operator<(const Comedy& rhs)const;
-    bool operator>(const Comedy& rhs)const;
-    bool operator==(const Comedy& rhs)const;
-    Comedy& operator=(const Comedy&);
+    bool operator<(const Movie& rhs)const;
+    bool operator>(const Movie& rhs)const;
+    bool operator==(const Movie& rhs)const;
+    Comedy& operator=(const Movie&);
 private:
 
 };
