@@ -34,9 +34,14 @@ Customer::Customer(int id, string first, string last)
 // ----------------------------------------------------------------------
 void Customer::borrow(Media* newMedia)
 {
-	Transaction tran(newMedia, "borrowed");
-	newMedia->decreaseInv(1);
-	idHistory.push_back(tran);
+	if (newMedia > 0)
+	{
+		Transaction tran(newMedia, "borrowed");
+		newMedia->decreaseInv(1);
+		idHistory.push_back(tran);
+	}
+	else
+		cout << "Out of Stock" << endl;
 }
 
 // --------------------------return---------------------------------
