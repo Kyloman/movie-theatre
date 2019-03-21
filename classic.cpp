@@ -18,8 +18,10 @@ Classic::Classic(int newstock, string newdirector, string newtitle, string newma
     setYear(newyear);
     setInv(newstock);
     setMonth(newmonth);
-    
-    majorActor = newmajoractor;
+    setMajorActor(newmajoractor);
+
+	setComp1((to_string(getYear())) + (to_string(getMonth()))); 
+	setComp2(getMajorActor());
 }
 
 
@@ -40,6 +42,11 @@ Classic::Classic(const Classic& copy)
     setDirector(copy.getDirector());
     setYear(copy.getYear());
     setInv(copy.getInv());
+	month = copy.getMonth();
+	majorActor = copy.getMajorActor();
+
+	setComp1((to_string(getYear())) + (to_string(getMonth())));
+	setComp2(getMajorActor());
 }
 Classic& Classic::operator=(const Classic& rhs)
 {   
@@ -49,6 +56,10 @@ Classic& Classic::operator=(const Classic& rhs)
     setInv(rhs.getInv());
     month = rhs.getMonth();
     majorActor = rhs.getMajorActor();
+
+	setComp1((to_string(getYear())) + (to_string(getMonth())));
+	setComp2(getMajorActor());
+
     return *this;
 }
 void Classic::setMonth(int newMonth)
