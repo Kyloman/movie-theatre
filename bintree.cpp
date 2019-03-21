@@ -1,7 +1,7 @@
 // ----------------------- bintree.cpp ----------------------------------------
 // Jonathan Acoltzi Rojas, CSS 343 C
 // Jan 26, 2019
-// Feb 3, 2019
+// March 20, 2019
 // --------------------------------------------------------------------------
 // Purpose - to create a binary search tree. That can be made into an array
 // and vise versa. The saves a nodeData that is a string class.
