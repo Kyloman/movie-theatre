@@ -55,10 +55,10 @@ void Media::decreaseInv(int amount)
 // --------------------------toString---------------------------------
 // Description: returns a type string of a media type
 // ----------------------------------------------------------------------
-string Media::toString()
-{
-    string mediaString = "";
-    mediaString += to_string(inventory) + " " + name;
-    return mediaString;
-    
-}
+//string Media::toString()const
+//{
+//    string mediaString = "";
+//    mediaString += to_string(inventory) + " " + name;
+//    return mediaString;
+//    
+//}
