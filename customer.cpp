@@ -62,13 +62,14 @@ void Customer::returning(Media* newMedia)
 void Customer::getHistory() 
 {
 	int size = idHistory.size();
-	string out = ""; //we are building a string to print
-	for (int x = 0; x < size; x++)
+    string out = ""; //we are building a string to print
+    
+    for (int x = 0; x < size; x++)
     {
 		out += getName() + " "; 
 		out += idHistory[x].toString();
 	}
-	cout << out << endl;
+    cout <<"history:" <<out << endl;
 }
 
 // --------------------------getID---------------------------------

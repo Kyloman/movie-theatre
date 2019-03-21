@@ -115,7 +115,7 @@ void Shop::readFileCommands(ifstream& infile)
     string dummy;
 	for (;;) {
 		infile >> s;
-
+        cout<< s;
 		if (infile.eof()) break;             // no more lines of data
 
         // I calls inventory prints trees in order
@@ -255,7 +255,7 @@ void Shop::transactionData(Customer* tempCust, Movie* tempMovie, ifstream& infil
                 title = stringHelper(infile);
                 Drama *temp = new Drama(0, director, title, 0);
                 if(!dramaTree.retrieve(temp, tempMovie))
-                    cout<<"fuck";
+                    cout<<"no drama";
             }
             else if(typeMovie == "C")
             {
@@ -271,7 +271,7 @@ void Shop::transactionData(Customer* tempCust, Movie* tempMovie, ifstream& infil
                 actor += actorF + " " +actorL;
                 Classic *temp = new Classic(0, "", "", actor, month, year);
                 if(!classicTree.retrieve(temp, tempMovie))
-                    cout<<"fuck";
+                    cout<<"no classic";
             }
             else
             {
