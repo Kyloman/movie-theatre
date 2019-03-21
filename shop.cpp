@@ -174,7 +174,6 @@ void Shop::readFileCommands(ifstream& infile)
                 cout << "no such ID" << endl;
         }
 
-
         else
         {
             cout<<"not a command"<< endl;
@@ -185,7 +184,7 @@ void Shop::readFileCommands(ifstream& infile)
     cout<<endl;
 }
 // ---------------------readFileCostumers(ifstream&)---------------------------------
-// Description: reads th file for Customer info.
+// Description: reads the file for Customer info.
 // ---------------------------------------------------------------------------
 void Shop::readFileCostumers(ifstream& infile)
 {
