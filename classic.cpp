@@ -11,14 +11,14 @@
 // --------------------------constructor---------------------------------
 // Description: ovearloaded Constructor
 // ----------------------------------------------------------------------
-Classic::Classic(int newstock, string newdirector, string newtitle, string newmajoractor,int newmonth, int newyear)
+Classic::Classic(int newstock, string newdirector, string newtitle, string newmajoractor, int newmonth, int newyear)
 {
-    setTitle(newtitle);
-    setDirector(newdirector);
-    setYear(newyear);
-    setInv(newstock);
-    setMonth(newmonth);
-    setMajorActor(newmajoractor);
+	setTitle(newtitle);
+	setDirector(newdirector);
+	setYear(newyear);
+	setInv(newstock);
+	setMonth(newmonth);
+	setMajorActor(newmajoractor);
 
 	setComp1(reformatDate(getYear(), getMonth()));
 	setComp2(getMajorActor());
@@ -33,15 +33,15 @@ Classic::~Classic()
 
 }
 
- //--------------------------contructor---------------------------------
- //Description: copy constuctor
- //----------------------------------------------------------------------
+//--------------------------contructor---------------------------------
+//Description: copy constuctor
+//----------------------------------------------------------------------
 Classic::Classic(const Classic& copy)
-{ 
-    setTitle(copy.getTitle());
-    setDirector(copy.getDirector());
-    setYear(copy.getYear());
-    setInv(copy.getInv());
+{
+	setTitle(copy.getTitle());
+	setDirector(copy.getDirector());
+	setYear(copy.getYear());
+	setInv(copy.getInv());
 	month = copy.getMonth();
 	majorActor = copy.getMajorActor();
 
@@ -49,36 +49,36 @@ Classic::Classic(const Classic& copy)
 	setComp2(getMajorActor());
 }
 Classic& Classic::operator=(const Classic& rhs)
-{   
-    setTitle(rhs.getTitle());
-    setDirector(rhs.getDirector());
-    setYear(rhs.getYear());
-    setInv(rhs.getInv());
-    month = rhs.getMonth();
-    majorActor = rhs.getMajorActor();
+{
+	setTitle(rhs.getTitle());
+	setDirector(rhs.getDirector());
+	setYear(rhs.getYear());
+	setInv(rhs.getInv());
+	month = rhs.getMonth();
+	majorActor = rhs.getMajorActor();
 
 	setComp1(reformatDate(getYear(), getMonth()));
 	setComp2(getMajorActor());
 
-    return *this;
+	return *this;
 }
 void Classic::setMonth(int newMonth)
 {
-    month = newMonth;
+	month = newMonth;
 }
 // --------------------------setmajoractor---------------------------------
 // Description:  sets the actor
 // ----------------------------------------------------------------------
 void Classic::setMajorActor(string newActor)
 {
-    majorActor = newActor;
+	majorActor = newActor;
 }
 // --------------------------getMonth---------------------------------
 // Description: returns month
 // ----------------------------------------------------------------------
 int Classic::getMonth()const
 {
-    return month;
+	return month;
 }
 
 // --------------------------setmajoractor---------------------------------
@@ -86,7 +86,7 @@ int Classic::getMonth()const
 // ----------------------------------------------------------------------
 string Classic::getMajorActor()const
 {
-    return majorActor;
+	return majorActor;
 }
 
 // --------------------------operator<---------------------------------
@@ -155,12 +155,12 @@ bool Classic::operator<(const Movie& other)const
 // ----------------------------------------------------------------------
 bool Classic::operator>(const Movie& rhs)const
 {
-    return !(*this < rhs);
+	return !(*this < rhs);
 }
 // --------------------------operator==---------------------------------
 // Description: Overloads == opertaor for Classic Movies
 // ----------------------------------------------------------------------
-bool Classic::operator==(const Classic& other)const
+bool Classic::operator==(const Movie& other)const
 {
 	//Check dates
 	string date1 = this->getComp1();
@@ -204,5 +204,5 @@ void Classic::combineMajorActors(string rhsActor)
 }
 
 static string reformatDate(int year, int month) {
-	return (to_string((year*12 + month)));
+	return (to_string((year * 12 + month)));
 }
