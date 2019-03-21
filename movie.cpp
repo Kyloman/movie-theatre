@@ -10,7 +10,9 @@
 #include "movie.h"
 using namespace std;
 
-//Constructor
+// --------------------------constructor---------------------------------
+// Description: default constructor for movie type.
+// ----------------------------------------------------------------------
 Movie::Movie()
 {
     title = "";
@@ -18,55 +20,97 @@ Movie::Movie()
     year = 0;
 }
 
-//Deconstructor
+// --------------------------deconstructor---------------------------------
+// Description: default deconstructor for movie type.
+// ----------------------------------------------------------------------
 Movie::~Movie()
 {
     
 }
 
-//Setter
+// --------------------------setDirector---------------------------------
+// Description: sets the director for a movie to a passed parameter
+// ----------------------------------------------------------------------
 void Movie::setDirector(string name)
 {
     director = name;
 }
+
+// --------------------------setTitle---------------------------------
+// Description: sets the title for a movie to a passed parameter
+// ----------------------------------------------------------------------
 void Movie::setTitle(string name)
 {
     title = name;
 }
+
+// --------------------------setYear---------------------------------
+// Description: sets the year for a movie to a passed parameter
+// ----------------------------------------------------------------------
 void Movie::setYear(int yearMovie)
 {
     year = yearMovie;
 }
+
+// --------------------------setComp1---------------------------------
+// Description: sets the comparable1 for a movie to a passed parameter
+// ----------------------------------------------------------------------
 void Movie::setComp1(string comp1)
 {
     comparable1 = comp1;
 }
+
+// --------------------------setComp2---------------------------------
+// Description: sets the comparable2 for a movie to a passed parameter
+// ----------------------------------------------------------------------
 void Movie::setComp2(string comp2)
 {
     comparable2 = comp2;
 }
 
-//Getters
+// --------------------------getName---------------------------------
+// Description: gets the title for a movie 
+// ----------------------------------------------------------------------
 string Movie::getName()const
 {
     return title;
 }
+
+// --------------------------getDirector---------------------------------
+// Description: gets the director for a movie 
+// ----------------------------------------------------------------------
 string Movie::getDirector()const
 {
     return director;
 }
+
+// --------------------------getTitle---------------------------------
+// Description: gets the title for a movie 
+// ----------------------------------------------------------------------
 string Movie::getTitle()const
 {
     return title;
 }
+
+// --------------------------getYear---------------------------------
+// Description: gets the year for a movie 
+// ----------------------------------------------------------------------
 int Movie::getYear()const
 {
     return year;
 }
+
+// --------------------------getComp1---------------------------------
+// Description: gets the comparable1 for a movie 
+// ----------------------------------------------------------------------
 string Movie::getComp1()const
 {
     return comparable1;
 }
+
+// --------------------------getComp2---------------------------------
+// Description: gets the comparable2 for a movie 
+// ----------------------------------------------------------------------
 string Movie::getComp2()const
 {
     return comparable2;
