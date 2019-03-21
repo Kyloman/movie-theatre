@@ -1,5 +1,5 @@
 
-#DEMO HOW TO RUN
+**DEMO HOW TO RUN**
 
 -unzip the file in linux as per usual
 
@@ -9,7 +9,7 @@
 
 -----------------------------------------------------------------------------------------------------------
 
-#TEAM CONTRIBUTION
+**TEAM CONTRIBUTION**
 
 We all collaborated together to work on all parts of the project. We can't remember a single class where only one of us worked on it. 
 It seems pointless to explicitly emphasize methods or classes that one of us worked on more than the other. 
