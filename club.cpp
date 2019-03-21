@@ -26,15 +26,22 @@ Club::Club()
 // ----------------------------------------------------------------------
 Club::~Club()
 {
-//    for (int x = 1; x < capacity; x++) {
-//        Node *clear = arr[0];
-//        while(clear->nextCust != NULL)
-//            clear = clear->nextCust;
-//
-//
-//    }
-}
+    for (int x = 1; x < capacity; x++) {
+        Node *clear = arr[0];
+        while(clear != NULL)
+        {
+            deleteHelper(clear->nextCust);
+        }
 
+    }
+}
+void Club::deleteHelper(Node *clear)
+{
+    if(clear->nextCust != NULL)
+        deleteHelper(clear->nextCust);
+    delete clear->cust;
+    delete clear;
+}
 //Copy Constructor
 //Club::Club(const Club& copy)
 
@@ -96,7 +103,6 @@ bool Club::deleteMember(int iD)
 	return false; 
         
 }
-
 // --------------------------find---------------------------------
 // Description: searches club to find a specific member in the clu via ID
 // returns true if found, false if the member doesnt exist
