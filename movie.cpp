@@ -37,6 +37,14 @@ void Movie::setYear(int yearMovie)
 {
     year = yearMovie;
 }
+void Movie::setComp1(string comp1)
+{
+	comparable1 = comp1;
+}
+void Movie::setComp2(string comp2)
+{
+	comparable2 = comp2;
+}
 
 //Getters
 string Movie::getName()const
@@ -54,6 +62,14 @@ string Movie::getTitle()const
 int Movie::getYear()const
 {
     return year;
+}
+string Movie::getComp1()const
+{
+	return comparable1;
+}
+string Movie::getComp2()const
+{
+	return comparable2;
 }
 
 //Had to guess what the vars were, you magic tricked movie.h out of repo
