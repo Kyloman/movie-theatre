@@ -30,11 +30,11 @@ BinTree::BinTree()
 // --------------------------Contructor(copy)----------------------------------
 // Description:creates a tree class that is a deap copy of another tree class
 // ----------------------------------------------------------------------------
-BinTree::BinTree(const BinTree &rhs)
-{
-    root = NULL;
-    *this = rhs;
-}// end of copy constructor
+//BinTree::BinTree(const BinTree &rhs)
+//{
+//    root = NULL;
+//    *this = rhs;
+//}// end of copy constructor
 
 // --------------------------destructor---------------------------------------
 // Description:deletes the tree when class is deleted leaves root = NULL.
@@ -67,16 +67,16 @@ void BinTree::makeEmpty()                 // make the tree empty so isEmpty retu
 // Description: copies one tree to another. lhs will now equal right
 // hand side.
 // ----------------------------------------------------------------------------
-BinTree& BinTree::operator=(const BinTree &rhs)
-{
-    if(*this != rhs)
-    {
-        makeEmpty();
-        
-        copyHelper(root, rhs.root);
-    }
-    return *this;
-} // end of operator=
+//BinTree& BinTree::operator=(const BinTree &rhs)
+//{
+//    if(*this != rhs)
+//    {
+//        makeEmpty();
+//        
+//        copyHelper(root, rhs.root);
+//    }
+//    return *this;
+//} // end of operator=
 
 // --------------------------operator==---------------------------------------
 // Description: checks if two trees are equal returns true if yes.
@@ -251,29 +251,29 @@ void BinTree::insertHelper(Node* &current, Movie* p)
 // Description: copies a tree recursivly. leaves tree with one value
 // per recursion if rhs nodedata is not NULL
 // ----------------------------------------------------------------------------
-void BinTree::copyHelper(Node* &copied, Node* rhs)
-{
-    if(rhs == NULL)
-    return;
-    
-    if(copied == NULL)
-    {
-        
-        copied = new Node(*rhs);
-        Movie *temp = new Movie(*rhs->data);
-        copied->data = temp;
-        copied->left = NULL;
-        copied->right = NULL;
-    }
-    
-    
-    
-    if(rhs->left != NULL)
-        copyHelper(copied->left, rhs->left);
-    if(rhs->right != NULL)
-        copyHelper(copied->right, rhs->right);
-    
-} // end of copyHelper
+//void BinTree::copyHelper(Node* &copied, Node* rhs)
+//{
+//    if(rhs == NULL)
+//    return;
+//
+//    if(copied == NULL)
+//    {
+//
+//        copied = new Node(*rhs);
+//        Movie *temp = new Movie(*rhs->data);
+//        copied->data = temp;
+//        copied->left = NULL;
+//        copied->right = NULL;
+//    }
+//
+//
+//
+//    if(rhs->left != NULL)
+//        copyHelper(copied->left, rhs->left);
+//    if(rhs->right != NULL)
+//        copyHelper(copied->right, rhs->right);
+//
+//} // end of copyHelper
 
 // --------------------------:treeToArrayHelper -----------------------------------
 // Description: adds vaue to array deletes value frome tree. recursive
