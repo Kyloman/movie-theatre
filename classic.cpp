@@ -1,10 +1,12 @@
-//
-//  drama.cpp
-//  assi_4
-//
-//  Created by Marko Lakic on 3/19/19.
-//  Copyright � 2019 Marko Lakic. All rights reserved.
-//
+// ------------------------------------------------ classic.h ---------------------------------------------------------
+// Kyle Lotterer, Jonathan Rojas, Marko Lakic CSS 343 C
+// 3/3/2019
+// Date of Last Modification 3/20/2019
+// --------------------------------------------------------------------------------------------------------------------
+// Child class of DVD for Classic type DVD’s. Allows the user to set and get the month and major actor of the DVD.
+// --------------------------------------------------------------------------------------------------------------------
+// Specially categorized using Month and Actor on top of normal DVD sorting mechanics.
+// --------------------------------------------------------------------------------------------------------------------
 
 #include "classic.h"
 
