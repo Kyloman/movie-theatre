@@ -1,10 +1,13 @@
-//
-//  customer.cpp
-//  assi_4
-//
-//  Created by Jonathan Acoltzi Rojas on 3/10/19.
-//  Copyright © 2019 Jonathan Acoltzi Rojas. All rights reserved.
-//
+// ---------------------------------- customer.h-------------------------------------------
+// Programmer Name Course Section Number
+// 3/12/2019
+// Date of Last Modification 3/20/19
+// --------------------------------------------------------------------------------------------------------------------
+// Purpose - this is the class for the customer that keeps track of customer info and actions.
+// --------------------------------------------------------------------------------------------------------------------
+// Think of this like a dossier which notes what customers have interacted with a store. 
+// --------------------------------------------------------------------------------------------------------------------
+
 
 #include "customer.h"
 
