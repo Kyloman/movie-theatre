@@ -19,7 +19,7 @@ using namespace std;
 // ----------------------------------------------------------------------
 Transaction::Transaction() {
     
-}//end of constructor
+}
 
 // --------------------------constructor---------------------------------
 // Description: creates a transaction class with parameters 
@@ -27,14 +27,15 @@ Transaction::Transaction() {
 Transaction::Transaction(Movie* newMedia, string newAction) {
 	type = newMedia;
 	action = newAction;
-}//end of constructor
+}
 
 // --------------------------deconstructor---------------------------------
 // Description: default deconstructor for transaction class
 // ----------------------------------------------------------------------
-Transaction::~Transaction() {
-
-}//end of deconstructor
+Transaction::~Transaction()
+{
+    
+}
 
 // --------------------------toString---------------------------------
 // Description: represents a transaction as a string type.
@@ -44,5 +45,5 @@ string Transaction::toString() {
     retVal += action + " " + type->toString();
     return retVal;
 
-}//end of toString
+}
 

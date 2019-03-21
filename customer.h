@@ -30,7 +30,8 @@ public:
 	// Description: creates a new customer with a unique ID
 	// ----------------------------------------------------------------------
 	Customer(int, string, string);
-
+    
+    ~Customer();
 
 	// --------------------------getName()---------------------------------
 	// Description: returns the name of a customer

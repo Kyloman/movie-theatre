@@ -19,22 +19,29 @@ Club::Club()
     customerAmount = 0; 
     for(int i = 0; i < capacity; i++)
         arr[i] = NULL;
-}//end of constructor
+}
 
 // --------------------------deconstructor---------------------------------
 // Description: clears out the club class then deletes it to free memory
 // ----------------------------------------------------------------------
 Club::~Club()
 {
-//    for (int x = 1; x < capacity; x++) {
-//        Node *clear = arr[0];
-//        while(clear->nextCust != NULL)
-//            clear = clear->nextCust;
-//
-//
-//    }
-}//end of deconstructor
+    for (int x = 1; x < capacity; x++) {
+        Node *clear = arr[0];
+        while(clear != NULL)
+        {
+            deleteHelper(clear->nextCust);
+        }
 
+    }
+}
+void Club::deleteHelper(Node *clear)
+{
+    if(clear->nextCust != NULL)
+        deleteHelper(clear->nextCust);
+    delete clear->cust;
+    delete clear;
+}
 //Copy Constructor
 //Club::Club(const Club& copy)
 
@@ -57,7 +64,7 @@ void Club::addMember(int ID, string last, string first, int i)
         addMemberHelper(temp, current);
     customerAmount++;
 
-}//end of addMember
+}
 
 // --------------------------addMemberHelper---------------------------------
 // Description: helper function for addMember function
@@ -71,7 +78,7 @@ void Club::addMemberHelper(Node *temp, Node* current)
     else
         addMemberHelper( temp, current->nextCust);
     
-}//end of AddMemberHelper
+}
 
 // --------------------------deleteMember---------------------------------
 // Description: removes a member and unties pointers to free memory
@@ -95,8 +102,7 @@ bool Club::deleteMember(int iD)
    
 	return false; 
         
-}//end of deleteMember
-
+}
 // --------------------------find---------------------------------
 // Description: searches club to find a specific member in the clu via ID
 // returns true if found, false if the member doesnt exist
@@ -118,7 +124,7 @@ bool Club::find(int iD)
         return false;
     return true;
     //just so code runs please change and delete comment
-}//end of find
+}
 
 // --------------------------getMember---------------------------------
 // Description: returns a pointer to customer found by passing their ID
@@ -134,5 +140,5 @@ Customer* Club::getCustomer(int iD)
         temp = temp->nextCust;
     }
     return temp->cust;
-}//end of getCustomer
+}
 

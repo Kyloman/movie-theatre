@@ -45,6 +45,7 @@ private:
         Customer* cust;                        // pointer to data object
         Node* nextCust;                         
     };
+    void deleteHelper(Node *);
     void addMemberHelper(Node*, Node* );
     Node *arr[10007];
     
