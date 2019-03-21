@@ -113,7 +113,8 @@ bool Club::find(int iD)
         }
     }
     else
-        return true;
+        return false;
+    return true;
     //just so code runs please change and delete comment
 }
 
