@@ -1,7 +1,7 @@
 // ------------------------------------------------ transaction.h ---------------------------------------------------------
 // Kyle Lotterer, Jonathan Rojas, Marko Lakic CSS 343 C
 // 3/3/2019
-// Date of Last Modification
+// Date of Last Modification 3/20/19
 // --------------------------------------------------------------------------------------------------------------------
 // This class represents an action a customer can do, from borrowing to returning a movie. It tracks what type of media
 // was manipulated, how many were manipulated

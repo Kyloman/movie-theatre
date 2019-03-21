@@ -1,9 +1,9 @@
 // ---------------------------------- customer.h-------------------------------------------
 // Programmer Name Course Section Number
-// Creation Date
-// Date of Last Modification
+// 3/2/2019
+// Date of Last Modification 3/20/19
 // --------------------------------------------------------------------------------------------------------------------
-// Purpose - this is the class for the customer that keeps track of costumer info and actions.
+// Purpose - this is the class for the customer that keeps track of customer info and actions.
 // --------------------------------------------------------------------------------------------------------------------
 // Think of this like a dossier which notes what customers have interacted with a store. 
 // --------------------------------------------------------------------------------------------------------------------
