@@ -72,7 +72,7 @@ void Customer::getHistory()
 		//out += getName() + " "; 
 		out += idHistory[x].toString();
 	}
-    cout <<"history:" << out << endl;
+	cout << "Customer#" << getID << " history:" << out << endl;
 }
 
 // --------------------------getID---------------------------------
