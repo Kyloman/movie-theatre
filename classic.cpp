@@ -157,6 +157,7 @@ bool Classic::operator>(const Movie& rhs)const
 {
 	return !(*this < rhs);
 }
+
 // --------------------------operator==---------------------------------
 // Description: Overloads == opertaor for Classic Movies
 // ----------------------------------------------------------------------
@@ -203,6 +204,6 @@ void Classic::combineMajorActors(string rhsActor)
 	this->setMajorActor(actors);
 }
 
-static string reformatDate(int year, int month) {
+string Classic::reformatDate(int year, int month) {
 	return (to_string((year * 12 + month)));
 }
