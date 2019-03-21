@@ -1,7 +1,7 @@
 // ----------------------------------------------------- club ---------------------------------------------------------
 // Kyle Lotterer, Jonathan Rojas, Marko Lakic CSS 343 C
 // 3/7/2019
-// Date of Last Modification
+// Date of Last Modification 3/20/19
 // --------------------------------------------------------------------------------------------------------------------
 // This Club represents a list of customers that have interacted with the shop. You can add customers and see how many
 // are in.
