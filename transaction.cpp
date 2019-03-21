@@ -32,8 +32,9 @@ Transaction::Transaction(Movie* newMedia, string newAction) {
 // --------------------------deconstructor---------------------------------
 // Description: default deconstructor for transaction class
 // ----------------------------------------------------------------------
-Transaction::~Transaction() {
-
+Transaction::~Transaction()
+{
+    
 }
 
 // --------------------------toString---------------------------------

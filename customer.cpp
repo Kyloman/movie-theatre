@@ -31,6 +31,15 @@ Customer::Customer(int id, string first, string last)
     lName = last;
 }
 
+Customer::~Customer()
+{
+    int size = idHistory.size();
+    for (int x = 0; x < size; x++)
+    {
+        //out += getName() + " ";
+        idHistory.pop_back();
+    }
+}
 // --------------------------borrow---------------------------------
 // Description: function for when customers borrow a copy of a movie
 // decreases inventory when the borrow transaction goes through
