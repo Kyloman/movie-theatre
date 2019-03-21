@@ -98,7 +98,7 @@ bool Comedy::operator>(const Movie& rhs)const
 // --------------------------operator==---------------------------------
 // Description: Overloads == opertaor for Comedy Movies
 // ----------------------------------------------------------------------
-bool Comedy::operator==(const Comedy& other)const
+bool Comedy::operator==(const Movie& other)const
 {
 	string title1 = this->getComp1();
 	string title2 = other.getComp1();
