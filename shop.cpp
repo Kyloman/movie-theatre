@@ -125,7 +125,8 @@ void Shop::readFileCommands(ifstream& infile)
         // I calls inventory prints trees in order
 		if (s == "I")
 		{
-			cout << "comedys:" << endl;
+			cout << endl;
+			cout << "Comedies:" << endl;
 			cout << comedyTree;
 			cout << "Dramas:" << endl;
 			cout << dramaTree;
@@ -249,7 +250,7 @@ void Shop::transactionData(Customer* tempCust, Movie* tempMovie, ifstream& infil
                 infile>> date;
                 Comedy *temp = new Comedy(0, "", title, date);
                 if(!comedyTree.retrieve(temp, tempMovie))
-                    cout<<"fuck";
+                    cout<<"no comedy";
             }
             else if(typeMovie == "D")
             {

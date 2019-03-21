@@ -140,9 +140,13 @@ bool Drama::operator<(const Movie& other)const
 // --------------------------operator>---------------------------------
 // Description: Overloads > opertaor for Drama Movies
 // ----------------------------------------------------------------------
-bool Drama::operator>(const Movie& other)const
+bool Drama::operator>(const Movie& rhs)const
 {
-	return !(*this < other);
+    bool check1 = (*this < rhs);
+    bool check2 = (*this == rhs);
+    if(check1 || check2)
+        return false;
+    return true;
 }
 
 // --------------------------operator==---------------------------------

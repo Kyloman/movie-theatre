@@ -157,7 +157,11 @@ bool Classic::operator<(const Movie& other)const
 // ----------------------------------------------------------------------
 bool Classic::operator>(const Movie& rhs)const
 {
-	return !(*this < rhs);
+    bool check1 = (*this < rhs);
+    bool check2 = (*this == rhs);
+    if(check1 || check2)
+        return false;
+    return true;
 }
 
 // --------------------------operator==---------------------------------
