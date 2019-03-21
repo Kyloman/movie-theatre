@@ -16,6 +16,9 @@ Comedy::Comedy(int newstock, string newdirector, string newtitle, int newdate )
     setDirector(newdirector);
     setYear(newdate);
     setInv(newstock);
+    setComarable1(title);
+    
+    setComarable1();
 }
 // ------------------------deconstructor---------------------------------
 // Description: destructor

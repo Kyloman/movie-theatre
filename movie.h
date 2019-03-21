@@ -29,7 +29,8 @@ public:
 	void setDirector(string name);
 	void setTitle(string name);
 	void setYear(int name);
-	
+    void setComp1(string);
+    void setComp2(string);
 	//Getters
     string getName()const;
 	string getDirector()const;
@@ -46,6 +47,8 @@ private:
     int stock;
     string director;
 	string title;
+    string comparable1;
+    string comparable2;
 };
 
 #endif 
