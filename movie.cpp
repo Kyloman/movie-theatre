@@ -95,8 +95,8 @@ bool Movie::operator==(const Movie& other)
 	}
 
 	//Check comp2
-    int comp2_1 = getComp2;
-	int comp2_2 = other.getComp2();
+    string comp2_1 = getComp2;
+	string comp2_2 = other.getComp2();
 
     if (comp2_1 != comp2_2)
 		return false;
@@ -132,8 +132,8 @@ bool Movie::operator<(const Movie& other)
 		return false;
 
 	//Check comp2
-	int comp2_1 = getComp2;
-	int comp2_2 = other.getComp2();
+	string comp2_1 = getComp2;
+	string comp2_2 = other.getComp2();
 
 	if (comp2_1 < comp2_2)
 		return true;
