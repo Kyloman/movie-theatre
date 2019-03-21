@@ -81,24 +81,24 @@ string Movie::toString()const
 bool Movie::operator==(const Movie& other)
 {
 	//Check titles
-    string title1 = this->getTitle();
-	string title2 = other.getTitle();
+    string comp1_1 = this->getComp1();
+	string comp1_2= other.getComp1();
     
-    if (title1.length() != title2.length())
+    if (comp1_1.length() != comp1_2.length())
 		return false;
 	
 	//Checking if the titles are the same
-	for (int x = 0; x < title1.length(); x++) 
+	for (int x = 0; x < comp1_1.length(); x++) 
 	{
-		if (title1[x] != title2[x])
+		if (comp1_1[x] != comp1_2[x])
 			return false;
 	}
 
 	//Check dates
-    int date1 = year;
-	int date2 = other.getYear();
+    int comp2_1 = getComp2;
+	int comp2_2 = other.getComp2();
 
-    if (date1 != date2)
+    if (comp2_1 != comp2_2)
 		return false;
 
 	//If these are both the same, we assume they are the same!
@@ -107,37 +107,37 @@ bool Movie::operator==(const Movie& other)
 
 bool Movie::operator<(const Movie& other)
 {
-	string title1 = this->getTitle();
-	string title2 = other.getTitle();
+	string comp1_1 = this->getComp1();
+	string comp1_2 = other.getComp1();
 
-	int chosenLength = title1.length();
+	int chosenLength = comp1_1.length();
 
 	//If title 2 is smaller, we use that so no out of bounds error
-	if (title1.length() > title2.length())
-		chosenLength = title2.length();
+	if (comp1_1.length() > comp1_2.length())
+		chosenLength = comp1_2.length();
 
 	//Check titles
 	for (int x = 0; x < chosenLength; x++) 
 	{
-		if (title1[x] < title2[x])
+		if (comp1_1[x] < comp1_2[x])
 			return true;
-		if (title1[x] > title2[x])
+		if (comp1_1[x] > comp1_2[x])
 			return false;
 	}
 
 	//If one title is longer than the other, that's larger
-	if (title1 < title2) 
+	if (comp1_1 < comp1_2) 
 		return true;
-	else if (title1 > title2)
+	else if (comp1_1 > comp1_2)
 		return false;
 
 	//Check dates
-	int date1 = year;
-	int date2 = other.getYear();
+	int comp2_1 = getComp2;
+	int comp2_2 = other.getComp2();
 
-	if (date1 < date2)
+	if (comp2_1 < comp2_2)
 		return true;
-	if (date1 > date2)
+	if (comp2_1> comp2_2)
 		return false;
 
 	return false; //if they are equal then it is false
