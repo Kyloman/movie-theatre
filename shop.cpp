@@ -275,6 +275,7 @@ void Shop::transactionData(Customer* tempCust, Movie* tempMovie, ifstream& infil
             }
             
             tempCust = club1.getCustomer(iD);
+            
         }
         else
         {
