@@ -245,7 +245,7 @@ void Shop::transactionData(Customer* tempCust, Movie* tempMovie, ifstream& infil
                 infile>> date;
                 Comedy *temp = new Comedy(0, "", title, date);
                 if(!comedyTree.retrieve(temp, tempMovie))
-                    cout<<"fuck";
+                    cout<<"no comedy";
             }
             else if(typeMovie == "D")
             {
