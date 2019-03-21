@@ -80,8 +80,8 @@ Drama& Drama::operator=(const Drama& rhs)
 bool Drama::operator<(const Drama& other)const 
 {
 	//Check directors
-	string director1 = this->getDirector();
-	string director2 = other.getDirector();
+	string director1 = this->getComp1();
+	string director2 = other.getComp1();
 
 	int chosenLength = director1.length();
 
@@ -106,8 +106,8 @@ bool Drama::operator<(const Drama& other)const
 
 
 	//CHECKING TITLES NEXT
-	string title1 = this->getTitle();
-	string title2 = other.getTitle();
+	string title1 = this->getComp2();
+	string title2 = other.getComp2();
 
 	chosenLength = title1.length();
 
@@ -149,8 +149,8 @@ bool Drama::operator>(const Drama& other)const
 bool Drama::operator==(const Drama& other)const
 {
 	//Check directors
-	string director1 = this->getDirector();
-	string director2 = other.getDirector();
+	string director1 = this->getComp1();
+	string director2 = other.getComp1();
 
 	if (director1.length() != director2.length())
 		return false;
@@ -163,8 +163,8 @@ bool Drama::operator==(const Drama& other)const
 	}
 
 	//Check titles
-	string title1 = this->getTitle();
-	string title2 = other.getTitle();
+	string title1 = this->getComp2();
+	string title2 = other.getComp2();
 
 	if (title1.length() != title2.length())
 		return false;
