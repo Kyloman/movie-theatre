@@ -101,7 +101,7 @@ bool Club::deleteMember(int iD)
 // ----------------------------------------------------------------------
 bool Club::find(int iD)
 {
-    int find = iD % capacity;
+    int find = (iD % capacity);
     Node* temp = arr[find];
     if(temp != NULL)
     {
@@ -113,8 +113,8 @@ bool Club::find(int iD)
         }
     }
     else
-        return false;
-    return true; //just so code runs please change and delete comment
+        return true;
+    //just so code runs please change and delete comment
 }
 
 // --------------------------getMember---------------------------------
