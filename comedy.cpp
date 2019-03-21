@@ -22,14 +22,15 @@ Comedy::Comedy(int newstock, string newdirector, string newtitle, int newdate )
 
 	setComp1(getTitle());
 	setComp2(to_string(getYear()));
-}
+}//end of overloaded constructor
+
 // ------------------------deconstructor---------------------------------
 // Description: destructor
 // ----------------------------------------------------------------------
 Comedy::~Comedy()
 {
     
-}
+}//end of deconstrutor
 
 // --------------------------contructor---------------------------------
 // Description: copy constuctor
@@ -43,7 +44,7 @@ Comedy::Comedy(const Comedy& rhs)
 
 	setComp1(getTitle());
 	setComp2(to_string(getYear()));
-}
+}//end of copyConstructor
 
 // --------------------------operator=---------------------------------
 // Description: Overloads = opertaor for Comedy Movies
@@ -58,7 +59,7 @@ Comedy& Comedy::operator=(const Movie& rhs)
 
 	setComp1(getTitle());
 	setComp2(to_string(getYear()));
-}
+}//end of operator=
 
 
 // --------------------------operator<---------------------------------
@@ -88,7 +89,7 @@ bool Comedy::operator<(const Movie& other)const
 	string year2 = other.getComp2();
 
 	return (year1 < year2);
-}
+}//end of operator<
 
 // --------------------------operator>---------------------------------
 // Description: Overloads > opertaor for Comedy Movies
@@ -100,7 +101,7 @@ bool Comedy::operator>(const Movie& rhs)const
     if(check1 || check2)
         return false;
     return true;
-}
+}//end of operator>
 
 // --------------------------operator==---------------------------------
 // Description: Overloads == opertaor for Comedy Movies
@@ -130,7 +131,7 @@ bool Comedy::operator==(const Movie& other)const
 		return false;
 	else
 		return true;
-}
+}//end of operator==
 
 // --------------------------toString---------------------------------
 // Description: returns type string from comedy

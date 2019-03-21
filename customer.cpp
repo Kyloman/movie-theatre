@@ -29,7 +29,7 @@ Customer::Customer(int id, string first, string last)
     ident = id;
     fName = first;
     lName = last;
-}
+}//end of constructor
 
 Customer::~Customer()
 {
@@ -54,7 +54,7 @@ void Customer::borrow(Movie* newMedia)
 	}
 	else
 		cout << "Out of Stock" << endl;
-}
+}//end of borrow
 
 // --------------------------return---------------------------------
 // Description: function for when customers return a copy of a movie
@@ -66,7 +66,7 @@ void Customer::returning(Movie* newMedia)
 	newMedia->increaseInv(1);
 	idHistory.push_back(tran);
     
-}
+}//end of returning
 
 // --------------------------getHistory---------------------------------
 // Description: getter for customer History 
@@ -84,7 +84,7 @@ void Customer::getHistory()
 	cout << "Customer #" << getID() << "'s history:" << endl;
 	cout << out;
 	cout << endl;
-}
+}// end of getHistroy
 
 // --------------------------getID---------------------------------
 // Description: getter for customer ID
@@ -92,7 +92,7 @@ void Customer::getHistory()
 int Customer::getID()
 {
 	return ident;
-}
+}//end of getID
 
 // --------------------------setID---------------------------------
 // Description: setter for customer ID
@@ -100,7 +100,7 @@ int Customer::getID()
 void Customer::setID(int newID)
 {
 	ident = newID;
-}
+}//end of setID
 
 // --------------------------getName---------------------------------
 // Description: getter for customer name
@@ -108,7 +108,7 @@ void Customer::setID(int newID)
 string Customer::getName() 
 {
 	return fName + " " + lName;
-}
+}//end of getName
 
 // --------------------------setName---------------------------------
 // Description: setter for customer name
@@ -117,4 +117,4 @@ void Customer::setName(string first, string last)
 {
 	fName = first;
 	lName = last;
-}
+}//end of setName
