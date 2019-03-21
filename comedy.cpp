@@ -63,8 +63,8 @@ Comedy& Comedy::operator=(const Movie& rhs)
 // ----------------------------------------------------------------------
 bool Comedy::operator<(const Movie& other)const
 {
-	string title1 = this->getTitle();
-	string title2 = other.getTitle();
+	string title1 = this->getComp1();
+	string title2 = other.getComp1();
 	int minLength = 0;
 	if (title1.length() < title2.length())
 		minLength = title1.length();
@@ -81,8 +81,8 @@ bool Comedy::operator<(const Movie& other)const
 	if (title1.length() < title2.length())
 		return true;
 
-	int year1 = this->getYear();
-	int year2 = other.getYear();
+	string year1 = this->getComp2();
+	string year2 = other.getComp2();
 
 	return (year1 < year2);
 }
@@ -98,10 +98,10 @@ bool Comedy::operator>(const Movie& rhs)const
 // --------------------------operator==---------------------------------
 // Description: Overloads == opertaor for Comedy Movies
 // ----------------------------------------------------------------------
-bool Comedy::operator==(const Comedy& other)const
+bool Comedy::operator==(const Movie& other)const
 {
-	string title1 = this->getTitle();
-	string title2 = other.getTitle();
+	string title1 = this->getComp1();
+	string title2 = other.getComp1();
 
 	if (title1.length() != title1.length())
 	{
@@ -116,8 +116,8 @@ bool Comedy::operator==(const Comedy& other)const
 			}
 		}
 
-	int year1 = this->getYear();
-	int year2 = other.getYear();
+	string year1 = this->getComp2();
+	string year2 = other.getComp2();
 
 	if (year1 != year2)
 		return false;

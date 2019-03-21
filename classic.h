@@ -54,6 +54,8 @@ public:
 	// ----------------------------------------------------------------------
 	void combineMajorActors(string);
 
+	static string reformatDate(int year, int month);
+
     bool operator<(const Movie& )const;
 	bool operator>(const Movie& )const;
 	bool operator==(const Movie& )const;
