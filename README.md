@@ -12,10 +12,8 @@ DEMO HOW TO RUN:
 
 TEAM CONTRIBUTION:
 
-Jonathan:
-
-Kyle:
-
-Marko:
+We all collaborated together to work on all parts of the project. We can't remember a single class where only one of us worked on it. 
+It seems pointless to explicitly emphasize methods or classes that one of us worked on more than the other. 
 
 
+For broad contribution, please refer to the GIRHUBCONTRIBUTION.png to see the lines of code created and deleted.
