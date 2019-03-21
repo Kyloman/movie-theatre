@@ -27,10 +27,10 @@ public:
 	Drama(const Drama& copy);
 
 	//Operator Overload
-    Drama& operator=(const Drama&);
-	bool operator<(const Drama& rhs)const;
-	bool operator>(const Drama& rhs)const;
-	bool operator==(const Drama& rhs)const;
+    Drama& operator=(const Movie&);
+	bool operator<(const Movie& rhs)const;
+	bool operator>(const Movie& rhs)const;
+	bool operator==(const Movie& rhs)const;
 private:
 	int date;
 	int stock;
