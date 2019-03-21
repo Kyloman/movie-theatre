@@ -24,7 +24,7 @@ Classic::Classic(int newstock, string newdirector, string newtitle, string newma
 
 	setComp1(reformatDate(getYear(), getMonth()));
 	setComp2(getMajorActor());
-}
+} // end of constructor
 
 
 // ------------------------deconstructor---------------------------------
@@ -33,7 +33,7 @@ Classic::Classic(int newstock, string newdirector, string newtitle, string newma
 Classic::~Classic()
 {
 
-}
+}// end of deconstructo
 
 //--------------------------contructor---------------------------------
 //Description: copy constuctor
@@ -49,7 +49,12 @@ Classic::Classic(const Classic& copy)
 
 	setComp1(reformatDate(getYear(), getMonth()));
 	setComp2(getMajorActor());
-}
+}// end of copy constructor
+
+ //--------------------------operator=---------------------------------
+ //Description: overloads the = operator for classic movie types to deep
+ // copy instead of shallow copy. 
+ //----------------------------------------------------------------------
 Classic& Classic::operator=(const Classic& rhs)
 {
 	setTitle(rhs.getTitle());
@@ -63,33 +68,39 @@ Classic& Classic::operator=(const Classic& rhs)
 	setComp2(getMajorActor());
 
 	return *this;
-}
+}// end of copy  operator 
+
+ //--------------------------setMonth---------------------------------
+ //Description: sets month of release for classic movie types
+ //----------------------------------------------------------------------
 void Classic::setMonth(int newMonth)
 {
 	month = newMonth;
-}
+}//end of setMonth
+
 // --------------------------setmajoractor---------------------------------
 // Description:  sets the actor
 // ----------------------------------------------------------------------
 void Classic::setMajorActor(string newActor)
 {
 	majorActor = newActor;
-}
+}//end of setMajorActor
+
 // --------------------------getMonth---------------------------------
 // Description: returns month
 // ----------------------------------------------------------------------
 int Classic::getMonth()const
 {
 	return month;
-}
+}//end getMonth
 
-// --------------------------setmajoractor---------------------------------
+// --------------------------getmajoractor---------------------------------
 // Description:  returns major actor the actor
 // ----------------------------------------------------------------------
 string Classic::getMajorActor()const
 {
 	return majorActor;
-}
+}//end of getMajorActor
 
 // --------------------------operator<---------------------------------
 // Description: Overloads < opertaor for Classic Movies
@@ -150,7 +161,7 @@ bool Classic::operator<(const Movie& other)const
 
 	//If these are both the same, then it is false
 	return false;
-}
+}// end of operator<
 
 // --------------------------operator>---------------------------------
 // Description: Overloads > opertaor for Classic Movies
@@ -162,7 +173,7 @@ bool Classic::operator>(const Movie& rhs)const
     if(check1 || check2)
         return false;
     return true;
-}
+}//end of operator>
 
 // --------------------------operator==---------------------------------
 // Description: Overloads == opertaor for Classic Movies
@@ -199,7 +210,7 @@ bool Classic::operator==(const Movie& other)const
 
 	//If these are both the same, we assume they are the same!
 	return true;
-}
+}//end of operator==
 
 // --------------------------combineMajorActors---------------------------------
 // Description: Function to add another major actor to a movie. 
@@ -208,8 +219,12 @@ void Classic::combineMajorActors(string rhsActor)
 {
 	string actors = this->getMajorActor() + " " + rhsActor;
 	this->setMajorActor(actors);
-}
+}//end of combineMajorActors
 
+ // --------------------------reformatDate---------------------------------
+ // Description: reformats the date for easier comparison between classic 
+ // movie types.
+ // ----------------------------------------------------------------------
 string Classic::reformatDate(int year, int month) {
 	return (to_string((year * 12 + month)));
 }
