@@ -16,9 +16,9 @@ Comedy::Comedy(int newstock, string newdirector, string newtitle, int newdate )
     setDirector(newdirector);
     setYear(newdate);
     setInv(newstock);
-    setComarable1(title);
-    
-    setComarable1();
+
+	setComp1(getTitle());
+	setComp2(to_string(getYear()));
 }
 // ------------------------deconstructor---------------------------------
 // Description: destructor
@@ -37,7 +37,26 @@ Comedy::Comedy(const Comedy& rhs)
 	setDirector(rhs.getDirector());
 	setYear(rhs.getYear());
 	setInv(rhs.getInv());
+
+	setComp1(getTitle());
+	setComp2(to_string(getYear()));
 }
+
+// --------------------------operator=---------------------------------
+// Description: Overloads = opertaor for Comedy Movies
+// ----------------------------------------------------------------------
+Comedy& Comedy::operator=(const Movie& rhs)
+{
+	setTitle(rhs.getTitle());
+	setDirector(rhs.getDirector());
+	setYear(rhs.getYear());
+	setInv(rhs.getInv());
+	return *this;
+
+	setComp1(getTitle());
+	setComp2(to_string(getYear()));
+}
+
 
 // --------------------------operator<---------------------------------
 // Description: Overloads < opertaor for Comedy Movies
@@ -106,14 +125,3 @@ bool Comedy::operator==(const Comedy& other)const
 		return true;
 }
 
-// --------------------------operator=---------------------------------
-// Description: Overloads = opertaor for Comedy Movies
-// ----------------------------------------------------------------------
-Comedy& Comedy::operator=(const Movie& rhs)
-{
-    setTitle(rhs.getTitle());
-    setDirector(rhs.getDirector());
-    setYear(rhs.getYear());
-    setInv(rhs.getInv());
-    return *this;
-}
