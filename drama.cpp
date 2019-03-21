@@ -62,7 +62,7 @@ Drama::Drama(const Drama& copy)
 // --------------------------operator=---------------------------------
 // Description: Overloads = opertaor for Drama Movies
 // ----------------------------------------------------------------------
-Drama& Drama::operator=(const Drama& rhs)
+Drama& Drama::operator=(const Movie& rhs)
 {
     setTitle(rhs.getTitle());
     setDirector(rhs.getDirector());
@@ -77,7 +77,7 @@ Drama& Drama::operator=(const Drama& rhs)
 // --------------------------operator<---------------------------------
 // Description: Overloads < opertaor for Drama Movies
 // ----------------------------------------------------------------------
-bool Drama::operator<(const Drama& other)const 
+bool Drama::operator<(const Movie& other)const
 {
 	//Check directors
 	string director1 = this->getDirector();
@@ -138,7 +138,7 @@ bool Drama::operator<(const Drama& other)const
 // --------------------------operator>---------------------------------
 // Description: Overloads > opertaor for Drama Movies
 // ----------------------------------------------------------------------
-bool Drama::operator>(const Drama& other)const
+bool Drama::operator>(const Movie& other)const
 {
 	return !(*this < other);
 }
@@ -146,7 +146,7 @@ bool Drama::operator>(const Drama& other)const
 // --------------------------operator==---------------------------------
 // Description: Overloads == opertaor for Drama Movies
 // ----------------------------------------------------------------------
-bool Drama::operator==(const Drama& other)const
+bool Drama::operator==(const Movie& other)const
 {
 	//Check directors
 	string director1 = this->getDirector();
