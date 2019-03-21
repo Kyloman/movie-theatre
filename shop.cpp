@@ -19,7 +19,7 @@ Shop::Shop()
 }
 Shop::~Shop()
 {
-
+    club1.~Club();
 }
 
 

@@ -23,7 +23,7 @@ public:
 	Movie();
 	
 	//Deconstructor
-	~Movie();
+	virtual ~Movie();
 	
 	//Setter
 	void setDirector(string name);

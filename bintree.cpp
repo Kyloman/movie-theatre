@@ -328,7 +328,6 @@ void BinTree::makeEmptyHelper(Node* &current)
 
         if(current->data != NULL)
         {
-            cout<< current->data->toString() << " ";
             delete current->data;
             current->data = NULL;
         }
