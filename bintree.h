@@ -54,7 +54,7 @@ public:
     bool operator!=(const BinTree &) const;
     //for kyle <3 chech for item if found increase stock then breack //use retrieve function
     bool insert(Movie*);
-    bool retrieve(Movie*, Movie*) const;
+    bool retrieve(Movie*, Movie*&) const;
     void displaySideways() const;            // provided below, displays the tree sideways
     int getHeight (const Movie &) const;
     void bstreeToArray(Movie* []);

@@ -43,7 +43,6 @@ void Shop::readFileMovies(ifstream& infile)
 			int year;
 			Movie* f;
 			infile >> stock;
-            cout<< stock<<endl<<endl;
             infile >> dummy;
 
 			director = stringHelper(infile);
@@ -104,7 +103,7 @@ void Shop::readFileMovies(ifstream& infile)
 		}
 		else
 		{
-			cout << "not correct input";
+			cout << "not correct input" << endl;
             getline(infile, dummy );
 		}
 
@@ -119,7 +118,6 @@ void Shop::readFileCommands(ifstream& infile)
     string dummy;
 	for (;;) {
 		infile >> s;
-        cout<< s;
 		if (infile.eof()) break;             // no more lines of data
 
         // I calls inventory prints trees in order
@@ -158,9 +156,6 @@ void Shop::readFileCommands(ifstream& infile)
             transactionData(tempCust, tempMovie, infile);
             if(tempCust != NULL)
             {
-                
-                cout<< (tempMovie->getInv())<< endl;
-                cout<< (tempCust->getID()) << endl;
                 tempCust->borrow(tempMovie);
             }
             else
@@ -182,11 +177,12 @@ void Shop::readFileCommands(ifstream& infile)
 
         else
         {
-            cout<<"not a command";
+            cout<<"not a command"<< endl;
             getline(infile, dummy);
             
         }
     }
+    cout<<endl;
 }
 // ---------------------readFileCostumers(ifstream&)---------------------------------
 // Description: reads th file for Customer info.
@@ -228,8 +224,9 @@ string Shop::stringHelper(ifstream& infile)
     }
     return str;
 }
-void Shop::transactionData(Customer* tempCust, Movie* tempMovie, ifstream& infile)
+void Shop::transactionData(Customer *&tempCust, Movie *&tempMovie, ifstream& infile)
 {
+    
     string dummy;
     string typeMedia;
     string typeMovie;
@@ -282,9 +279,10 @@ void Shop::transactionData(Customer* tempCust, Movie* tempMovie, ifstream& infil
             }
             else
             {
-                cout<<"no type movie";
+                cout<<"no type movie" << endl;
                 getline(infile, dummy);
             }
+            
             
             tempCust = club1.getCustomer(iD);
             
