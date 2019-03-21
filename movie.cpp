@@ -37,6 +37,14 @@ void Movie::setYear(int yearMovie)
 {
     year = yearMovie;
 }
+void Movie::setComp1(string comp1)
+{
+	comparable1 = comp1;
+}
+void Movie::setComp2(string comp2)
+{
+	comparable2 = comp2;
+}
 
 //Getters
 string Movie::getName()const
@@ -55,6 +63,14 @@ int Movie::getYear()const
 {
     return year;
 }
+string Movie::getComp1()const
+{
+	return comparable1;
+}
+string Movie::getComp2()const
+{
+	return comparable2;
+}
 
 //Had to guess what the vars were, you magic tricked movie.h out of repo
 string Movie::toString()const
@@ -68,18 +84,14 @@ bool Movie::operator==(const Movie& other)
     string title1 = this->getTitle();
 	string title2 = other.getTitle();
     
-
     if (title1.length() != title2.length())
-    {
 		return false;
-	}
 	
 	//Checking if the titles are the same
-	for (int x = 0; x < title1.length(); x++) {
+	for (int x = 0; x < title1.length(); x++) 
+	{
 		if (title1[x] != title2[x])
-        {
 			return false;
-		}
 	}
 
 	//Check dates
@@ -87,9 +99,7 @@ bool Movie::operator==(const Movie& other)
 	int date2 = other.getYear();
 
     if (date1 != date2)
-    {
 		return false;
-	}
 
 	//If these are both the same, we assume they are the same!
 	return true;
@@ -107,37 +117,28 @@ bool Movie::operator<(const Movie& other)
 		chosenLength = title2.length();
 
 	//Check titles
-	for (int x = 0; x < chosenLength; x++) {
+	for (int x = 0; x < chosenLength; x++) 
+	{
 		if (title1[x] < title2[x])
-		{
 			return true;
-		}
 		if (title1[x] > title2[x])
-		{
 			return false;
-		}
 	}
 
 	//If one title is longer than the other, that's larger
-	if (title1 < title2) {
+	if (title1 < title2) 
 		return true;
-	}
-	else if (title1 > title2) {
+	else if (title1 > title2)
 		return false;
-	}
 
 	//Check dates
 	int date1 = year;
 	int date2 = other.getYear();
 
 	if (date1 < date2)
-	{
 		return true;
-	}
 	if (date1 > date2)
-	{
 		return false;
-	}
 
 	return false; //if they are equal then it is false
 }

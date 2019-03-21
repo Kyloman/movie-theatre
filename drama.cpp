@@ -76,24 +76,19 @@ bool Drama::operator<(const Drama& other)const
 		chosenLength = director2.length();
 
 	//Check directors
-	for (int x = 0; x < chosenLength; x++) {
+	for (int x = 0; x < chosenLength; x++) 
+	{
 		if (director1[x] < director2[x])
-		{
 			return true;
-		}
 		if (director1[x] > director2[x])
-		{
 			return false;
-		}
 	}
 
 	//If one director is longer than the other, that's larger
-	if (director1 < director2) {
+	if (director1 < director2)
 		return true;
-	}
-	else if (director1 > director2) {
+	else if (director1 > director2)
 		return false;
-	}
 
 
 	//CHECKING TITLES NEXT
@@ -107,24 +102,19 @@ bool Drama::operator<(const Drama& other)const
 		chosenLength = title2.length();
 
 	//Check titles
-	for (int x = 0; x < chosenLength; x++) {
+	for (int x = 0; x < chosenLength; x++) 
+	{
 		if (title1[x] < title2[x])
-		{
 			return true;
-		}
 		if (title1[x] > title2[x])
-		{
 			return false;
-		}
 	}
 
 	//If one title is longer than the other, that's larger
-	if (title1 < title2) {
+	if (title1 < title2)
 		return true;
-	}
-	else if (title1 > title2) {
+	else if (title1 > title2) 
 		return false;
-	}
 
 
 	//If these are both the same, then it is false
@@ -149,34 +139,27 @@ bool Drama::operator==(const Drama& other)const
 	string director2 = other.getDirector();
 
 	if (director1.length() != director2.length())
-	{
 		return false;
-	}
 
 	//Checking if the titles are the same
-	for (int x = 0; x < director1.length(); x++) {
+	for (int x = 0; x < director1.length(); x++) 
+	{
 		if (director1[x] != director2[x])
-		{
 			return false;
-		}
 	}
 
 	//Check titles
 	string title1 = this->getTitle();
 	string title2 = other.getTitle();
 
-
 	if (title1.length() != title2.length())
-	{
 		return false;
-	}
 
 	//Checking if the titles are the same
-	for (int x = 0; x < title1.length(); x++) {
+	for (int x = 0; x < title1.length(); x++) 
+	{
 		if (title1[x] != title2[x])
-		{
 			return false;
-		}
 	}
 
 	//If these are both the same, we assume they are the same!

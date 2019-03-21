@@ -35,6 +35,8 @@ public:
     string getName()const;
 	string getDirector()const;
 	string getTitle()const;
+	string getComp1()const;
+	string getComp2()const;
 	int getYear()const;
     
 
