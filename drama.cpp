@@ -16,6 +16,9 @@ Drama::Drama()
 	director = "";
 	date = 0;	
 	setInv(0);
+
+	setComp1(director);
+	setComp2(title);
 }
 
 // --------------------------constructor---------------------------------
@@ -27,6 +30,9 @@ Drama::Drama(int newstock, string newdirector, string newtitle, int newdate)
     setDirector(newdirector);
     setYear(newdate);
     setInv(newstock);
+
+	setComp1(director);
+	setComp2(title);
 }
 
 
@@ -46,6 +52,11 @@ Drama::Drama(const Drama& copy)
 	title = copy.getTitle();
 	director = copy.getDirector();
 	date = copy.getYear();
+	setInv(copy.getInv());
+
+	setComp1(director);
+	setComp2(title);
+	
 }
 
 // --------------------------operator=---------------------------------
@@ -57,6 +68,9 @@ Drama& Drama::operator=(const Drama& rhs)
     setDirector(rhs.getDirector());
     setYear(rhs.getYear());
     setInv(rhs.getInv());
+
+	setComp1(director);
+	setComp2(title);
     return *this;
 }
 
