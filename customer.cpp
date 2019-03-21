@@ -34,7 +34,7 @@ Customer::Customer(int id, string first, string last)
 // ----------------------------------------------------------------------
 void Customer::borrow(Media* newMedia)
 {
-	if (newMedia > 0)
+	if (newMedia->getInv() > 0)
 	{
 		Transaction tran(newMedia, "borrowed");
 		newMedia->decreaseInv(1);
