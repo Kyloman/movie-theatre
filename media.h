@@ -29,7 +29,7 @@ public:
 
     string toString();
 protected:
-	int inventory;
+	int inventory = 0;
 private:	
 	string name;
 };

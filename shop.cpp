@@ -43,6 +43,7 @@ void Shop::readFileMovies(ifstream& infile)
 			int year;
 			Movie* f;
 			infile >> stock;
+            cout<< stock<<endl<<endl;
             infile >> dummy;
 
 			director = stringHelper(infile);
@@ -109,7 +110,6 @@ void Shop::readFileMovies(ifstream& infile)
 
 
 	}
-    cout<<"end";
 }
 
 
@@ -138,12 +138,12 @@ void Shop::readFileCommands(ifstream& infile)
 		else if (s == "H")
 		{
 			int iD;
-			Customer* temp;
+            Customer *temp;
 			infile >> iD;
 			if (club1.find(iD))
 			{
-				temp = club1.getCustomer(iD);
-				temp->getHistory();
+                temp = club1.getCustomer(iD);
+                temp->getHistory();
 			}
             else
                 cout << "no Customer" << endl;
@@ -152,12 +152,14 @@ void Shop::readFileCommands(ifstream& infile)
 		//B calls borrow
 		else if (s == "B")
 		{
-            Customer* tempCust = nullptr;
-            Movie* tempMovie = nullptr;
+            Customer* tempCust;
+            Movie* tempMovie;
             transactionData(tempCust, tempMovie, infile);
-            if(tempMovie != NULL)
+            if(tempCust != NULL)
             {
-                tempMovie->getInv();
+                
+                cout<< (tempMovie->getInv())<< endl;
+                cout<< (tempCust->getID()) << endl;
                 tempCust->borrow(tempMovie);
             }
             else
@@ -170,7 +172,7 @@ void Shop::readFileCommands(ifstream& infile)
             Customer* tempCust = nullptr;
             Movie* tempMovie = nullptr;
             transactionData(tempCust,tempMovie, infile);
-            if(tempMovie != NULL)
+            if(tempCust != NULL)
                 tempCust->returning(tempMovie);
             else
                 cout << "no such ID" << endl;

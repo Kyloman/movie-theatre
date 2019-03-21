@@ -103,7 +103,7 @@ bool BinTree::operator!=(const BinTree &rhs) const
 bool BinTree::insert(Movie *p)
 {
     Movie *temp = nullptr;
-    if(retrieve(p, temp) == true)
+    if(retrieve( p, temp) == true)
     {
         temp = NULL;
         return false;
