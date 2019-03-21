@@ -81,17 +81,17 @@ string Classic::getMajorActor()const
 // --------------------------operator<---------------------------------
 // Description: Overloads < opertaor for Classic Movies
 // ----------------------------------------------------------------------
-bool Classic::operator<(const Movie& rhs)const 
+bool Classic::operator<(const Movie& rhs)const
 {
     if (this->getYear() == rhs.getYear())
     {
-        if (this->getMonth() == rhs.getMonth())
+        if (this->getComp1() == rhs.getComp1())
             if (this->getTitle() == rhs.getTitle())
                 return false;
             else
-                return(this->getMajorActor() < rhs.getMajorActor());
+                return(this->getComp2() < rhs.getComp2());
         else
-            return (this->getMonth() < rhs.month);
+            return (this->getComp1() < rhs.getComp1());
     }
     return (this->getYear() < rhs.getYear());
 }
