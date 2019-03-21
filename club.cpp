@@ -53,7 +53,6 @@ void Club::addMember(int ID, string last, string first, int i)
     if(arr[ID % capacity] == NULL  )
     {
         arr[ID % capacity] = temp;
-        cout<< arr[ID % capacity]->Id;
     }
     else
         addMemberHelper(temp, current);
