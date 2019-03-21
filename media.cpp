@@ -8,33 +8,50 @@
 
 #include "media.h"
 
+// --------------------------constructor---------------------------------
+// Description: default constructor for the media type
+// ----------------------------------------------------------------------
 Media::Media()
 {
     inventory = 0;
     name = "";
 }
-//getters
+
+// --------------------------getInv---------------------------------
+// Description: returns the inventory amount of a media 
+// ----------------------------------------------------------------------
 int Media::getInv()const
 {
     return inventory;
 }
 
-//Setter
+// --------------------------setInv---------------------------------
+// Description: sets the inventory to a passed parameter amount
+// ----------------------------------------------------------------------
 void Media::setInv(int amount)
 {
     inventory = amount;
 }
 
-//functions
+// --------------------------increaseInv---------------------------------
+// Description: increases inv by passed parameter amount
+// ----------------------------------------------------------------------
 void Media::increaseInv(int amount)
 {
     inventory += amount;
 }
+
+// --------------------------decreaseInv---------------------------------
+// Description: decreases inv by passed parameter amount 
+// ----------------------------------------------------------------------
 void Media::decreaseInv(int amount)
 {
     inventory -= amount;
 }
 
+// --------------------------toString---------------------------------
+// Description: returns a type string of a media type
+// ----------------------------------------------------------------------
 string Media::toString()
 {
     string mediaString = "";
