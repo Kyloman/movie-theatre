@@ -35,7 +35,7 @@ Customer::Customer(int id, string first, string last)
 // Description: function for when customers borrow a copy of a movie
 // decreases inventory when the borrow transaction goes through
 // ----------------------------------------------------------------------
-void Customer::borrow(Media* newMedia)
+void Customer::borrow(Movie* newMedia)
 {
 	if (newMedia->getInv() > 0)
 	{
@@ -51,7 +51,7 @@ void Customer::borrow(Media* newMedia)
 // Description: function for when customers return a copy of a movie
 // increases inventory when the return transaction goes through
 // ----------------------------------------------------------------------
-void Customer::returning(Media* newMedia)
+void Customer::returning(Movie* newMedia)
 {
 	Transaction tran(newMedia, "returned");
 	newMedia->increaseInv(1);
@@ -72,7 +72,7 @@ void Customer::getHistory()
 		//out += getName() + " "; 
 		out += idHistory[x].toString();
 	}
-	cout << "Customer#" << getID << " history:" << out << endl;
+    cout << "Customer#" << getID() << " history:" << out << endl;
 }
 
 // --------------------------getID---------------------------------

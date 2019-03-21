@@ -11,7 +11,7 @@
 
 #ifndef TRANSACTION_H
 #define TRANSACTION_H
-#include "media.h"
+#include "movie.h" 
 //#include "customer.h"
 
 class Transaction
@@ -19,7 +19,7 @@ class Transaction
 public:
 	//Constructor
     Transaction();
-	Transaction(Media* newMedia, string action);
+	Transaction(Movie* newMedia, string action);
 	
 	//Deconstructor
 	~Transaction();
@@ -28,7 +28,7 @@ public:
 	string toString();
 
 private:
-	Media* type;
+	Movie* type;
 	string action;
 };
 

@@ -24,7 +24,7 @@ Transaction::Transaction() {
 // --------------------------constructor---------------------------------
 // Description: creates a transaction class with parameters 
 // ----------------------------------------------------------------------
-Transaction::Transaction(Media* newMedia, string newAction) {
+Transaction::Transaction(Movie* newMedia, string newAction) {
 	type = newMedia;
 	action = newAction;
 }

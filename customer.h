@@ -61,11 +61,11 @@ public:
 	// --------------------------borrow()---------------------------------
 	// Description: an item is borrowed by the customer
 	// ----------------------------------------------------------------------
-	void borrow(Media*);
+	void borrow(Movie*);
 	// --------------------------borrow()---------------------------------
 	// Description: an item is returned by the customer
 	// ----------------------------------------------------------------------
-	void returning(Media*);
+	void returning(Movie*);
 	// --------------------------==---------------------------------
 	// Description: returns true if two customers are the same
 	// ----------------------------------------------------------------------

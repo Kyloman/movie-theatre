@@ -27,7 +27,7 @@ public:
 	void increaseInv(int amount);
 	void decreaseInv(int amount);
 
-    virtual string toString()const = 0;
+    string toString()const;
 protected:
 	int inventory = 0;
 private:	
