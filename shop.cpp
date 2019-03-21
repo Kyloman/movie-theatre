@@ -125,7 +125,8 @@ void Shop::readFileCommands(ifstream& infile)
         // I calls inventory prints trees in order
 		if (s == "I")
 		{
-			cout << "comedys:" << endl;
+			cout << endl;
+			cout << "Comedies:" << endl;
 			cout << comedyTree;
 			cout << "Dramas:" << endl;
 			cout << dramaTree;
