@@ -21,7 +21,7 @@ Movie::Movie()
     director = "";
     year = 0;
 	stock = 0;
-}
+}// end of constructor
 
 // --------------------------deconstructor---------------------------------
 // Description: default deconstructor for movie type.
@@ -29,7 +29,7 @@ Movie::Movie()
 Movie::~Movie()
 {
     
-}
+}//end of deconstructor
 
 // --------------------------setDirector---------------------------------
 // Description: sets the director for a movie to a passed parameter
@@ -37,7 +37,7 @@ Movie::~Movie()
 void Movie::setDirector(string name)
 {
     director = name;
-}
+}//end of setDirector
 
 // --------------------------setTitle---------------------------------
 // Description: sets the title for a movie to a passed parameter
@@ -45,7 +45,7 @@ void Movie::setDirector(string name)
 void Movie::setTitle(string name)
 {
     title = name;
-}
+}//end of setTitle
 
 // --------------------------setYear---------------------------------
 // Description: sets the year for a movie to a passed parameter
@@ -53,7 +53,7 @@ void Movie::setTitle(string name)
 void Movie::setYear(int yearMovie)
 {
     year = yearMovie;
-}
+}//end of setYear
 
 // --------------------------setComp1---------------------------------
 // Description: sets the comparable1 for a movie to a passed parameter
@@ -61,7 +61,7 @@ void Movie::setYear(int yearMovie)
 void Movie::setComp1(string comp1)
 {
     comparable1 = comp1;
-}
+}//end of setComp1
 
 // --------------------------setComp2---------------------------------
 // Description: sets the comparable2 for a movie to a passed parameter
@@ -69,7 +69,7 @@ void Movie::setComp1(string comp1)
 void Movie::setComp2(string comp2)
 {
     comparable2 = comp2;
-}
+}//end of setComp2
 
 // --------------------------getName---------------------------------
 // Description: gets the title for a movie 
@@ -77,7 +77,7 @@ void Movie::setComp2(string comp2)
 string Movie::getName()const
 {
     return title;
-}
+}//end of getName
 
 // --------------------------getDirector---------------------------------
 // Description: gets the director for a movie 
@@ -85,7 +85,7 @@ string Movie::getName()const
 string Movie::getDirector()const
 {
     return director;
-}
+}//end of getDirector
 
 // --------------------------getTitle---------------------------------
 // Description: gets the title for a movie 
@@ -93,7 +93,7 @@ string Movie::getDirector()const
 string Movie::getTitle()const
 {
     return title;
-}
+}//end of getTitle
 
 // --------------------------getYear---------------------------------
 // Description: gets the year for a movie 
@@ -101,7 +101,7 @@ string Movie::getTitle()const
 int Movie::getYear()const
 {
     return year;
-}
+}//end of getYear
 
 // --------------------------getComp1---------------------------------
 // Description: gets the comparable1 for a movie 
@@ -109,7 +109,7 @@ int Movie::getYear()const
 string Movie::getComp1()const
 {
     return comparable1;
-}
+}//end of getComp1
 
 // --------------------------getComp2---------------------------------
 // Description: gets the comparable2 for a movie 
@@ -117,11 +117,11 @@ string Movie::getComp1()const
 string Movie::getComp2()const
 {
     return comparable2;
-}
+}//end of getComp2
 
 //Had to guess what the vars were, you magic tricked movie.h out of repo
 string Movie::toString()const
 {
     return (this->getTitle() + " (" + to_string(this->getYear()) + ")"); 
-}
+}//end of toString
 

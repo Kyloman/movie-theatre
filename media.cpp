@@ -18,7 +18,7 @@ Media::Media()
 {
     inventory = 0;
     name = "";
-}
+}//end of constructor
 
 // --------------------------getInv---------------------------------
 // Description: returns the inventory amount of a media 
@@ -26,7 +26,7 @@ Media::Media()
 int Media::getInv()const
 {
     return inventory;
-}
+}//end of getInv
 
 // --------------------------setInv---------------------------------
 // Description: sets the inventory to a passed parameter amount
@@ -34,7 +34,7 @@ int Media::getInv()const
 void Media::setInv(int amount)
 {
     inventory = amount;
-}
+}//end of setInv
 
 // --------------------------increaseInv---------------------------------
 // Description: increases inv by passed parameter amount
@@ -42,7 +42,7 @@ void Media::setInv(int amount)
 void Media::increaseInv(int amount)
 {
     inventory += amount;
-}
+}//end od increaseInv
 
 // --------------------------decreaseInv---------------------------------
 // Description: decreases inv by passed parameter amount 
@@ -50,7 +50,7 @@ void Media::increaseInv(int amount)
 void Media::decreaseInv(int amount)
 {
     inventory -= amount;
-}
+}//end of decreaseInv
 
 // --------------------------toString---------------------------------
 // Description: returns a type string of a media type
@@ -61,4 +61,4 @@ string Media::toString()const
     mediaString += to_string(inventory) + " " + name;
     return mediaString;
     
-}
+}//end of toString

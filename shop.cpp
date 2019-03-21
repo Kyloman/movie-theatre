@@ -16,11 +16,16 @@
 // ----------------------------------------------------
 Shop::Shop()
 {
-}
+
+}// end of constructor
+
+ // --------------------------deconstructor-------------------------------------
+ // Description: destroys shop class
+ // ----------------------------------------------------
 Shop::~Shop()
 {
     club1.~Club();
-}
+}// end of deconstructor
 
 
 // --------------------------readFileMovies(ifstream&)-------------------------------
@@ -109,7 +114,8 @@ void Shop::readFileMovies(ifstream& infile)
 
 
 	}
-}
+}// end of readFileMovies
+
 
 
 void Shop::readFileCommands(ifstream& infile)
@@ -182,7 +188,9 @@ void Shop::readFileCommands(ifstream& infile)
         }
     }
     cout<<endl;
-}
+}// end of readFileCommands
+
+
 // ---------------------readFileCostumers(ifstream&)---------------------------------
 // Description: reads the file for Customer info.
 // ---------------------------------------------------------------------------
@@ -200,9 +208,11 @@ void Shop::readFileCostumers(ifstream& infile)
         club1.addMember(ID, lastName, firstName, i);
         i++;
     }
-}
+}// end of readFileCustomers
 
-
+ // ---------------------stringHelper(ifstream&)---------------------------------
+ // Description: helper function
+ // ---------------------------------------------------------------------------
 string Shop::stringHelper(ifstream& infile)
 {
     string str = "";
@@ -222,7 +232,11 @@ string Shop::stringHelper(ifstream& infile)
         str += temp;
     }
     return str;
-}
+}// end of stringHelper
+
+ // ---------------------transactionData()---------------------------------
+ // Description: holds all data of transactions
+ // ---------------------------------------------------------------------------
 void Shop::transactionData(Customer *&tempCust, Movie *&tempMovie, ifstream& infile)
 {
     
@@ -297,4 +311,4 @@ void Shop::transactionData(Customer *&tempCust, Movie *&tempMovie, ifstream& inf
         cout << "ID not found" << endl;
         getline(infile, dummy);
     }
-}
+}//end of transactionData

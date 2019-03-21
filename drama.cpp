@@ -35,7 +35,7 @@ Drama::Drama(int newstock, string newdirector, string newtitle, int newdate)
 
 	setComp1(getDirector());
 	setComp2(title);
-}
+}// end of constructor
 
 
 // ------------------------deconstructor---------------------------------
@@ -44,7 +44,7 @@ Drama::Drama(int newstock, string newdirector, string newtitle, int newdate)
 Drama::~Drama()
 {
 
-}
+}//end of deconstructor
 
 // --------------------------contructor---------------------------------
 // Description: copy constuctor
@@ -59,7 +59,7 @@ Drama::Drama(const Drama& copy)
 	setComp1(getDirector());
 	setComp2(title);
 	
-}
+}//end of copyconstructor
 
 // --------------------------operator=---------------------------------
 // Description: Overloads = opertaor for Drama Movies
@@ -74,7 +74,7 @@ Drama& Drama::operator=(const Movie& rhs)
 	setComp1(getDirector());
 	setComp2(title);
     return *this;
-}
+}//end of operator=
 
 // --------------------------operator<---------------------------------
 // Description: Overloads < opertaor for Drama Movies
@@ -135,7 +135,7 @@ bool Drama::operator<(const Movie& other)const
 
 	//If these are both the same, then it is false
 	return false;
-}
+}//end of operator<
 
 // --------------------------operator>---------------------------------
 // Description: Overloads > opertaor for Drama Movies
@@ -147,7 +147,7 @@ bool Drama::operator>(const Movie& rhs)const
     if(check1 || check2)
         return false;
     return true;
-}
+}//end of operator>
 
 // --------------------------operator==---------------------------------
 // Description: Overloads == opertaor for Drama Movies
@@ -184,4 +184,4 @@ bool Drama::operator==(const Movie& other)const
 
 	//If these are both the same, we assume they are the same!
 	return true;
-}
+}//end of operator==
