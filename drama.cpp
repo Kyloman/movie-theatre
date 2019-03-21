@@ -17,7 +17,7 @@ Drama::Drama()
 	date = 0;	
 	setInv(0);
 
-	setComp1(director);
+	setComp1(getDirector());
 	setComp2(title);
 }
 
@@ -31,7 +31,7 @@ Drama::Drama(int newstock, string newdirector, string newtitle, int newdate)
     setYear(newdate);
     setInv(newstock);
 
-	setComp1(director);
+	setComp1(getDirector());
 	setComp2(title);
 }
 
@@ -54,7 +54,7 @@ Drama::Drama(const Drama& copy)
 	date = copy.getYear();
 	setInv(copy.getInv());
 
-	setComp1(director);
+	setComp1(getDirector());
 	setComp2(title);
 	
 }
@@ -69,7 +69,7 @@ Drama& Drama::operator=(const Movie& rhs)
     setYear(rhs.getYear());
     setInv(rhs.getInv());
 
-	setComp1(director);
+	setComp1(getDirector());
 	setComp2(title);
     return *this;
 }
