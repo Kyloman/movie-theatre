@@ -32,7 +32,7 @@ Classic::Classic(int newstock, string newdirector, string newtitle, string newma
 // ----------------------------------------------------------------------
 Classic::~Classic()
 {
-
+    
 }
 
 //--------------------------contructor---------------------------------

@@ -249,6 +249,8 @@ void Shop::transactionData(Customer *&tempCust, Movie *&tempMovie, ifstream& inf
                 Comedy *temp = new Comedy(0, "", title, date);
                 if(!comedyTree.retrieve(temp, tempMovie))
                     cout<<"no comedy";
+                delete temp;
+                temp = NULL;
             }
             else if(typeMovie == "D")
             {
@@ -259,6 +261,8 @@ void Shop::transactionData(Customer *&tempCust, Movie *&tempMovie, ifstream& inf
                 Drama *temp = new Drama(0, director, title, 0);
                 if(!dramaTree.retrieve(temp, tempMovie))
                     cout<<"no drama";
+                delete temp;
+                temp = NULL;
             }
             else if(typeMovie == "C")
             {
@@ -275,6 +279,8 @@ void Shop::transactionData(Customer *&tempCust, Movie *&tempMovie, ifstream& inf
                 Classic *temp = new Classic(0, "", "", actor, month, year);
                 if(!classicTree.retrieve(temp, tempMovie))
                     cout<<"no classic";
+                delete temp;
+                temp = NULL;
             }
             else
             {
