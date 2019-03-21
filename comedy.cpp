@@ -132,3 +132,11 @@ bool Comedy::operator==(const Movie& other)const
 		return true;
 }
 
+// --------------------------toString---------------------------------
+// Description: returns type string from comedy
+// ----------------------------------------------------------------------
+//string Comedy::toString() 
+//{
+//	string s1 = "";
+//	s1 = getTitle() + " ";
+//}
