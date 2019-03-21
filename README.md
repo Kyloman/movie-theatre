@@ -15,4 +15,4 @@ We all collaborated together to work on all parts of the project. We can't remem
 It seems pointless to explicitly emphasize methods or classes that one of us worked on more than the other. 
 
 
-For broad contribution, please refer to the GIRHUBCONTRIBUTION.png to see the lines of code created and deleted.
+For broad contribution, please refer to the GITHUBCONTRIBUTION.png to see the lines of code created and deleted.
