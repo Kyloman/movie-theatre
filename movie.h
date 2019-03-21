@@ -39,9 +39,9 @@ public:
     
 
 	string toString()const;
-    virtual bool operator==(const Movie& other);
-    virtual bool operator<(const Movie& other);
-    virtual bool operator>(const Movie& other);
+    virtual bool operator==(const Movie& other) = 0;
+    virtual bool operator<(const Movie& other) = 0;
+    virtual bool operator>(const Movie& other) = 0;
 private:
     int year;
     int stock;
