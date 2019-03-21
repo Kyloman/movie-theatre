@@ -74,28 +74,32 @@ void Customer::getHistory()
 // --------------------------getID---------------------------------
 // Description: getter for customer ID
 // ----------------------------------------------------------------------
-int Customer::getID() {
+int Customer::getID()
+{
 	return ident;
 }
 
 // --------------------------setID---------------------------------
 // Description: setter for customer ID
 // ----------------------------------------------------------------------
-void Customer::setID(int newID) {
+void Customer::setID(int newID)
+{
 	ident = newID;
 }
 
 // --------------------------getName---------------------------------
 // Description: getter for customer name
 // ----------------------------------------------------------------------
-string Customer::getName() {
+string Customer::getName() 
+{
 	return fName + " " + lName;
 }
 
 // --------------------------setName---------------------------------
 // Description: setter for customer name
 // ----------------------------------------------------------------------
-void Customer::setName(string first, string last) {
+void Customer::setName(string first, string last) 
+{
 	fName = first;
 	lName = last;
 }
